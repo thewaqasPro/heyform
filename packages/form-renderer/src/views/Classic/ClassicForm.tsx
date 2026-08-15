@@ -160,17 +160,6 @@ export const ClassicForm: FC = () => {
           </div>
         </form>
       </div>
-
-      {!state.settings?.removeBranding && (
-        <a
-          href="https://heyform.net"
-          target="_blank"
-          rel="noreferrer"
-          className="heyform-classic-branding"
-        >
-          Powered by HeyForm
-        </a>
-      )}
     </div>
   )
 }

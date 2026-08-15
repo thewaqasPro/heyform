@@ -13,6 +13,7 @@ export const Branding: FC = () => {
   if (state.settings?.removeBranding) {
     return null
   }
+  return null
 
   return (
     <a className="heyform-branding" href="https://heyform.net/?ref=badge" target="_blank">
@@ -33,9 +34,7 @@ export const WelcomeBranding: FC = () => {
     <div className="heyform-footer heyform-welcome-footer">
       <div className="heyform-footer-wrapper">
         <div className="heyform-footer-left" />
-        <div className="heyform-footer-right">
-          <Branding />
-        </div>
+        <div className="heyform-footer-right">{/* <Branding /> */}</div>
       </div>
     </div>
   )
