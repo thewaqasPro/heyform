@@ -18,7 +18,7 @@ const LayoutModeSelector: FC<LayoutModeSelectorProps> = ({
   const current = value || 'conversational'
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
       <div
         onClick={() => onChange?.('conversational')}
         className={cn(
@@ -33,7 +33,7 @@ const LayoutModeSelector: FC<LayoutModeSelectorProps> = ({
             className={cn(
               'flex h-10 w-10 items-center justify-center rounded-lg',
               current === 'conversational'
-                ? 'bg-primary text-white'
+                ? 'bg-primary/30 text-white'
                 : 'bg-accent-light text-secondary'
             )}
           >
@@ -43,7 +43,7 @@ const LayoutModeSelector: FC<LayoutModeSelectorProps> = ({
             <div
               className={cn(
                 'text-sm font-semibold',
-                current === 'conversational' ? 'text-primary' : 'text-foreground'
+                current === 'conversational' ? 'text-primary' : 'text-primary'
               )}
             >
               Conversational
@@ -68,7 +68,7 @@ const LayoutModeSelector: FC<LayoutModeSelectorProps> = ({
           <div
             className={cn(
               'flex h-10 w-10 items-center justify-center rounded-lg',
-              current === 'classic' ? 'bg-primary text-white' : 'bg-accent-light text-secondary'
+              current === 'classic' ? 'bg-primary/30 text-white' : 'bg-accent-light text-primary'
             )}
           >
             <IconLayoutList className="h-5 w-5" />
@@ -77,7 +77,7 @@ const LayoutModeSelector: FC<LayoutModeSelectorProps> = ({
             <div
               className={cn(
                 'text-sm font-semibold',
-                current === 'classic' ? 'text-primary' : 'text-foreground'
+                current === 'classic' ? 'text-primary' : 'text-primary'
               )}
             >
               Classic Website Form
