@@ -42,7 +42,7 @@ const Login = () => {
         )}
       </div>
 
-      <SocialLogin />
+      {/* <SocialLogin /> */}
 
       <Form.Simple
         className="space-y-4"

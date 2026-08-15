@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 
 const { spawnSync } = require('child_process')
+const { existsSync } = require('fs')
+const { join } = require('path')
 
 const args = process.argv.slice(2)
-const result = spawnSync('pnpm', ['exec', 'oxlint', ...args], {
-  encoding: 'utf8'
+const binPath = join(__dirname, '../node_modules/.bin/oxlint')
+const command = existsSync(binPath) ? binPath : 'oxlint'
+
+const result = spawnSync(command, args, {
+  encoding: 'utf8',
+  shell: process.platform === 'win32'
 })
 
 if (result.stdout) {
