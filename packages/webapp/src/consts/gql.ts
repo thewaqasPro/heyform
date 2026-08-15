@@ -162,6 +162,7 @@ export const WORKSPACE_RECENT_FORMS_GQL = gql`
         enableClosedMessage
         closedFormTitle
         closedFormDescription
+        layoutMode
       }
       retentionAt
       suspended
@@ -430,6 +431,7 @@ export const FORMS_GQL = gql`
         enableClosedMessage
         closedFormTitle
         closedFormDescription
+        layoutMode
       }
       version
       isDraft
@@ -516,6 +518,7 @@ export const FORM_SUMMARY_GQL = gql`
         enableClosedMessage
         closedFormTitle
         closedFormDescription
+        layoutMode
       }
       retentionAt
       suspended
@@ -567,6 +570,7 @@ export const FORM_DETAIL_GQL = gql`
         enableClosedMessage
         closedFormTitle
         closedFormDescription
+        layoutMode
         redirectOnCompletion
         redirectUrl
         metaTitle
@@ -1423,6 +1427,7 @@ export const PUBLIC_FORM_GQL = gql`
         enableClosedMessage
         closedFormTitle
         closedFormDescription
+        layoutMode
       }
       drafts {
         id

@@ -7,6 +7,7 @@ import type {
   FieldKindEnum,
   FieldLayoutAlignEnum,
   FormKindEnum,
+  FormLayoutModeEnum,
   FormStatusEnum,
   InteractiveModeEnum
 } from './enums/form'
@@ -49,6 +50,9 @@ export interface FormSettings {
   metaTitle?: string
   metaDescription?: string
   metaOGImageUrl?: string
+
+  // Form Layout Mode (Conversational vs Classic)
+  layoutMode?: FormLayoutModeEnum | 'conversational' | 'classic'
 
   // Custom closed form message
   enableClosedMessage?: boolean

@@ -45,7 +45,8 @@ export class UpdateFormResolver {
       ['closedFormDescription', 'settings.closedFormDescription'],
       ['allowArchive', 'settings.allowArchive'],
       ['requirePassword', 'settings.requirePassword'],
-      ['enableEmailNotification', 'settings.enableEmailNotification']
+      ['enableEmailNotification', 'settings.enableEmailNotification'],
+      ['layoutMode', 'settings.layoutMode']
     ])
 
     if (helper.isValid(input.password)) {

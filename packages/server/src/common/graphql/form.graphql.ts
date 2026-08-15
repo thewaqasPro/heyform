@@ -590,6 +590,10 @@ export class UpdateFormInput extends FormDetailInput {
   @Field({ nullable: true })
   @IsOptional()
   enableEmailNotification?: boolean
+
+  @Field({ nullable: true })
+  @IsOptional()
+  layoutMode?: string
 }
 
 @InputType()
@@ -1007,6 +1011,9 @@ export class FormSettingType {
 
   @Field({ nullable: true })
   enableEmailNotification?: boolean
+
+  @Field({ nullable: true })
+  layoutMode?: string
 }
 
 @ObjectType()

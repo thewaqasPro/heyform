@@ -4,6 +4,11 @@ export enum InteractiveModeEnum {
   POPUP
 }
 
+export enum FormLayoutModeEnum {
+  CONVERSATIONAL = 'conversational',
+  CLASSIC = 'classic'
+}
+
 export enum FormKindEnum {
   SURVEY = 1,
   QUIZ,

@@ -7,10 +7,10 @@ interface TimeoutProps {
 }
 
 export class Timeout {
-  private readonly caches: AnyMap<number> = {}
+  private readonly caches: AnyMap<any> = {}
 
   add({ name, duration, callback }: TimeoutProps) {
-    this.caches[name] = setTimeout(callback, duration)
+    this.caches[name] = setTimeout(callback, duration) as any
   }
 
   remove(name: string) {

@@ -388,7 +388,8 @@ export class FormService {
       'languages',
       'enableClosedMessage',
       'closedFormTitle',
-      'closedFormDescription'
+      'closedFormDescription',
+      'layoutMode'
     ])
 
     masked.fields = form.fields.map(field => {

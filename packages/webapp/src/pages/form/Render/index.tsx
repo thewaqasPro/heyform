@@ -23,7 +23,12 @@ export default function FormRender() {
     const result = await FormService.publicForm(formId)
 
     setForm(result)
-    setLocale(getPreferredLanguage(LANGUAGES, result.form.settings.locale || LANGUAGES[0]))
+    setLocale(
+      getPreferredLanguage(
+        LANGUAGES,
+        result?.form?.settings?.locale || result?.settings?.locale || LANGUAGES[0]
+      )
+    )
 
     return true
   }

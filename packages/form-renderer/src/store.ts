@@ -1,3 +1,4 @@
+/// <reference types="stripe-v3" />
 import type {
   FormField,
   FormSettings,

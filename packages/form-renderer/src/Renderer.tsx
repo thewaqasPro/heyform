@@ -21,6 +21,7 @@ import { StoreContext, StoreReducer, getStorage } from './store'
 import { getTheme } from './theme'
 import type { IFormModel } from './typings'
 import { Blocks } from './views/Blocks'
+import { ClassicForm } from './views/Classic'
 import { Sidebar } from './views/Sidebar'
 
 export interface FormRendererProps {
@@ -204,6 +205,18 @@ export const FormRenderer: FC<FormRendererProps> = ({
       }
     }
   }, [])
+
+  if (state.settings?.layoutMode === 'classic') {
+    return (
+      <StoreContext.Provider value={{ state, dispatch }}>
+        <Tooltip.Provider delayDuration={100}>
+          <div className={clsx('heyform-root heyform-root-classic', className)}>
+            <ClassicForm />
+          </div>
+        </Tooltip.Provider>
+      </StoreContext.Provider>
+    )
+  }
 
   return (
     <StoreContext.Provider value={{ state, dispatch }}>
