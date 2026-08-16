@@ -8,5 +8,5 @@ module.exports = {
   splitting: false,
   treeshake: true,
   clean: true,
-  noExternal: ['nanoid']
+  noExternal: ['nanoid', 'uuid']
 }

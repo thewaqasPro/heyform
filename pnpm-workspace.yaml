@@ -2,6 +2,7 @@ packages:
   - 'packages/*'
 overrides:
   nanoid: '3.3.11'
+  uuid: '9.0.1'
 allowBuilds:
   '@apollo/protobufjs': true
   '@nestjs/core': true
