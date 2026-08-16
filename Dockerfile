@@ -12,6 +12,7 @@ COPY pnpm-workspace.yaml $APP_PATH/pnpm-workspace.yaml
 COPY packages $APP_PATH/packages
 
 RUN pnpm install --frozen-lockfile || pnpm install
+RUN pnpm build:packages
 RUN pnpm build:server
 RUN pnpm build:webapp
 RUN mkdir -p $APP_PATH/packages/server/static

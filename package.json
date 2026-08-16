@@ -12,8 +12,10 @@
     "dev": "run-p dev:webapp dev:server",
     "dev:webapp": "pnpm --filter ./packages/webapp dev",
     "dev:server": "pnpm --filter ./packages/server dev",
-    "build:server": "pnpm --filter ./packages/server build",
-    "build:webapp": "pnpm --filter ./packages/webapp build",
+    "build:packages": "pnpm -r --filter \"@kyndform/*\" build",
+    "build:server": "pnpm build:packages && pnpm --filter ./packages/server build",
+    "build:webapp": "pnpm build:packages && pnpm --filter ./packages/webapp build",
+    "build": "pnpm build:packages && pnpm build:server && pnpm build:webapp",
     "format": "prettier --write \"packages/**/*.{js,ts,tsx,css}\"",
     "lint": "node scripts/run-oxlint.js packages",
     "postinstall": "simple-git-hooks"
