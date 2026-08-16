@@ -138,7 +138,9 @@ export class FormService {
 
   async findAllByFieldLength(maxLength = 2) {
     return this.formModel.find({
-      $where: `this.fields.length <= ${maxLength}`
+      $expr: {
+        $lte: [{ $size: { $ifNull: ['$fields', []] } }, maxLength]
+      }
     })
   }
 
@@ -412,7 +414,7 @@ export class FormService {
 
     const team = await this.teamService.findById(form.teamId)
 
-    masked.settings.removeBranding = team.removeBranding
+    masked.settings.removeBranding = team?.removeBranding ?? false
 
     if (form.settings?.captchaKind === CaptchaKindEnum.GOOGLE_RECAPTCHA) {
       masked.settings.googleRecaptchaKey = GOOGLE_RECAPTCHA_KEY

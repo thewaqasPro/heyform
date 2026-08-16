@@ -1,6 +1,7 @@
 import got from 'got'
 
 import { FormModel, SubmissionModel } from '@model'
+import { assertSafeOutboundRequest } from '@utils'
 
 export interface DiscordConfig {
   webhookUrl: string
@@ -31,6 +32,8 @@ export default {
   run: async ({ config, submission, form }: RunArgs) => {
     if (!config?.webhookUrl) return
 
+    const { lookup, url } = await assertSafeOutboundRequest(config.webhookUrl)
+
     const fields = (submission.answers || []).slice(0, 25).map(answer => {
       let val = String(answer.value ?? '')
       if (typeof answer.value === 'object' && answer.value !== null) {
@@ -58,7 +61,8 @@ export default {
       ]
     }
 
-    await got.post(config.webhookUrl, {
+    await got.post(url.toString(), {
+      lookup,
       json: payload,
       timeout: 10000,
       retry: 1

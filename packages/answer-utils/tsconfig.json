@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
+    "outDir": "dist",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "noUnusedLocals": true,
@@ -9,8 +10,6 @@
     "strict": true,
     "removeComments": true,
     "allowSyntheticDefaultImports": true,
-    "listEmittedFiles": true,
-    "listFiles": true,
     "allowJs": false,
     "declaration": true,
     "sourceMap": true,
@@ -18,5 +17,6 @@
     "resolveJsonModule": true,
     "skipLibCheck": true
   },
-  "exclude": ["coverage", "lib", "node_modules"]
+  "include": ["src/**/*"],
+  "exclude": ["coverage", "dist", "lib", "node_modules", "test"]
 }

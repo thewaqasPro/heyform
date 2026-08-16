@@ -338,7 +338,7 @@ export interface StringVariable {
   name: string
   kind: 'string'
   value: string
-  logics: LogicPayload[]
+  logics?: LogicPayload[]
 }
 
 export interface NumberVariable extends Omit<StringVariable, 'kind' | 'value'> {

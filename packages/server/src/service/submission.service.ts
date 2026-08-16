@@ -287,25 +287,29 @@ export class SubmissionService {
       formId
     }
 
-    if (submissionIds) {
+    if (helper.isValidArray(submissionIds)) {
+      if (submissionIds.length === 0) {
+        return false
+      }
       conditions._id = {
         $in: submissionIds
       }
     }
 
-    const result = await this.submissionModel.updateOne(conditions, {
+    const result = await this.submissionModel.updateMany(conditions, {
       status: SubmissionStatusEnum.PRIVATE
     })
     return result.matchedCount > 0
   }
 
   public async deleteByIds(formId: string, submissionIds?: string[]): Promise<boolean> {
-    const conditions: any = {
-      formId
+    if (!helper.isValidArray(submissionIds) || submissionIds.length === 0) {
+      return false
     }
 
-    if (submissionIds) {
-      conditions._id = {
+    const conditions: any = {
+      formId,
+      _id: {
         $in: submissionIds
       }
     }

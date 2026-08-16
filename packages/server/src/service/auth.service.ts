@@ -336,7 +336,7 @@ export class AuthService {
     const cooldownUntil = parseNumber(await this.redisService.get(cooldownKey), 0)
 
     if (cooldownUntil > now) {
-      const waitSeconds = Math.ceil((cooldownUntil - now) / 1000)
+      const waitSeconds = Math.ceil(cooldownUntil - now)
       const unit = waitSeconds === 1 ? 'second' : 'seconds'
       throw new ForbiddenException(
         `Please wait ${waitSeconds} ${unit} before requesting another code email.`

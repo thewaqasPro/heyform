@@ -100,7 +100,7 @@ export class RoleGuard implements CanActivate {
       id: team.id,
       ownerId: team.ownerId,
       isOwner,
-      role: member.role,
+      role: member?.role ?? (isOwner ? TeamRoleEnum.OWNER : undefined),
       storageQuota: team.storageQuota
     }
 

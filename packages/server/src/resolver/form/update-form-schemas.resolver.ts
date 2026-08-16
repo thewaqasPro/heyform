@@ -38,7 +38,7 @@ export class UpdateFormSchemasResolver {
     return {
       drafts,
       version: updates.version,
-      canPublish: JSON.stringify(form) !== updates._drafts
+      canPublish: JSON.stringify(form.fields || []) !== updates._drafts
     }
   }
 }

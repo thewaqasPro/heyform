@@ -16,12 +16,17 @@ exports[`correct value should be verified 1`] = `
 `;
 
 exports[`transform full name to html 1`] = `
-"<ol>
-<li>
-  <h3>full_name.test</h3>
-  <p>firstName lastName</p>
-</li>
-</ol>"
+"<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse; border-spacing: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      full_name.test
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <span style="font-weight: 500; color: #0f172a;">firstName lastName</span>
+    </div>
+  </td>
+</tr></table>"
 `;
 
 exports[`transform full name to text 1`] = `

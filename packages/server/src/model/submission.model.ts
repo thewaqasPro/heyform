@@ -62,3 +62,7 @@ export class SubmissionModel extends Document {
 }
 
 export const SubmissionSchema = SchemaFactory.createForClass(SubmissionModel)
+
+SubmissionSchema.index({ formId: 1, status: 1, category: 1, _id: -1 })
+SubmissionSchema.index({ formId: 1, startAt: 1, endAt: 1 })
+SubmissionSchema.index({ formId: 1, 'answers.id': 1, status: 1 })

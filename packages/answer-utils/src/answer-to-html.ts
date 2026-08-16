@@ -1,4 +1,4 @@
-import { Answer, FieldKindEnum, QUESTION_FIELD_KINDS } from '@heyform-inc/shared-types-enums'
+import { Answer, FieldKindEnum } from '@heyform-inc/shared-types-enums'
 
 import parser from './answer-parser'
 import { escapeHtmlText } from './escape-html'
@@ -100,7 +100,9 @@ function renderAnswerHtml(answer: Answer): string {
 
       case FieldKindEnum.URL: {
         const url = String(answer.value).trim()
-        return `<a href="${escapeHtmlText(url)}" target="_blank" style="color: #2563eb; text-decoration: underline; word-break: break-all;">${escapeHtmlText(url)}</a>`
+        const isSafeScheme = /^https?:\/\//i.test(url)
+        const safeHref = isSafeScheme ? url : `http://${url}`
+        return `<a href="${escapeHtmlText(safeHref)}" target="_blank" style="color: #2563eb; text-decoration: underline; word-break: break-all;">${escapeHtmlText(url)}</a>`
       }
 
       case FieldKindEnum.FULL_NAME: {

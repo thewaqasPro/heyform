@@ -39,73 +39,158 @@ Jack Smith, 24",
 `;
 
 exports[`should convert value to html 1`] = `
-"<ol>
-<li>
-  <h3>Group Multiple Choose </h3>
-  <p>Group Choice 1, Group Choice 2</p>
-</li>
-
-<li>
-  <h3>☎️  Your MobilePhone </h3>
-  <p>+12015551023</p>
-</li>
-
-<li>
-  <h3>🧱 Multiple Choose </h3>
-  <p>Choice 2</p>
-</li>
-
-<li>
-  <h3>👋 Just choose one</h3>
-  <p>🍍 Pineapple</p>
-</li>
-
-<li>
-  <h3>👍 Do you agree with us </h3>
-  <p>No</p>
-</li>
-
-<li>
-  <h3>🐶 Choose the dog </h3>
-  <p>Choice 3</p>
-</li>
-
-<li>
-  <h3>🈴️ Upload you avatar </h3>
-  <p>avatar.jpg (https://heyformhq.com/qCpteNRi2SiO_avatar.jpg)</p>
-</li>
-
-<li>
-  <h3>You sig here</h3>
-  <p> (https://heyform.net/sig.jpg)</p>
-</li>
-
-<li>
-  <h3>🪐 Rate here </h3>
-  <p>5</p>
-</li>
-
-<li>
-  <h3>Full name</h3>
-  <p>Ivan Woods</p>
-</li>
-
-<li>
-  <h3>Input table</h3>
-  <p>Ivan, 16
-Jack Smith, 24</p>
-</li>
-
-<li>
-  <h3>✈ Multiple Choose with other</h3>
-  <p>Choice 2, Other answer</p>
-</li>
-
-<li>
-  <h3>🎉 Single Choose with other</h3>
-  <p>Other answer</p>
-</li>
-</ol>"
+"<table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="width: 100%; border-collapse: collapse; border-spacing: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      Group Multiple Choose 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <div style="margin-top: 2px;"><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Group Choice 1</span><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Group Choice 2</span></div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      ☎️  Your MobilePhone 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <a href="tel:+12015551023" style="color: #2563eb; text-decoration: none; font-weight: 500;">+12015551023</a>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      🧱 Multiple Choose 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <div style="margin-top: 2px;"><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Choice 2</span></div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      👋 Just choose one
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <div style="margin-top: 2px;"><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">🍍 Pineapple</span></div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      👍 Do you agree with us 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <span style="display: inline-block; padding: 3px 10px; background-color: #fee2e2; color: #991b1b; border-radius: 9999px; font-size: 12px; font-weight: 600;">✗ No</span>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      🐶 Choose the dog 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <div style="margin-top: 2px;"><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Choice 3</span></div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      🈴️ Upload you avatar 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      
+<div style="margin-top: 4px;">
+  <div style="margin-bottom: 8px;">
+    <a href="https://heyformhq.com/qCpteNRi2SiO_avatar.jpg" target="_blank" style="display: inline-block; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px; background-color: #f8fafc; text-decoration: none;">
+      <img src="https://heyformhq.com/qCpteNRi2SiO_avatar.jpg" alt="avatar.jpg" style="max-width: 100%; max-height: 160px; border-radius: 6px; display: block;" />
+    </a>
+  </div>
+  <a href="https://heyformhq.com/qCpteNRi2SiO_avatar.jpg" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: 0.2px;">
+    📎 Download avatar.jpg &nbsp; &darr;
+  </a>
+</div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      You sig here
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      
+<div style="margin-top: 4px;">
+  <div style="margin-bottom: 8px;">
+    <a href="https://heyform.net/sig.jpg" target="_blank" style="display: inline-block; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px; background-color: #f8fafc; text-decoration: none;">
+      <img src="https://heyform.net/sig.jpg" alt="Download Attachment" style="max-width: 100%; max-height: 160px; border-radius: 6px; display: block;" />
+    </a>
+  </div>
+  <a href="https://heyform.net/sig.jpg" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: 0.2px;">
+    📎 Download Download Attachment &nbsp; &darr;
+  </a>
+</div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      🪐 Rate here 
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <span style="display: inline-block; padding: 4px 12px; background-color: #fef3c7; color: #92400e; border-radius: 6px; font-weight: 700; font-size: 13px;">★ 5</span>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      Full name
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <span style="font-weight: 500; color: #0f172a;">Ivan Woods</span>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      Input table
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <pre style="font-family: inherit; margin: 0; white-space: pre-wrap; font-size: 13px; color: #334155;">Ivan, 16
+Jack Smith, 24</pre>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      ✈ Multiple Choose with other
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <div style="margin-top: 2px;"><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Choice 2</span><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Other answer</span></div>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td style="padding: 14px 0; border-bottom: 1px solid #f1f5f9;">
+    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; margin-bottom: 5px;">
+      🎉 Single Choose with other
+    </div>
+    <div style="font-size: 14px; color: #0f172a; line-height: 1.5;">
+      <div style="margin-top: 2px;"><span style="display: inline-block; padding: 4px 10px; margin: 2px 6px 2px 0; background-color: #f1f5f9; color: #334155; border-radius: 9999px; font-size: 12px; font-weight: 500; border: 1px solid #e2e8f0;">Other answer</span></div>
+    </div>
+  </td>
+</tr></table>"
 `;
 
 exports[`should convert value to json 1`] = `

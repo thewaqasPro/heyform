@@ -14,6 +14,10 @@ interface RunArgs {
   form: FormModel
 }
 
+function escapeTelegramHtml(str: string): string {
+  return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+
 function stripHtml(html: string): string {
   return html
     .replace(
@@ -54,7 +58,7 @@ export default {
     const htmlAnswers = answersToHtml(submission.answers || [])
     const textAnswers = stripHtml(htmlAnswers)
 
-    const message = `📋 <b>New Submission: ${form.name}</b>\n\n${textAnswers}\n\n<i>Submission ID: ${submission.id}</i>`
+    const message = `📋 <b>New Submission: ${escapeTelegramHtml(form.name)}</b>\n\n${textAnswers}\n\n<i>Submission ID: ${escapeTelegramHtml(submission.id)}</i>`
 
     await got.post(`https://api.telegram.org/bot${config.botToken}/sendMessage`, {
       json: {
