@@ -20,7 +20,10 @@ export class Uploader {
     values: Any,
     private readonly openToken: string
   ) {
-    flattenFields(form.fields).forEach(row => {
+    const candidateFields =
+      form.fields && form.fields.length > 0 ? form.fields : (form as any).drafts || []
+
+    flattenFields(candidateFields).forEach(row => {
       if (UPLOAD_FIELD_KINDS.includes(row.kind)) {
         let value = values[row.id]
 

@@ -142,6 +142,10 @@ export const Renderer: FC<RendererProps> = ({ form, query, locale, contactId }) 
         token.recaptchaToken = await recaptchaToken(captchaRef)
       }
 
+      if (!openTokenRef.current) {
+        await openForm()
+      }
+
       const file = await new Uploader(form, values, openTokenRef.current).start()
 
       const hiddenFields = (form!.hiddenFields || [])

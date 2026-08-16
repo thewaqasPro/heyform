@@ -11,8 +11,7 @@ import {
   S3_PUBLIC_URL,
   S3_REGION,
   S3_SECRET_ACCESS_KEY,
-  UPLOAD_DIR,
-  UPLOAD_FILE_TYPES
+  UPLOAD_DIR
 } from '@environments'
 import { helper, nanoid } from '@heyform-inc/utils'
 
@@ -140,11 +139,29 @@ function isS3Configured(): boolean {
   )
 }
 
+const MIME_ALIASES: Record<string, string> = {
+  'image/jpg': 'image/jpeg',
+  'image/pjpeg': 'image/jpeg',
+  'image/x-png': 'image/png',
+  'application/x-pdf': 'application/pdf',
+  'application/acrobat': 'application/pdf',
+  'applications/vnd.pdf': 'application/pdf',
+  'text/pdf': 'application/pdf',
+  'application/x-zip-compressed': 'application/zip',
+  'application/x-zip': 'application/zip',
+  'multipart/x-zip': 'application/zip',
+  'application/x-tar': 'application/x-tar',
+  'application/x-gzip': 'application/gzip',
+  'application/gzip': 'application/gzip'
+}
+
 function normalizeMimeType(mimeType: unknown): string {
-  return String(mimeType || '')
+  const raw = String(mimeType || '')
     .split(';', 1)[0]
     .trim()
     .toLowerCase()
+
+  return MIME_ALIASES[raw] || raw
 }
 
 export function sanitizeUploadFilename(filename: unknown): string {
@@ -162,15 +179,21 @@ export function sanitizeUploadFilename(filename: unknown): string {
 }
 
 export function getUploadType(filename: unknown, mimeType: unknown): UploadType | undefined {
-  const normalizedMimeType = normalizeMimeType(mimeType)
-  const uploadType = UPLOAD_TYPES[normalizedMimeType]
+  let normalizedMimeType = normalizeMimeType(mimeType)
+  let uploadType = UPLOAD_TYPES[normalizedMimeType]
   const extension = extname(String(filename || '')).toLowerCase()
 
-  if (
-    !uploadType ||
-    !UPLOAD_FILE_TYPES.includes(normalizedMimeType) ||
-    !uploadType.extensions.includes(extension)
-  ) {
+  if (!uploadType) {
+    const entry = Object.entries(UPLOAD_TYPES).find(([_, type]) =>
+      type.extensions.includes(extension)
+    )
+    if (entry) {
+      normalizedMimeType = entry[0]
+      uploadType = entry[1]
+    }
+  }
+
+  if (!uploadType || !uploadType.extensions.includes(extension)) {
     return
   }
 
