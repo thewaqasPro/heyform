@@ -49,7 +49,8 @@ const computeState = (state: WorkspaceStoreType): ComputedStoreType => {
   let project: ProjectType | undefined
   let members: MemberType[] = []
   let forms: FormType[] = []
-  let sharingURLPrefix = WEBSITE_URL.replace(/\/+$/, '')
+  const websiteUrl = window.heyform?.websiteURL || WEBSITE_URL || ''
+  let sharingURLPrefix = websiteUrl.replace(/\/+$/, '')
 
   const workspace = state.workspaces.find(w => w.id === state.currentWorkspaceId)
 
@@ -110,7 +111,7 @@ export const useWorkspaceStore = create<WorkspaceStoreType>()(
           })
         },
 
-        deleteWorkspace: workspaceId => {
+        deleteWorkspace: (workspaceId: string) => {
           set(state => {
             state.workspaces = state.workspaces.filter(w => w.id !== workspaceId)
             state.currentWorkspaceId = undefined
