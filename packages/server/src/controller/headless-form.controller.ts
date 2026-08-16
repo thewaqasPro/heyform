@@ -3,6 +3,7 @@ import {
   CaptchaKindEnum,
   FieldKindEnum,
   FormField,
+  HiddenField,
   HiddenFieldAnswer,
   SubmissionCategoryEnum,
   SubmissionStatusEnum
@@ -30,6 +31,7 @@ import {
   uploadFileFilter
 } from '@config'
 import { APP_HOMEPAGE_URL, UPLOAD_FILE_SIZE } from '@environments'
+import { htmlUtils } from '@heyform-inc/answer-utils'
 import { helper, nanoid, timestamp } from '@heyform-inc/utils'
 import { FormModel } from '@model'
 import {
@@ -77,6 +79,16 @@ function formatFieldTitle(key: string): string {
     .replace(/[-_]+/g, ' ')
     .replace(/\b\w/g, char => char.toUpperCase())
     .trim()
+}
+
+function getFieldPlainTitle(field: FormField): string {
+  if (typeof field.title === 'string') {
+    return field.title
+  }
+  if (helper.isArray(field.title)) {
+    return htmlUtils.plain(htmlUtils.serialize(field.title as any))
+  }
+  return field.label || ''
 }
 
 function inferFieldKind(key: string, value: any): FieldKindEnum {
@@ -372,7 +384,9 @@ export class HeadlessFormController {
     const answers: Answer[] = []
     const hiddenFields: HiddenFieldAnswer[] = []
     const formFields = [...(form.fields || [])]
+    const formHiddenFields = [...(form.hiddenFields || [])]
     const newFormFields: FormField[] = []
+    const newHiddenFields: HiddenField[] = []
 
     for (const [key, value] of Object.entries(rawBody)) {
       if (SYSTEM_CONTROL_KEYS.has(key)) {
@@ -385,6 +399,12 @@ export class HeadlessFormController {
           name: key,
           value: typeof value === 'object' ? JSON.stringify(value) : String(value ?? '')
         })
+
+        if (!formHiddenFields.some(h => h.id === key || h.name === key)) {
+          const newHf: HiddenField = { id: key, name: key }
+          newHiddenFields.push(newHf)
+          formHiddenFields.push(newHf)
+        }
         continue
       }
 
@@ -392,9 +412,8 @@ export class HeadlessFormController {
       let existingField = formFields.find(
         f =>
           f.id === key ||
-          (typeof f.title === 'string' &&
-            f.title.toLowerCase().trim() === key.toLowerCase().trim()) ||
-          (f.label && f.label.toLowerCase().trim() === key.toLowerCase().trim())
+          (f.label && f.label.toLowerCase().trim() === key.toLowerCase().trim()) ||
+          getFieldPlainTitle(f).toLowerCase().trim() === key.toLowerCase().trim()
       )
 
       if (!existingField) {
@@ -416,19 +435,34 @@ export class HeadlessFormController {
       answers.push({
         id: existingField.id,
         title:
-          typeof existingField.title === 'string' ? existingField.title : formatFieldTitle(key),
+          typeof existingField.title === 'string'
+            ? existingField.title
+            : getFieldPlainTitle(existingField) || formatFieldTitle(key),
         kind: existingField.kind,
         properties: existingField.properties || {},
         value
       })
     }
 
-    // If new dynamic fields were discovered, update form schema
+    // If new dynamic fields or hidden fields were discovered, update form schema
+    const updatePayload: Record<string, any> = {
+      fieldsUpdatedAt: now
+    }
+    let shouldUpdateForm = false
+
     if (newFormFields.length > 0 && (form.settings as any)?.autoCreateFields !== false) {
-      await this.formService.update(form.id, {
-        fields: formFields,
-        fieldsUpdatedAt: now
-      })
+      updatePayload.fields = formFields
+      updatePayload._drafts = JSON.stringify(formFields)
+      shouldUpdateForm = true
+    }
+
+    if (newHiddenFields.length > 0) {
+      updatePayload.hiddenFields = formHiddenFields
+      shouldUpdateForm = true
+    }
+
+    if (shouldUpdateForm) {
+      await this.formService.update(form.id, updatePayload)
     }
 
     // Akismet spam check if enabled

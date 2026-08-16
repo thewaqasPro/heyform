@@ -105,6 +105,8 @@ export default function FormSubmissions() {
     }
   )
 
+  const [submissionFields, setSubmissionFields] = useState<FormField[]>([])
+
   const fields = useMemo(() => {
     const submitDateField = {
       id: FieldKindEnum.SUBMIT_DATE,
@@ -128,8 +130,23 @@ export default function FormSubmissions() {
       title: row.name
     }))
 
-    return [submitDateField, ...questionFields, ...variables, ...hiddenFields] as FormField[]
-  }, [form?.drafts, form?.hiddenFields, form?.variables, t])
+    const knownIds = new Set([
+      submitDateField.id,
+      ...questionFields.map(f => f.id),
+      ...variables.map(v => v.id),
+      ...hiddenFields.map(h => h.id)
+    ])
+
+    const extraFields = submissionFields.filter(f => !knownIds.has(f.id))
+
+    return [
+      submitDateField,
+      ...questionFields,
+      ...variables,
+      ...hiddenFields,
+      ...extraFields
+    ] as FormField[]
+  }, [form?.drafts, form?.hiddenFields, form?.variables, submissionFields, t])
 
   async function fetch({ current, pageSize }: TableFetchParams) {
     const { total, submissions } = await SubmissionService.submissions({
@@ -138,6 +155,39 @@ export default function FormSubmissions() {
       page: current,
       limit: pageSize
     })
+
+    const extraMap = new Map<string, FormField>()
+    for (const sub of submissions) {
+      for (const ans of sub.answers || []) {
+        if (ans.id && !extraMap.has(ans.id)) {
+          extraMap.set(ans.id, {
+            id: ans.id,
+            title: ans.title || ans.id,
+            label: ans.title || ans.id,
+            kind: ans.kind || FieldKindEnum.SHORT_TEXT
+          } as FormField)
+        }
+      }
+      for (const hf of sub.hiddenFields || []) {
+        if (hf.id && !extraMap.has(hf.id)) {
+          extraMap.set(hf.id, {
+            id: hf.id,
+            title: hf.name || hf.id,
+            kind: FieldKindEnum.HIDDEN_FIELDS
+          } as FormField)
+        }
+      }
+    }
+
+    if (extraMap.size > 0) {
+      setSubmissionFields(prev => {
+        const merged = new Map(prev.map(f => [f.id, f]))
+        for (const [id, f] of extraMap.entries()) {
+          merged.set(id, f)
+        }
+        return Array.from(merged.values())
+      })
+    }
 
     const list = submissions.map(row => ({
       ...row,
