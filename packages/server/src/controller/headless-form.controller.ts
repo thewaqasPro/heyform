@@ -98,6 +98,16 @@ function inferFieldKind(key: string, value: any): FieldKindEnum {
     return FieldKindEnum.FILE_UPLOAD
   }
 
+  if (
+    lowerKey === 'name' ||
+    lowerKey === 'fullname' ||
+    lowerKey === 'full_name' ||
+    lowerKey === 'first_name' ||
+    (typeof value === 'object' && value !== null && ('firstName' in value || 'lastName' in value))
+  ) {
+    return FieldKindEnum.FULL_NAME
+  }
+
   if (lowerKey.includes('email') || (typeof value === 'string' && helper.isEmail(value))) {
     return FieldKindEnum.EMAIL
   }
@@ -409,12 +419,20 @@ export class HeadlessFormController {
       }
 
       // Check if matching field already exists in form.fields
-      let existingField = formFields.find(
-        f =>
+      const lowerKey = key.toLowerCase().trim()
+      let existingField = formFields.find(f => {
+        const plainTitle = getFieldPlainTitle(f).toLowerCase().trim()
+        const label = (f.label || '').toLowerCase().trim()
+        return (
           f.id === key ||
-          (f.label && f.label.toLowerCase().trim() === key.toLowerCase().trim()) ||
-          getFieldPlainTitle(f).toLowerCase().trim() === key.toLowerCase().trim()
-      )
+          label === lowerKey ||
+          plainTitle === lowerKey ||
+          (lowerKey === 'name' &&
+            (f.kind === FieldKindEnum.FULL_NAME || plainTitle === 'full name')) ||
+          (lowerKey === 'phone' &&
+            (f.kind === FieldKindEnum.PHONE_NUMBER || plainTitle === 'phone number'))
+        )
+      })
 
       if (!existingField) {
         const fieldKind = inferFieldKind(key, value)
@@ -432,6 +450,15 @@ export class HeadlessFormController {
         formFields.push(existingField)
       }
 
+      let formattedValue = value
+      if (existingField.kind === FieldKindEnum.FULL_NAME && typeof value === 'string') {
+        const parts = value.trim().split(/\s+/)
+        formattedValue = {
+          firstName: parts[0] || '',
+          lastName: parts.slice(1).join(' ')
+        }
+      }
+
       answers.push({
         id: existingField.id,
         title:
@@ -440,7 +467,7 @@ export class HeadlessFormController {
             : getFieldPlainTitle(existingField) || formatFieldTitle(key),
         kind: existingField.kind,
         properties: existingField.properties || {},
-        value
+        value: formattedValue
       })
     }
 

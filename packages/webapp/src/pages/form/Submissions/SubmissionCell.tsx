@@ -133,9 +133,17 @@ const FileUploadItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell })
 }
 
 const FullNameItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {
-  if (answer.kind !== field.kind || !helper.isObject(answer.value)) {
+  if (
+    answer.kind !== field.kind ||
+    (!helper.isObject(answer.value) && typeof answer.value !== 'string')
+  ) {
     return null
   }
+
+  const nameStr =
+    typeof answer.value === 'string'
+      ? answer.value
+      : [answer.value.firstName, answer.value.lastName].filter(Boolean).join(' ')
 
   return (
     <div
@@ -143,7 +151,7 @@ const FullNameItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) =
         truncate: isTableCell
       })}
     >
-      {[answer.value.firstName, answer.value.lastName].filter(Boolean).join(' ')}
+      {nameStr}
     </div>
   )
 }

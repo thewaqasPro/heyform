@@ -87,8 +87,8 @@ export class AppModule implements NestModule {
         method: RequestMethod.POST
       })
       .apply(FormBodyMiddleware)
-      .forRoutes('{*path}')
+      .forRoutes('*')
       .apply(JsonBodyMiddleware)
-      .forRoutes('{*path}')
+      .forRoutes('*')
   }
 }
