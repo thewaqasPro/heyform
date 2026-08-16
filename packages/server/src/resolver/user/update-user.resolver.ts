@@ -1,6 +1,6 @@
 import { Auth, User } from '@decorator'
 import { UpdateUserInput } from '@graphql'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { UserLangEnum, UserModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { UserService } from '@service'

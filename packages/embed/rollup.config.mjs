@@ -11,7 +11,7 @@ export default {
   output: {
     format: 'umd',
     file: 'dist/index.umd.js',
-    name: 'HeyForm',
+    name: 'KyndForm',
     sourcemap: true,
     inlineDynamicImports: true
   },

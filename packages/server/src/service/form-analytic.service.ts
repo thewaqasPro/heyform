@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
 import { SubmissionService } from './submission.service'
-import { date, helper } from '@heyform-inc/utils'
+import { date, helper } from '@kyndform/utils'
 import { FormAnalyticModel } from '@model'
 
 interface FormAnalyticOptions {

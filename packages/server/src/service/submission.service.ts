@@ -1,15 +1,11 @@
-import {
-  Answer,
-  SubmissionCategoryEnum,
-  SubmissionStatusEnum
-} from '@heyform-inc/shared-types-enums'
+import { Answer, SubmissionCategoryEnum, SubmissionStatusEnum } from '@kyndform/shared-types-enums'
 import { BadRequestException, Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
 import { FormService } from './form.service'
 import { RedisService } from './redis.service'
-import { date, helper } from '@heyform-inc/utils'
+import { date, helper } from '@kyndform/utils'
 import { SubmissionModel } from '@model'
 import { getUpdateQuery } from '@utils'
 

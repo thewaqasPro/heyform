@@ -1,10 +1,10 @@
-import { flattenFieldsWithGroups } from '@heyform-inc/form-renderer'
+import { flattenFieldsWithGroups } from '@kyndform/form-renderer'
 import {
   ActionEnum,
   FieldKindEnum,
   Logic,
   UNSELECTABLE_FIELD_KINDS
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import * as dagre from 'dagre'
 import { Edge, Node } from 'react-flow-renderer'
 

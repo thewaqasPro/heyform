@@ -4,15 +4,15 @@ import {
   FormField,
   OTHER_FIELD_KINDS,
   QUESTION_FIELD_KINDS
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import * as Tooltip from '@radix-ui/react-tooltip'
 import clsx from 'clsx'
 import type { FC } from 'react'
 import { useEffect, useMemo, useReducer, useState } from 'react'
 
 import { flattenFieldsWithGroups, parseFields, progressPercentage } from './utils'
-import { applyLogicToFields } from '@heyform-inc/answer-utils'
-import { helper, nanoid } from '@heyform-inc/utils'
+import { applyLogicToFields } from '@kyndform/answer-utils'
+import { helper, nanoid } from '@kyndform/utils'
 
 import { ClosedMessage } from './blocks/ClosedMessage'
 import { SuspendedMessage } from './blocks/SuspendedMessage'
@@ -121,7 +121,7 @@ export const FormRenderer: FC<FormRendererProps> = ({
   const [isAndroid, setAndroid] = useState(false)
 
   useEffect(() => {
-    setAndroid(window.heyform.device.android)
+    setAndroid(window.kyndform.device.android)
   }, [])
 
   const allowPayment = useMemo(
@@ -210,7 +210,7 @@ export const FormRenderer: FC<FormRendererProps> = ({
     return (
       <StoreContext.Provider value={{ state, dispatch }}>
         <Tooltip.Provider delayDuration={100}>
-          <div className={clsx('heyform-root heyform-root-classic', className)}>
+          <div className={clsx('kyndform-root kyndform-root-classic', className)}>
             <ClassicForm />
           </div>
         </Tooltip.Provider>
@@ -223,17 +223,17 @@ export const FormRenderer: FC<FormRendererProps> = ({
       <Tooltip.Provider delayDuration={100}>
         <div
           className={clsx(
-            'heyform-root',
+            'kyndform-root',
             {
-              'heyform-root-open': state.isSidebarOpen,
-              'heyform-root-android': isAndroid
+              'kyndform-root-open': state.isSidebarOpen,
+              'kyndform-root-android': isAndroid
             },
             className
           )}
         >
           <div
-            className={clsx('heyform-wrapper', {
-              'heyform-is-welcome': !state.isStarted && state.welcomeField
+            className={clsx('kyndform-wrapper', {
+              'kyndform-is-welcome': !state.isStarted && state.welcomeField
             })}
           >
             <Blocks />

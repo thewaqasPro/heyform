@@ -4,9 +4,9 @@ import {
   NumberCalculateAction,
   StringCalculateAction,
   Variable
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { isNumber } from './helper'
 

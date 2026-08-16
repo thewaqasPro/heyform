@@ -6,7 +6,7 @@ import {
   HiddenFieldAnswer,
   Logic,
   Property
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { BadRequestException } from '@nestjs/common'
 
 import { APP_HOMEPAGE_URL, S3_BUCKET, S3_ENDPOINT, S3_PUBLIC_URL } from '@environments'

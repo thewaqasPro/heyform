@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 import { NavLink } from 'react-router-dom'
 
 import { cn, useParam } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Tooltip } from '@/components'
 import { useAppStore, useModal, useWorkspaceStore } from '@/store'
@@ -33,7 +33,7 @@ const RESOURCE_LINKS = [
   {
     icon: IconLocation,
     title: 'workspace.sidebar.gettingStarted',
-    href: 'https://docs.heyform.net/quickstart/create-a-form'
+    href: 'https://docs.kyndform.com/quickstart/create-a-form'
   }
 ]
 

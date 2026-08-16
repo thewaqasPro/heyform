@@ -1,8 +1,8 @@
 {
-  "name": "@heyform-inc/form-renderer",
+  "name": "@kyndform/form-renderer",
   "version": "0.3.8",
-  "homepage": "https://heyform.net",
-  "author": "Heyooo, Inc.",
+  "homepage": "https://kyndform.com",
+  "author": "KyndForm, Inc.",
   "license": "AGPL-3.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -27,9 +27,9 @@
     "type-check": "tsc --pretty --noEmit"
   },
   "peerDependencies": {
-    "@heyform-inc/answer-utils": "^1.2.0",
-    "@heyform-inc/shared-types-enums": "^1.2.2",
-    "@heyform-inc/utils": "^1.2.2",
+    "@kyndform/answer-utils": "workspace:*",
+    "@kyndform/shared-types-enums": "workspace:*",
+    "@kyndform/utils": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@tabler/icons-react": "^3.11.0",
@@ -48,9 +48,9 @@
     "store2": "^2.13.2"
   },
   "dependencies": {
-    "@heyform-inc/answer-utils": "^1.2.0",
-    "@heyform-inc/shared-types-enums": "^1.3.0",
-    "@heyform-inc/utils": "^1.2.2",
+    "@kyndform/answer-utils": "workspace:*",
+    "@kyndform/shared-types-enums": "workspace:*",
+    "@kyndform/utils": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "@radix-ui/react-tooltip": "^1.1.3",
     "@tabler/icons-react": "^3.20.0",

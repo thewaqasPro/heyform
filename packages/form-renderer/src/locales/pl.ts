@@ -1,5 +1,5 @@
 export default {
-  'Made with HeyForm': 'Wykonano w <icon></icon> <span>HeyForm</span>',
+  'Made with KyndForm': 'Wykonano w <icon></icon> <span>KyndForm</span>',
   'This field is required': 'To pole jest wymagane',
   'File type is not supported': 'Typ pliku nie jest obsługiwany',
   "File size can't exceed {{size}}": 'Rozmiar pliku nie może przekraczać {{size}}',
@@ -50,7 +50,7 @@ export default {
   'Thanks for completing this form. Now create your own form.':
     'Dziękujemy za wypełnienie formularza. Teraz stwórz własny formularz.',
   'Form unavailable': 'Formularz niedostępny',
-  'Create a heyform': 'Utwórz heyform',
+  'Create a kyndform': 'Utwórz kyndform',
   "The form can't receive new submissions now.":
     'Formularz nie może teraz przyjmować nowych zgłoszeń.',
   "This page doesn't exist": 'Ta strona nie istnieje',

@@ -1,11 +1,11 @@
-.heyform-root-classic {
+.kyndform-root-classic {
   height: 100%;
   width: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-.heyform-classic-root {
+.kyndform-classic-root {
   min-height: 100%;
   width: 100%;
   padding: 40px 16px 80px;
@@ -13,11 +13,11 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  background-color: var(--heyform-background-color, var(--heyform-theme-background, #f9fafb));
-  color: var(--heyform-question-color, var(--heyform-theme-question-text, #111827));
+  background-color: var(--kyndform-background-color, var(--kyndform-theme-background, #f9fafb));
+  color: var(--kyndform-question-color, var(--kyndform-theme-question-text, #111827));
   font-family: inherit;
 
-  .heyform-classic-card {
+  .kyndform-classic-card {
     width: 100%;
     max-width: 680px;
     background-color: #ffffff;
@@ -33,12 +33,12 @@
     }
   }
 
-  .heyform-classic-header {
+  .kyndform-classic-header {
     margin-bottom: 32px;
     padding-bottom: 24px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 
-    .heyform-classic-logo {
+    .kyndform-classic-logo {
       max-height: 56px;
       max-width: 200px;
       object-fit: contain;
@@ -46,66 +46,66 @@
       display: block;
     }
 
-    .heyform-classic-title {
+    .kyndform-classic-title {
       font-size: 26px;
       font-weight: 700;
       line-height: 1.3;
       margin: 0 0 8px;
-      color: var(--heyform-question-color, var(--heyform-theme-question-text, #111827));
+      color: var(--kyndform-question-color, var(--kyndform-theme-question-text, #111827));
     }
 
-    .heyform-classic-description {
+    .kyndform-classic-description {
       font-size: 15px;
       line-height: 1.5;
-      color: var(--heyform-description-color, rgba(0, 0, 0, 0.6));
+      color: var(--kyndform-description-color, rgba(0, 0, 0, 0.6));
       margin: 0;
     }
   }
 
-  .heyform-classic-field {
+  .kyndform-classic-field {
     margin-bottom: 28px;
     transition: all 0.2s ease;
 
     &.has-error {
-      .heyform-classic-label {
+      .kyndform-classic-label {
         color: #ef4444;
       }
 
-      .heyform-input,
-      .heyform-textarea,
+      .kyndform-input,
+      .kyndform-textarea,
       .input {
         border-color: #ef4444 !important;
       }
     }
 
-    .heyform-classic-label {
+    .kyndform-classic-label {
       display: block;
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 6px;
-      color: var(--heyform-question-color, var(--heyform-theme-question-text, #1f2937));
+      color: var(--kyndform-question-color, var(--kyndform-theme-question-text, #1f2937));
 
-      .heyform-classic-required {
+      .kyndform-classic-required {
         color: #ef4444;
         margin-left: 4px;
         font-weight: 700;
       }
 
-      .heyform-classic-number {
+      .kyndform-classic-number {
         margin-right: 6px;
         opacity: 0.7;
         font-weight: 500;
       }
     }
 
-    .heyform-classic-field-description {
+    .kyndform-classic-field-description {
       font-size: 13px;
       line-height: 1.4;
-      color: var(--heyform-description-color, rgba(0, 0, 0, 0.55));
+      color: var(--kyndform-description-color, rgba(0, 0, 0, 0.55));
       margin-bottom: 10px;
     }
 
-    .heyform-classic-error-message {
+    .kyndform-classic-error-message {
       font-size: 13px;
       color: #ef4444;
       margin-top: 6px;
@@ -116,12 +116,12 @@
     }
   }
 
-  .heyform-classic-footer {
+  .kyndform-classic-footer {
     margin-top: 36px;
     padding-top: 24px;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
 
-    .heyform-classic-submit-btn {
+    .kyndform-classic-submit-btn {
       width: 100%;
       height: 48px;
       border-radius: 10px;
@@ -133,8 +133,8 @@
       cursor: pointer;
       border: none;
       transition: all 0.2s ease;
-      background-color: var(--heyform-button-color, var(--heyform-theme-button-bg, #000000));
-      color: var(--heyform-button-text-color, var(--heyform-theme-button-text, #ffffff));
+      background-color: var(--kyndform-button-color, var(--kyndform-theme-button-bg, #000000));
+      color: var(--kyndform-button-text-color, var(--kyndform-theme-button-text, #ffffff));
 
       &:hover:not(:disabled) {
         opacity: 0.9;
@@ -147,7 +147,7 @@
       }
     }
 
-    .heyform-classic-submit-error {
+    .kyndform-classic-submit-error {
       margin-top: 12px;
       padding: 10px 14px;
       background-color: #fef2f2;
@@ -159,7 +159,7 @@
     }
   }
 
-  .heyform-classic-branding {
+  .kyndform-classic-branding {
     margin-top: 24px;
     display: flex;
     align-items: center;
@@ -174,8 +174,8 @@
   }
 
   /* Input styling overrides for classic mode */
-  .heyform-input,
-  .heyform-textarea,
+  .kyndform-input,
+  .kyndform-textarea,
   .input {
     width: 100%;
     border-radius: 8px;
@@ -189,17 +189,17 @@
 
     &:focus {
       outline: none;
-      border-color: var(--heyform-button-color, var(--heyform-theme-button-bg, #2563eb));
+      border-color: var(--kyndform-button-color, var(--kyndform-theme-button-bg, #2563eb));
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
     }
   }
 
-  .heyform-textarea {
+  .kyndform-textarea {
     min-height: 100px;
     resize: vertical;
   }
 
-  .heyform-classic-grid-2 {
+  .kyndform-classic-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -209,12 +209,12 @@
     }
   }
 
-  .heyform-classic-opinion-scale {
+  .kyndform-classic-opinion-scale {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 
-    .heyform-opinion-btn {
+    .kyndform-opinion-btn {
       flex: 1;
       min-width: 38px;
       height: 42px;
@@ -230,18 +230,18 @@
       transition: all 0.15s ease;
 
       &:hover {
-        border-color: var(--heyform-button-color, var(--heyform-theme-button-bg, #000));
+        border-color: var(--kyndform-button-color, var(--kyndform-theme-button-bg, #000));
       }
 
       &.is-selected {
-        background: var(--heyform-button-color, var(--heyform-theme-button-bg, #000));
-        color: var(--heyform-button-text-color, var(--heyform-theme-button-text, #fff));
-        border-color: var(--heyform-button-color, var(--heyform-theme-button-bg, #000));
+        background: var(--kyndform-button-color, var(--kyndform-theme-button-bg, #000));
+        color: var(--kyndform-button-text-color, var(--kyndform-theme-button-text, #fff));
+        border-color: var(--kyndform-button-color, var(--kyndform-theme-button-bg, #000));
       }
     }
   }
 
-  .heyform-classic-legal {
+  .kyndform-classic-legal {
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -253,7 +253,7 @@
       margin-top: 3px;
       width: 16px;
       height: 16px;
-      accent-color: var(--heyform-button-color, var(--heyform-theme-button-bg, #000));
+      accent-color: var(--kyndform-button-color, var(--kyndform-theme-button-bg, #000));
       cursor: pointer;
     }
   }

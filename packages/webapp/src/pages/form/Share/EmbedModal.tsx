@@ -3,7 +3,7 @@ import { FC, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { useParam } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, ColorPicker, Input, Modal, Select, Switch } from '@/components'
 import { FORM_EMBED_OPTIONS } from '@/consts'
@@ -47,7 +47,7 @@ const FRAME_CONTENT = `
 <html>
 <head>
   <meta charset="utf-8" />
-  <style>body{margin:40px;}.container{max-width:1180px;margin-left:auto;margin-right:auto;}.mt-10{margin-top:40px;}.hf{background:rgba(15,23,42,0.05);border-radius:4px;}.hf-1{width:40%;height:40px;margin-bottom:20px;}.hf-2{width:100%;height:40px;margin-bottom:60px;}.hf-3{width:100%;height:120px;margin-top:60px;margin-bottom:40px;}.flex{display:flex;gap:40px;margin-top:40px;}.hf-4{flex:1 1 auto;height:400px;}.heyform__loading-container{display:none!important;}</style>
+  <style>body{margin:40px;}.container{max-width:1180px;margin-left:auto;margin-right:auto;}.mt-10{margin-top:40px;}.hf{background:rgba(15,23,42,0.05);border-radius:4px;}.hf-1{width:40%;height:40px;margin-bottom:20px;}.hf-2{width:100%;height:40px;margin-bottom:60px;}.hf-3{width:100%;height:120px;margin-top:60px;margin-bottom:40px;}.flex{display:flex;gap:40px;margin-top:40px;}.hf-4{flex:1 1 auto;height:400px;}.kyndform__loading-container{display:none!important;}</style>
 </head>
 <body>
   <div class="container">
@@ -354,20 +354,20 @@ const EmbedComponent = () => {
 
   const code = useMemo(() => {
     const attributes: string[] = Object.keys(embedConfig).reduce((prev, key) => {
-      const name = 'data-heyform-' + key.replace(/[A-Z]/g, w => `-${w.toLowerCase()}`)
+      const name = 'data-kyndform-' + key.replace(/[A-Z]/g, w => `-${w.toLowerCase()}`)
 
       return [...prev, `${name}="${embedConfig[key]}"`]
     }, [] as string[])
 
     return `<div
-\tdata-heyform-id="${formId}"
-\tdata-heyform-type="${embedType}"
-\tdata-heyform-custom-url="${sharingURLPrefix}/form/${formId}"
+\tdata-kyndform-id="${formId}"
+\tdata-kyndform-type="${embedType}"
+\tdata-kyndform-custom-url="${sharingURLPrefix}/form/${formId}"
 \t${attributes.join('\n\t')}
 >
-  ${embedType === 'modal' ? `<button class="heyform__trigger-button" type="button" onclick="HeyForm.openModal('${formId}Modal')">${embedConfig.triggerText}</button>` : ''}
+  ${embedType === 'modal' ? `<button class="kyndform__trigger-button" type="button" onclick="KyndForm.openModal('${formId}Modal')">${embedConfig.triggerText}</button>` : ''}
 </div>
-<script src="https://www.unpkg.com/@heyform-inc/embed@latest/dist/index.umd.js"></script>
+<script src="https://www.unpkg.com/@kyndform/embed@latest/dist/index.umd.js"></script>
 `
   }, [embedConfig, embedType, formId, sharingURLPrefix])
 

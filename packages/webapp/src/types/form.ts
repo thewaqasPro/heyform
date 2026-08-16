@@ -1,4 +1,4 @@
-import { FormField, FormModel, Property } from '@heyform-inc/shared-types-enums'
+import { FormField, FormModel, Property } from '@kyndform/shared-types-enums'
 
 import { APP_STATUS_ENUM } from '@/consts'
 

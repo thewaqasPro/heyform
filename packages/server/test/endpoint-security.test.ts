@@ -1,4 +1,4 @@
-import { ActionEnum, CaptchaKindEnum, FieldKindEnum, Logic } from '@heyform-inc/shared-types-enums'
+import { ActionEnum, CaptchaKindEnum, FieldKindEnum, Logic } from '@kyndform/shared-types-enums'
 import * as assert from 'assert'
 
 import { APP_HOMEPAGE_URL, parseTrustProxy } from '../src/environments'

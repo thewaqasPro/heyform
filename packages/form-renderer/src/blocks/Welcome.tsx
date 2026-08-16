@@ -1,4 +1,4 @@
-import type { FormField } from '@heyform-inc/shared-types-enums'
+import type { FormField } from '@kyndform/shared-types-enums'
 import type { FC } from 'react'
 
 import { replaceHTML } from '../utils'
@@ -31,7 +31,7 @@ export const Welcome: FC<BlockProps> = ({ field, ...restProps }) => {
     <>
       <EmptyState
         {...restProps}
-        className="heyform-welcome"
+        className="kyndform-welcome"
         field={newField}
         onClick={handleClick}
       />

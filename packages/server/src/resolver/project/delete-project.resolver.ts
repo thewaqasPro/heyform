@@ -1,4 +1,4 @@
-import { FormStatusEnum } from '@heyform-inc/shared-types-enums'
+import { FormStatusEnum } from '@kyndform/shared-types-enums'
 import { BadRequestException } from '@nestjs/common'
 
 import { Auth, Project, ProjectGuard, Team, User } from '@decorator'

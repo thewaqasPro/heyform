@@ -1,8 +1,8 @@
-import type { Column, InputTableValue } from '@heyform-inc/shared-types-enums'
+import type { Column, InputTableValue } from '@kyndform/shared-types-enums'
 import type { FC } from 'react'
 import { startTransition, useMemo, useState } from 'react'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Input } from '../components'
 import { IComponentProps } from '../typings'
@@ -65,9 +65,9 @@ export const TableInput: FC<TableInputProps> = ({
   }
 
   return (
-    <div className="heyform-table-root" {...restProps}>
+    <div className="kyndform-table-root" {...restProps}>
       <table>
-        <thead className="heyform-table-header">
+        <thead className="kyndform-table-header">
           <tr>
             {columns?.map(column => (
               <th key={column.id}>{column.label}</th>
@@ -76,7 +76,7 @@ export const TableInput: FC<TableInputProps> = ({
         </thead>
         <tbody>
           {rows.map((_, rowIdx) => (
-            <tr key={rowIdx} className="heyform-table-row">
+            <tr key={rowIdx} className="kyndform-table-row">
               {columns?.map(column => (
                 <InputField
                   key={column.id}

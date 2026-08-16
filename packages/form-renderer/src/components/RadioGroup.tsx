@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import type { FC } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { IComponentProps } from '../typings'
 import type { RadioOption } from './Radio'
@@ -58,9 +58,9 @@ export const RadioGroup: FC<RadioGroupProps> = ({
   return (
     <div
       className={clsx(
-        'heyform-radio-group',
+        'kyndform-radio-group',
         {
-          'heyform-radio-group-disabled': isDisabled
+          'kyndform-radio-group-disabled': isDisabled
         },
         className
       )}

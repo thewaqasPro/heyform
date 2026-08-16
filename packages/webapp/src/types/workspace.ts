@@ -1,4 +1,4 @@
-import { FormModel, FormTheme } from '@heyform-inc/shared-types-enums'
+import { FormModel, FormTheme } from '@kyndform/shared-types-enums'
 
 import { FormType } from '@/types/index.ts'
 

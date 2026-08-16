@@ -5,13 +5,13 @@ import {
   SubmissionCategoryEnum,
   SubmissionStatusEnum,
   Variable
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { BadRequestException, Headers, UseGuards } from '@nestjs/common'
 
 import { CompleteSubmissionInput, CompleteSubmissionType } from '@graphql'
 import { EndpointAnonymousIdGuard } from '@guard'
-import { applyLogicToFields, fieldValuesToAnswers, flattenFields } from '@heyform-inc/answer-utils'
-import { helper, timestamp } from '@heyform-inc/utils'
+import { applyLogicToFields, fieldValuesToAnswers, flattenFields } from '@kyndform/answer-utils'
+import { helper, timestamp } from '@kyndform/utils'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import {
   EndpointService,

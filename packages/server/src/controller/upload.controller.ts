@@ -17,7 +17,7 @@ import {
   uploadFileFilter
 } from '@config'
 import { APP_HOMEPAGE_URL, UPLOAD_FILE_SIZE } from '@environments'
-import { helper, timestamp } from '@heyform-inc/utils'
+import { helper, timestamp } from '@kyndform/utils'
 import { AuthService, EndpointService, FormService, RedisService } from '@service'
 import { isAllowedUploadField, md5 } from '@utils'
 
@@ -25,8 +25,10 @@ function getUploadContextValue(
   req: Request,
   key: 'fieldId' | 'formId' | 'openToken'
 ): string | undefined {
-  const headerName = `x-heyform-${key.replace(/[A-Z]/g, matched => `-${matched.toLowerCase()}`)}`
-  const value = req.get?.(headerName) || req.query?.[key]
+  const kebab = key.replace(/[A-Z]/g, matched => `-${matched.toLowerCase()}`)
+  const kyndHeader = `x-kyndform-${kebab}`
+  const legacyHeader = `x-kyndform-${kebab}`
+  const value = req.get?.(kyndHeader) || req.get?.(legacyHeader) || req.query?.[key]
   const firstValue = Array.isArray(value) ? value[0] : value
 
   return typeof firstValue === 'string' ? firstValue : undefined

@@ -1,7 +1,7 @@
-import { FieldKindEnum, FormField, FormModel } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, FormField, FormModel } from '@kyndform/shared-types-enums'
 
-import { flattenFields } from '@heyform-inc/answer-utils'
-import { helper, parseJson } from '@heyform-inc/utils'
+import { flattenFields } from '@kyndform/answer-utils'
+import { helper, parseJson } from '@kyndform/utils'
 
 const UPLOAD_FIELD_KINDS = new Set([FieldKindEnum.FILE_UPLOAD, FieldKindEnum.SIGNATURE])
 

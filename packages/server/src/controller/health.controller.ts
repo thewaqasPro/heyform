@@ -6,7 +6,7 @@ import { RedisService } from '@service'
 
 interface HealthResponse {
   status: 'ok' | 'down'
-  service: 'heyform-server'
+  service: 'kyndform-server'
   timestamp: string
   uptime: number
 }
@@ -29,7 +29,7 @@ export class HealthController {
   index(): HealthResponse {
     return {
       status: 'ok',
-      service: 'heyform-server',
+      service: 'kyndform-server',
       timestamp: new Date().toISOString(),
       uptime: Math.floor(process.uptime())
     }
@@ -53,7 +53,7 @@ export class HealthController {
 
     const response: ReadinessResponse = {
       status: mongo === 'up' && redis === 'up' ? 'ok' : 'down',
-      service: 'heyform-server',
+      service: 'kyndform-server',
       timestamp: new Date().toISOString(),
       uptime: Math.floor(process.uptime()),
       checks: {

@@ -3,7 +3,7 @@ import {
   FormKindEnum,
   InteractiveModeEnum,
   ThemeSettings
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 

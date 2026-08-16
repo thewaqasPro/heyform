@@ -1,5 +1,5 @@
 {
-  "name": "heyform-webapp",
+  "name": "kyndform-webapp",
   "private": true,
   "version": "3.0.1",
   "scripts": {
@@ -14,10 +14,10 @@
   "dependencies": {
     "@apollo/client": "^3.11.8",
     "@fortaine/fetch-event-source": "^3.0.6",
-    "@heyform-inc/answer-utils": "^1.2.0",
-    "@heyform-inc/form-renderer": "workspace:*",
-    "@heyform-inc/shared-types-enums": "^1.3.0",
-    "@heyform-inc/utils": "^1.2.2",
+    "@kyndform/answer-utils": "workspace:*",
+    "@kyndform/form-renderer": "workspace:*",
+    "@kyndform/shared-types-enums": "workspace:*",
+    "@kyndform/utils": "workspace:*",
     "@heyooo-inc/react-router": "^0.0.5",
     "@popperjs/core": "^2.11.8",
     "@radix-ui/react-dialog": "^1.1.2",

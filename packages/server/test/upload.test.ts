@@ -1,4 +1,4 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import * as assert from 'assert'
 
 import {
@@ -144,9 +144,9 @@ async function testUploadAdmissionAndDistributedQuota() {
     redisService as any
   )
   const headers: Record<string, string> = {
-    'x-heyform-field-id': 'file_1',
-    'x-heyform-form-id': 'form_1',
-    'x-heyform-open-token': 'encrypted_token'
+    'x-kyndform-field-id': 'file_1',
+    'x-kyndform-form-id': 'form_1',
+    'x-kyndform-open-token': 'encrypted_token'
   }
 
   await (anonymousController as any).assertUploadAllowed({

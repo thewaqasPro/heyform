@@ -1,4 +1,4 @@
-import { Answer } from '@heyform-inc/shared-types-enums'
+import { Answer } from '@kyndform/shared-types-enums'
 import { BadRequestException } from '@nestjs/common'
 
 import { Auth, Form, FormGuard } from '@decorator'
@@ -8,7 +8,7 @@ import {
   fieldsToValidateRules,
   flattenFields,
   validate
-} from '@heyform-inc/answer-utils'
+} from '@kyndform/answer-utils'
 import { FormModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { SubmissionService } from '@service'

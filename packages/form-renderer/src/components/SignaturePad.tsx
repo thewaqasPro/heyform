@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Signature_pad from 'signature_pad'
 
 import { useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { IComponentProps } from '../typings'
 import { Button } from './Button'
@@ -61,11 +61,11 @@ export const SignaturePad: FC<SignaturePadProps> = ({ value, penColor, onChange 
   }, [signaturePad])
 
   return (
-    <div className="heyform-signature-pad">
-      <div className="heyform-signature-wrapper">
+    <div className="kyndform-signature-pad">
+      <div className="kyndform-signature-wrapper">
         <canvas ref={setCanvasRef} />
       </div>
-      <div className="heyform-signature-bottom">
+      <div className="kyndform-signature-bottom">
         <span>{t('Draw your signature above')}</span>
         <Button.Link onClick={handleClear}>{t('Clear')}</Button.Link>
       </div>

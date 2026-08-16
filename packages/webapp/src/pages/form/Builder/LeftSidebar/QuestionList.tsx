@@ -1,9 +1,9 @@
-import { numberToChar, questionNumber } from '@heyform-inc/form-renderer'
+import { numberToChar, questionNumber } from '@kyndform/form-renderer'
 import {
   FieldKindEnum,
   OTHER_FIELD_KINDS,
   QUESTION_FIELD_KINDS
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { IconCaretDownFilled, IconDotsVertical, IconPlus } from '@tabler/icons-react'
 import { FC, MouseEvent, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -12,8 +12,8 @@ import { ReactSortable } from 'react-sortablejs'
 
 import { getFieldFromKind } from '../utils'
 import { cn, nextTick } from '@/utils'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Dropdown, Tooltip } from '@/components'
 import { ALL_FIELD_CONFIGS } from '@/consts'

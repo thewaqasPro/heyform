@@ -1,9 +1,9 @@
-import type { Layout as FormLayout } from '@heyform-inc/shared-types-enums'
+import type { Layout as FormLayout } from '@kyndform/shared-types-enums'
 import type { FC } from 'react'
 import { memo } from 'react'
 
 import { isURL } from '../utils'
-import { deepEqual, helper } from '@heyform-inc/utils'
+import { deepEqual, helper } from '@kyndform/utils'
 
 function filterStyle(brightness?: number) {
   if (!brightness) {
@@ -29,11 +29,11 @@ const LayoutComponent: FC<FormLayout> = props => {
   }
 
   return (
-    <div className={`heyform-layout heyform-layout-${props!.align}`}>
+    <div className={`kyndform-layout kyndform-layout-${props!.align}`}>
       <img
         src={props!.mediaUrl}
         style={filterStyle(props!.brightness)}
-        alt="HeyForm layout image"
+        alt="KyndForm layout image"
       />
     </div>
   )

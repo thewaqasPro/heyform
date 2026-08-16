@@ -1,7 +1,7 @@
-import { AnswerValue, FieldKindEnum, FormField } from '@heyform-inc/shared-types-enums'
+import { AnswerValue, FieldKindEnum, FormField } from '@kyndform/shared-types-enums'
 import dayjs from 'dayjs'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { FieldsToValidateRules, fieldsToValidateRules } from './fields-to-validate-rules'
 import { isDate, isMobilePhone } from './helper'

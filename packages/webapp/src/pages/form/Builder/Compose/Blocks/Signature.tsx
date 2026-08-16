@@ -10,9 +10,9 @@ export const Signature: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-signature" field={field} locale={locale} {...restProps}>
-      <div className="heyform-signature-wrapper"></div>
-      <div className="heyform-signature-bottom">
+    <Block className="kyndform-signature" field={field} locale={locale} {...restProps}>
+      <div className="kyndform-signature-wrapper"></div>
+      <div className="kyndform-signature-bottom">
         <span>{t('Draw your signature above', { lng: locale })}</span>
         <span>{t('Clear', { lng: locale })}</span>
       </div>

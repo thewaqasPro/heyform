@@ -30,7 +30,7 @@ export interface E2EClientOptions {
 
 /**
  * Minimal cookie jar — strips attributes, keeps name=value pairs.
- * Sufficient for HEYFORM_SESSION / HEYFORM_LOGGED_IN / HEYFORM_DEVICE_ID.
+ * Sufficient for KYNDFORM_SESSION / KYNDFORM_LOGGED_IN / KYNDFORM_DEVICE_ID.
  */
 class CookieJar {
   private store = new Map<string, string>()
@@ -140,7 +140,7 @@ export class E2EClient {
     path: string,
     file: { filename: string; contentType: string; data: Buffer | string }
   ): Promise<RestResponse> {
-    const boundary = `----heyform-e2e-${Date.now().toString(36)}`
+    const boundary = `----kyndform-e2e-${Date.now().toString(36)}`
     const fileBuffer = Buffer.isBuffer(file.data) ? file.data : Buffer.from(file.data)
     const parts: Buffer[] = [
       Buffer.from(
@@ -231,6 +231,6 @@ export class E2EClient {
   }
 
   isAuthenticated(): boolean {
-    return Boolean(this.jar.get('HEYFORM_SESSION'))
+    return Boolean(this.jar.get('KYNDFORM_SESSION'))
   }
 }

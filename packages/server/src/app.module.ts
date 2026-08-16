@@ -18,7 +18,7 @@ import {
   PermissionGuard,
   RoleGuard
 } from '@guard'
-import { hs } from '@heyform-inc/utils'
+import { hs } from '@kyndform/utils'
 import { FormBodyMiddleware, JsonBodyMiddleware, RawBodyMiddleware } from '@middleware'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ScheduleModule } from '@nestjs/schedule'

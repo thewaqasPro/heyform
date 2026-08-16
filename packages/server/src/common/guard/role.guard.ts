@@ -1,7 +1,7 @@
 import { BadRequestException, CanActivate, ExecutionContext, Injectable } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { TeamModel, TeamRoleEnum } from '@model'
 import { GqlExecutionContext } from '@nestjs/graphql'
 import { FormService, TeamService } from '@service'

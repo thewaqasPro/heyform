@@ -30,7 +30,7 @@ export const LegalTerms: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-legal-terms" field={field} {...restProps}>
+    <Block className="kyndform-legal-terms" field={field} {...restProps}>
       <Form
         initialValues={{
           input: [state.values[field.id]]

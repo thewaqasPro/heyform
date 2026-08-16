@@ -1,22 +1,22 @@
 
-@import '@heyform-inc/form-renderer/style.css';
+@import '@kyndform/form-renderer/style.css';
 
-.heyform-layout-float_left img,
-.heyform-layout-float_right img {
+.kyndform-layout-float_left img,
+.kyndform-layout-float_right img {
   border-radius: 1rem;
 }
 
-.heyform-layout-split_left img {
+.kyndform-layout-split_left img {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.heyform-layout-split_right img {
+.kyndform-layout-split_right img {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-#heyform-render-root {
+#kyndform-render-root {
   height: 100vh;
   width: 100vw;
   // overflow: hidden;
@@ -26,10 +26,10 @@
   background: transparent;
 }
 
-#heyform-render-root {
+#kyndform-render-root {
   position: relative;
-  font-family: var(--heyform-font-family);
-  background-color: var(--heyform-report-background-color);
+  font-family: var(--kyndform-font-family);
+  background-color: var(--kyndform-report-background-color);
 }
 
 .grecaptcha-badge {
@@ -38,97 +38,97 @@
 }
 
 // Report
-.heyform-report {
+.kyndform-report {
   @apply text-sm;
 }
 
-.heyform-report-heading {
+.kyndform-report-heading {
   @apply text-3xl font-bold;
-  color: var(--heyform-report-heading);
+  color: var(--kyndform-report-heading);
 }
 
-.heyform-report-subheading {
+.kyndform-report-subheading {
   @apply pb-4 text-sm/6 font-medium;
-  color: var(--heyform-report-heading-a60);
+  color: var(--kyndform-report-heading-a60);
 }
 
-.heyform-report-question {
+.kyndform-report-question {
   @apply text-sm/6 font-medium;
-  color: var(--heyform-report-question);
+  color: var(--kyndform-report-question);
 }
 
-.heyform-report-meta {
+.kyndform-report-meta {
   @apply text-xs/6;
-  color: var(--heyform-report-question-a60);
+  color: var(--kyndform-report-question-a60);
 }
 
-.heyform-report-content {
+.kyndform-report-content {
   @apply mt-2;
 }
 
-.heyform-report-chart {
+.kyndform-report-chart {
   @apply space-y-2;
 }
 
-.heyform-report-chart-item {
+.kyndform-report-chart-item {
   @apply relative rounded-md px-3 py-2 text-sm/6;
-  background: var(--heyform-report-chart-a025);
+  background: var(--kyndform-report-chart-a025);
 }
 
-.heyform-report-chart-background {
+.kyndform-report-chart-background {
   @apply pointer-events-none absolute bottom-0 left-0 top-0 rounded-md;
-  background: var(--heyform-report-chart-a15);
+  background: var(--kyndform-report-chart-a15);
 }
 
-.heyform-report-chart-content {
+.kyndform-report-chart-content {
   @apply relative flex items-center justify-between;
-  color: var(--heyform-report-question);
+  color: var(--kyndform-report-question);
 }
 
-.heyform-report-chart-percent {
+.kyndform-report-chart-percent {
   @apply font-medium;
 }
 
-.heyform-report-chart-count {
+.kyndform-report-chart-count {
   @apply text-xs/6;
-  color: var(--heyform-report-question-a60);
+  color: var(--kyndform-report-question-a60);
 }
 
-.heyform-report-border,
-.heyform-report-divide > :not([hidden]) ~ :not([hidden]) {
-  border-color: var(--heyform-report-question-a05);
+.kyndform-report-border,
+.kyndform-report-divide > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--kyndform-report-question-a05);
 }
 
-.heyform-report-answer {
+.kyndform-report-answer {
   @apply flex items-center justify-between gap-4 py-2 text-sm/6;
 }
 
-.heyform-report-value {
+.kyndform-report-value {
   @apply min-w-0 flex-1 whitespace-pre-line;
-  color: var(--heyform-report-question);
+  color: var(--kyndform-report-question);
 }
 
-.heyform-report-datetime {
+.kyndform-report-datetime {
   @apply text-xs;
-  color: var(--heyform-report-question-a60);
+  color: var(--kyndform-report-question-a60);
 }
 
-.heyform-report-input-value {
+.kyndform-report-input-value {
   @apply whitespace-nowrap py-2 text-sm/6;
-  color: var(--heyform-report-question);
+  color: var(--kyndform-report-question);
 }
 
-.heyform-report-input-datetime {
+.kyndform-report-input-datetime {
   @apply whitespace-nowrap py-2 text-right text-xs/6;
-  color: var(--heyform-report-question-a60);
+  color: var(--kyndform-report-question-a60);
 }
 
-.heyform-report-pagination {
+.kyndform-report-pagination {
   @apply mt-2 border-t py-2;
-  border-color: var(--heyform-report-question-a05);
+  border-color: var(--kyndform-report-question-a05);
 
   [data-slot='info'] {
-    color: var(--heyform-report-question);
+    color: var(--kyndform-report-question);
   }
 
   button {
@@ -136,8 +136,8 @@
 
     &,
     &:hover {
-      background: var(--heyform-report-question);
-      color: var(--heyform-report-button-text);
+      background: var(--kyndform-report-question);
+      color: var(--kyndform-report-button-text);
     }
 
     &:hover {

@@ -11,7 +11,7 @@ export function build(baseUrl: string) {
     const res = await client.restGet<{ status: string; service: string; uptime: number }>('/health')
     assert.strictEqual(res.status, 200)
     assert.strictEqual(res.body.status, 'ok')
-    assert.strictEqual(res.body.service, 'heyform-server')
+    assert.strictEqual(res.body.service, 'kyndform-server')
     assert.strictEqual(typeof res.body.uptime, 'number')
   })
 

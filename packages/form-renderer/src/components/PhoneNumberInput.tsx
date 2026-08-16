@@ -7,7 +7,7 @@ import {
 import type { FC } from 'react'
 import { startTransition, useCallback, useEffect, useMemo, useState } from 'react'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { COUNTRIES } from '../consts'
 import { CountrySelect } from './CountrySelect'
@@ -111,7 +111,7 @@ export const PhoneNumberInput: FC<PhoneNumberInputProps> = ({
   return (
     <div className="flex items-center">
       <CountrySelect
-        popupClassName="heyform-phone-number-popup"
+        popupClassName="kyndform-phone-number-popup"
         enableLabel={false}
         enableCallingCode={true}
         allowClear={false}

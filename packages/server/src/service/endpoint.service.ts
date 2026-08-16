@@ -1,4 +1,4 @@
-import { CaptchaKindEnum, FieldKindEnum, FormSettings } from '@heyform-inc/shared-types-enums'
+import { CaptchaKindEnum, FieldKindEnum, FormSettings } from '@kyndform/shared-types-enums'
 import { BadRequestException, Injectable } from '@nestjs/common'
 
 import {
@@ -7,7 +7,7 @@ import {
   FORM_ENCRYPTION_KEY,
   GOOGLE_RECAPTCHA_SECRET
 } from '@environments'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import {
   aesDecryptObject,
   akismet,

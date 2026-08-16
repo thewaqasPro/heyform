@@ -1,6 +1,6 @@
 import { Auth, Team, TeamGuard, User } from '@decorator'
 import { FormType, RecentFormsInput } from '@graphql'
-import { date, helper } from '@heyform-inc/utils'
+import { date, helper } from '@kyndform/utils'
 import { FormModel, TeamModel, UserModel } from '@model'
 import { Args, Query, Resolver } from '@nestjs/graphql'
 import { FormService, ProjectService, SubmissionService } from '@service'

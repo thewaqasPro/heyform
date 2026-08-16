@@ -1,11 +1,11 @@
-import { Button } from '@heyform-inc/form-renderer'
-import type { Choice } from '@heyform-inc/shared-types-enums'
+import { Button } from '@kyndform/form-renderer'
+import type { Choice } from '@kyndform/shared-types-enums'
 import { IconChevronRight, IconX } from '@tabler/icons-react'
 import type { FC } from 'react'
 import { startTransition, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { clone, nanoid } from '@heyform-inc/utils'
+import { clone, nanoid } from '@kyndform/utils'
 
 import { useStoreContext } from '../../store'
 import { FakeSubmit } from '../FakeSubmit'
@@ -41,8 +41,8 @@ const Thead: FC<TheadProps> = ({ index, column, deletable, onChange, onRemove, .
 
   return (
     <th>
-      <div className="heyform-input-table-thead" {...restProps}>
-        <div className="heyform-radio-remove" onClick={handleRemove}>
+      <div className="kyndform-input-table-thead" {...restProps}>
+        <div className="kyndform-radio-remove" onClick={handleRemove}>
           <IconX />
         </div>
         <input
@@ -122,16 +122,16 @@ export const InputTable: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const handleRemoveColumnCallback = useCallback(handleRemoveColumn, [field.properties])
 
   return (
-    <Block className="heyform-input-table" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-input-table" field={field} locale={locale} {...restProps}>
       <div className="mb-2 flex items-center justify-end">
-        <Button.Link className="heyform-add-column" onClick={handleAddColumnCallback}>
+        <Button.Link className="kyndform-add-column" onClick={handleAddColumnCallback}>
           {t('form.builder.compose.addColumn')}
         </Button.Link>
       </div>
-      <div className="heyform-table-scrollable">
+      <div className="kyndform-table-scrollable">
         <table>
           <thead>
-            <tr className="heyform-input-table-header">
+            <tr className="kyndform-input-table-header">
               {field.properties?.tableColumns?.map((column, index) => (
                 <Thead
                   key={column.id}
@@ -146,7 +146,7 @@ export const InputTable: FC<BlockProps> = ({ field, locale, ...restProps }) => {
           </thead>
           <tbody>
             {Array.from({ length: 5 }).map((_, i) => (
-              <tr key={i} className="heyform-input-table-row">
+              <tr key={i} className="kyndform-input-table-row">
                 {field.properties?.tableColumns?.map(column => (
                   <td key={column.id}></td>
                 ))}

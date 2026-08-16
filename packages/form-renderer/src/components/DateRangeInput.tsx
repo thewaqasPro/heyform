@@ -1,4 +1,4 @@
-import type { DateRangeValue } from '@heyform-inc/shared-types-enums'
+import type { DateRangeValue } from '@kyndform/shared-types-enums'
 import clsx from 'clsx'
 import type { FC } from 'react'
 import { useState } from 'react'
@@ -47,8 +47,8 @@ export const DateRangeInput: FC<DateRangeInputProps> = ({
 
   return (
     <div
-      className={clsx('heyform-range-root', {
-        'heyform-range-width-time': allowTime
+      className={clsx('kyndform-range-root', {
+        'kyndform-range-width-time': allowTime
       })}
     >
       <DateInput
@@ -58,7 +58,7 @@ export const DateRangeInput: FC<DateRangeInputProps> = ({
         onChange={handleStartChange}
         onError={onError}
       />
-      <div className="heyform-range-divider">{t('to')}</div>
+      <div className="kyndform-range-divider">{t('to')}</div>
       <DateInput
         value={value?.end}
         format={format}

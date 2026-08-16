@@ -1,8 +1,8 @@
-import type { Layout as FormLayout } from '@heyform-inc/shared-types-enums'
+import type { Layout as FormLayout } from '@kyndform/shared-types-enums'
 import type { FC } from 'react'
 
 import { cn } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 interface LayoutProps extends ComponentProps {
   layout?: FormLayout
@@ -32,7 +32,7 @@ export const Layout: FC<LayoutProps> = ({ className, layout, ...restProps }) => 
   }
 
   return (
-    <div className={cn('heyform-layout', className)} {...restProps}>
+    <div className={cn('kyndform-layout', className)} {...restProps}>
       <img src={layout!.mediaUrl} style={filterStyle(layout?.brightness)} />
     </div>
   )

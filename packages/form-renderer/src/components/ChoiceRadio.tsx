@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { FC, ReactNode, useCallback, useMemo } from 'react'
 
 import { isURL, stopEvent, useKey, useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { IComponentProps } from '../typings'
 import { Input } from './Input'
@@ -67,7 +67,7 @@ export const ChoiceRadio: FC<ChoiceRadioProps> = ({
   const labelChildren = useMemo(() => {
     if (isOther) {
       if (!isChecked) {
-        return <div className="heyform-radio-label-text">{value || label}</div>
+        return <div className="kyndform-radio-label-text">{value || label}</div>
       }
 
       return (
@@ -89,18 +89,18 @@ export const ChoiceRadio: FC<ChoiceRadioProps> = ({
   return (
     <div
       className={clsx(
-        'heyform-radio',
+        'kyndform-radio',
         {
-          'heyform-radio-selected': isChecked
+          'kyndform-radio-selected': isChecked
         },
         className
       )}
       onClick={handleClick}
       {...restProps}
     >
-      <div className="heyform-radio-container">
+      <div className="kyndform-radio-container">
         {enableImage && (
-          <div className="heyform-radio-image">
+          <div className="kyndform-radio-image">
             {isURL(image) ? (
               <img
                 src={image}
@@ -109,15 +109,15 @@ export const ChoiceRadio: FC<ChoiceRadioProps> = ({
             ) : icon ? (
               icon
             ) : (
-              <IconPhoto className="heyform-radio-placeholder" />
+              <IconPhoto className="kyndform-radio-placeholder" />
             )}
           </div>
         )}
-        <div className="heyform-radio-content">
-          {keyName && isHotkeyShow && <div className="heyform-radio-hotkey">{keyName}</div>}
-          <div className="heyform-radio-label">{labelChildren}</div>
+        <div className="kyndform-radio-content">
+          {keyName && isHotkeyShow && <div className="kyndform-radio-hotkey">{keyName}</div>}
+          <div className="kyndform-radio-label">{labelChildren}</div>
         </div>
-        <div className="heyform-radio-icon">
+        <div className="kyndform-radio-icon">
           <IconCheck />
         </div>
       </div>

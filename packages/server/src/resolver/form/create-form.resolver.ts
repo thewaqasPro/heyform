@@ -1,8 +1,8 @@
-import { CaptchaKindEnum, FieldKindEnum, FormStatusEnum } from '@heyform-inc/shared-types-enums'
+import { CaptchaKindEnum, FieldKindEnum, FormStatusEnum } from '@kyndform/shared-types-enums'
 
 import { Auth, ProjectGuard, Team, User } from '@decorator'
 import { CreateFormInput } from '@graphql'
-import { helper, nanoid } from '@heyform-inc/utils'
+import { helper, nanoid } from '@kyndform/utils'
 import { TeamModel, UserModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { FormService } from '@service'

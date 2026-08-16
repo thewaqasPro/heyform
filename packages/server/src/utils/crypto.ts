@@ -1,7 +1,7 @@
 import * as bcrypt from 'bcrypt'
 import * as crypto from 'crypto'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 const AES_KEY_SIZE = 32
 const BCRYPT_HASH_PATTERN = /^\$2[aby]\$\d{2}\$[./A-Za-z0-9]{53}$/

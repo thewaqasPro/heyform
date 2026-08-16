@@ -2,14 +2,14 @@ import {
   CHOICES_FIELD_KINDS,
   FieldKindEnum,
   QUESTION_FIELD_KINDS
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { FC, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { FormService } from '@/services'
 import { useParam } from '@/utils'
-import { flattenFields, htmlUtils } from '@heyform-inc/answer-utils'
-import { helper, pickValidValues } from '@heyform-inc/utils'
+import { flattenFields, htmlUtils } from '@kyndform/answer-utils'
+import { helper, pickValidValues } from '@kyndform/utils'
 
 import { Async, Repeat } from '@/components'
 import { useFormStore } from '@/store'
@@ -104,14 +104,14 @@ export const ReportList: FC<ReportListProps> = ({ isHideFieldEnabled }) => {
     >
       {isHideFieldEnabled && (
         <>
-          <h2 className="heyform-report-heading">{form?.name}</h2>
-          <p className="heyform-report-subheading">
+          <h2 className="kyndform-report-heading">{form?.name}</h2>
+          <p className="kyndform-report-subheading">
             {t('form.customReport.metadata', { count: form?.submissionCount || 0 })}
           </p>
         </>
       )}
 
-      <ol className="heyform-report-items mt-4 space-y-8">
+      <ol className="kyndform-report-items mt-4 space-y-8">
         {responses.map((row, index) => (
           <FormReportItem
             key={index}
@@ -135,7 +135,7 @@ export default function FormAnalyticsReport() {
       </div>
 
       <div className="p-6">
-        <div className="heyform-report">
+        <div className="kyndform-report">
           <ReportList />
         </div>
       </div>

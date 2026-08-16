@@ -1,4 +1,4 @@
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 export function getUpdateQuery(
   obj: Record<string, any>,

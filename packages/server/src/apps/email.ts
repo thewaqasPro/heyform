@@ -1,6 +1,6 @@
 import { SmtpOptionsFactory } from '@config'
 import { SMTP_FROM } from '@environments'
-import { answersToHtml } from '@heyform-inc/answer-utils'
+import { answersToHtml } from '@kyndform/answer-utils'
 import { FormModel, SubmissionModel } from '@model'
 import { smtpSendMail } from '@utils'
 
@@ -60,7 +60,7 @@ export default {
           ${htmlAnswers}
         </div>
         <div style="border-top: 1px solid #e2e8f0; margin-top: 24px; padding-top: 16px; font-size: 12px; color: #94a3b8; text-align: center;">
-          Sent automatically via HeyForm
+          Sent automatically via KyndForm
         </div>
       </div>
     `

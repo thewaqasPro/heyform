@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 
 import { initialValue, useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { FormField, Input } from '../components'
 import { useStore } from '../store'
@@ -20,7 +20,7 @@ export const FullName: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-full-name" field={field} {...restProps}>
+    <Block className="kyndform-full-name" field={field} {...restProps}>
       <Form
         initialValues={initialValue(state.values[field.id])}
         field={field}

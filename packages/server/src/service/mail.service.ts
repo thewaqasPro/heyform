@@ -5,7 +5,7 @@ import { Dirent, readFileSync, readdirSync } from 'fs'
 import { basename, extname, join } from 'path'
 
 import { EMAIL_TEMPLATES_DIR, SMTP_FROM } from '@environments'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 interface JoinWorkspaceAlertOptions {
   teamName: string
@@ -195,7 +195,7 @@ export class MailService {
         ...options,
         submission: trustedHtml(options.submission),
         logoBlock: trustedHtml(logoBlock),
-        workspaceName: options.workspaceName || 'HeyForm',
+        workspaceName: options.workspaceName || 'KyndForm',
         submissionDate: options.submissionDate || ''
       },
       undefined,

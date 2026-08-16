@@ -24,8 +24,13 @@ export const Submit: FC<SubmitProps> = ({
   onClick
 }) => {
   return (
-    <div className={clsx('heyform-submit-container', className)}>
-      <button className="heyform-submit-button" type="submit" disabled={disabled} onClick={onClick}>
+    <div className={clsx('kyndform-submit-container', className)}>
+      <button
+        className="kyndform-submit-button"
+        type="submit"
+        disabled={disabled}
+        onClick={onClick}
+      >
         {loading && (
           <span className="absolute inset-0 flex items-center justify-center">
             <Loader />

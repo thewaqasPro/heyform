@@ -1,4 +1,4 @@
-import { FieldKindEnum, FormField } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, FormField } from '@kyndform/shared-types-enums'
 import * as assert from 'assert'
 
 import { ExportFileService } from '../src/service/export-file.service'

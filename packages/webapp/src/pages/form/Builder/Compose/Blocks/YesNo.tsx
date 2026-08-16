@@ -9,8 +9,8 @@ export const YesNo: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-yes-no" field={field} locale={locale} {...restProps}>
-      <div className="heyform-radio-group w-40">
+    <Block className="kyndform-yes-no" field={field} locale={locale} {...restProps}>
+      <div className="kyndform-radio-group w-40">
         <FakeRadio hotkey="Y" label={t('Yes', { lng: locale })} />
         <FakeRadio hotkey="N" label={t('No', { lng: locale })} />
       </div>

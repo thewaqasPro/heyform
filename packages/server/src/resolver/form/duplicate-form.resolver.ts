@@ -1,6 +1,6 @@
 import { Auth, Form, FormGuard, User } from '@decorator'
 import { DuplicateFormInput } from '@graphql'
-import { helper, pickValidValues } from '@heyform-inc/utils'
+import { helper, pickValidValues } from '@kyndform/utils'
 import { FormModel, UserModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { FormService } from '@service'

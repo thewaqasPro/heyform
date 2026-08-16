@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { useCallback } from 'react'
 
 import { sendMessageToParent } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Countdown } from '../components/Countdown'
 import { useStore } from '../store'
@@ -30,17 +30,17 @@ export const Header: FC = () => {
   const handleCountdownEndCallback = useCallback(handleCountdownEnd, [state.values])
 
   return (
-    <div className="heyform-header">
-      <div className="heyform-header-wrapper">
-        <div className="heyform-header-left">
+    <div className="kyndform-header">
+      <div className="kyndform-header-wrapper">
+        <div className="kyndform-header-left">
           {(state.settings as any)?.whitelabelBranding && state.logo && (
-            <div className="heyform-logo">
+            <div className="kyndform-logo">
               <img src={state.logo} alt="" />
             </div>
           )}
         </div>
 
-        <div className="heyform-header-right">
+        <div className="kyndform-header-right">
           {state.settings?.enableTimeLimit && state.settings.timeLimit && (
             <Countdown settings={state.settings!} onEnd={handleCountdownEndCallback} />
           )}

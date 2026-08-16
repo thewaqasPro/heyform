@@ -1,4 +1,4 @@
-import { helper, hs, timestamp } from '@heyform-inc/utils'
+import { helper, hs, timestamp } from '@kyndform/utils'
 
 export interface LRUStore {
   setItem(key: string, data: any): any
@@ -55,7 +55,7 @@ export class LRU {
   private cache!: LRUCache
 
   constructor(options: LRUOptions) {
-    this.bucket = options.bucket || 'HEYFORM_BUCKET'
+    this.bucket = options.bucket || 'KYNDFORM_BUCKET'
     this.capacity = options.capacity || 10
     this.expires = options.expires || hs('1h')!
     this.store = options.store || new LRUMemoryStore()

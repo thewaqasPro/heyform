@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom'
 import { getFilteredFields } from './utils'
 import { FormService } from '@/services'
 import { useParam, useRouter } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Loader, Tooltip, usePrompt, useToast } from '@/components'
 import { useAppStore, useFormStore, useWorkspaceStore } from '@/store'
@@ -112,7 +112,7 @@ export default function BuilderNavBar() {
     <div className="flex h-14 items-center justify-between px-2">
       <nav aria-label="breadcrumb" className="flex">
         <ol className="text-secondary flex flex-wrap items-center gap-1.5 break-words text-sm">
-          {window.heyform.device.mobile ? (
+          {window.kyndform.device.mobile ? (
             <li className="text-primary">
               <Link
                 role="link"

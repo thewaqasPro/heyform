@@ -1,4 +1,4 @@
-import { helper, qs, removeObjectNil } from '@heyform-inc/utils'
+import { helper, qs, removeObjectNil } from '@kyndform/utils'
 
 interface FileUploadDisplayValue {
   filename: string

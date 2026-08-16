@@ -1,8 +1,8 @@
 import store2 from 'store2'
 
-import { helper, timestamp, toSecond } from '@heyform-inc/utils'
+import { helper, timestamp, toSecond } from '@kyndform/utils'
 
-import { HEYFORM_DATA_KEY } from '../consts'
+import { KYNDFORM_DATA_KEY } from '../consts'
 
 export interface LRUStore {
   setItem(key: string, data: Any): Any
@@ -164,7 +164,7 @@ let lru: LRU
 export function getLRU(): LRU {
   if (!lru) {
     lru = new LRU({
-      bucket: HEYFORM_DATA_KEY,
+      bucket: KYNDFORM_DATA_KEY,
       store: {
         getItem: store2.get.bind(store2),
         setItem: store2.set.bind(store2),

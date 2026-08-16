@@ -4,14 +4,14 @@ exports[`should convert value to api object 1`] = `
 {
   "(ID: EF9tbsJj3CNZ) 🐶 Choose the dog ": "Choice 3",
   "(ID: MVlZfnmjZlye) 👋 Just choose one": "🍍 Pineapple",
-  "(ID: NqCpSqCpteiO) You sig here": " (https://heyform.net/sig.jpg)",
+  "(ID: NqCpSqCpteiO) You sig here": " (https://kyndform.com/sig.jpg)",
   "(ID: NteSqF9g5cOa6) Input table": "Ivan, 16
 Jack Smith, 24",
   "(ID: Svky0NLxkN7u) 🎉 Single Choose with other": "Other answer",
   "(ID: X9F47wrnJImk) 👍 Do you agree with us ": "No",
   "(ID: bcFvi1syrp66) ☎️  Your MobilePhone ": "+12015551023",
   "(ID: g6Oayu81jkdqcte) Full name": "Ivan Woods",
-  "(ID: qCpteNRi2SiO) 🈴️ Upload you avatar ": "avatar.jpg (https://heyformhq.com/qCpteNRi2SiO_avatar.jpg)",
+  "(ID: qCpteNRi2SiO) 🈴️ Upload you avatar ": "avatar.jpg (https://kyndform.com/qCpteNRi2SiO_avatar.jpg)",
   "(ID: qFN5cteg6SOa) 🪐 Rate here ": 5,
   "(ID: u1NyLxkSvkN7) ✈ Multiple Choose with other": "Choice 2, Other answer",
   "(ID: vyLu2NkN70xkS) Group Multiple Choose ": "Group Choice 1, Group Choice 2",
@@ -23,14 +23,14 @@ exports[`should convert value to flat json 1`] = `
 {
   "EF9tbsJj3CNZ": "Choice 3",
   "MVlZfnmjZlye": "🍍 Pineapple",
-  "NqCpSqCpteiO": " (https://heyform.net/sig.jpg)",
+  "NqCpSqCpteiO": " (https://kyndform.com/sig.jpg)",
   "NteSqF9g5cOa6": "Ivan, 16
 Jack Smith, 24",
   "Svky0NLxkN7u": "Other answer",
   "X9F47wrnJImk": "No",
   "bcFvi1syrp66": "+12015551023",
   "g6Oayu81jkdqcte": "Ivan Woods",
-  "qCpteNRi2SiO": "avatar.jpg (https://heyformhq.com/qCpteNRi2SiO_avatar.jpg)",
+  "qCpteNRi2SiO": "avatar.jpg (https://kyndform.com/qCpteNRi2SiO_avatar.jpg)",
   "qFN5cteg6SOa": 5,
   "u1NyLxkSvkN7": "Choice 2, Other answer",
   "vyLu2NkN70xkS": "Group Choice 1, Group Choice 2",
@@ -109,11 +109,11 @@ exports[`should convert value to html 1`] = `
       
 <div style="margin-top: 4px;">
   <div style="margin-bottom: 8px;">
-    <a href="https://heyformhq.com/qCpteNRi2SiO_avatar.jpg" target="_blank" style="display: inline-block; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px; background-color: #f8fafc; text-decoration: none;">
-      <img src="https://heyformhq.com/qCpteNRi2SiO_avatar.jpg" alt="avatar.jpg" style="max-width: 100%; max-height: 160px; border-radius: 6px; display: block;" />
+    <a href="https://kyndform.com/qCpteNRi2SiO_avatar.jpg" target="_blank" style="display: inline-block; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px; background-color: #f8fafc; text-decoration: none;">
+      <img src="https://kyndform.com/qCpteNRi2SiO_avatar.jpg" alt="avatar.jpg" style="max-width: 100%; max-height: 160px; border-radius: 6px; display: block;" />
     </a>
   </div>
-  <a href="https://heyformhq.com/qCpteNRi2SiO_avatar.jpg" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: 0.2px;">
+  <a href="https://kyndform.com/qCpteNRi2SiO_avatar.jpg" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: 0.2px;">
     📎 Download avatar.jpg &nbsp; &darr;
   </a>
 </div>
@@ -129,11 +129,11 @@ exports[`should convert value to html 1`] = `
       
 <div style="margin-top: 4px;">
   <div style="margin-bottom: 8px;">
-    <a href="https://heyform.net/sig.jpg" target="_blank" style="display: inline-block; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px; background-color: #f8fafc; text-decoration: none;">
-      <img src="https://heyform.net/sig.jpg" alt="Download Attachment" style="max-width: 100%; max-height: 160px; border-radius: 6px; display: block;" />
+    <a href="https://kyndform.com/sig.jpg" target="_blank" style="display: inline-block; border: 1px solid #e2e8f0; border-radius: 8px; padding: 4px; background-color: #f8fafc; text-decoration: none;">
+      <img src="https://kyndform.com/sig.jpg" alt="Download Attachment" style="max-width: 100%; max-height: 160px; border-radius: 6px; display: block;" />
     </a>
   </div>
-  <a href="https://heyform.net/sig.jpg" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: 0.2px;">
+  <a href="https://kyndform.com/sig.jpg" target="_blank" style="display: inline-block; padding: 8px 16px; background-color: #0f172a; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 13px; font-weight: 500; letter-spacing: 0.2px;">
     📎 Download Download Attachment &nbsp; &darr;
   </a>
 </div>
@@ -199,7 +199,7 @@ exports[`should convert value to json 1`] = `
   "MVlZfnmjZlye": "🍍 Pineapple",
   "NqCpSqCpteiO": {
     "filename": "",
-    "url": "https://heyform.net/sig.jpg",
+    "url": "https://kyndform.com/sig.jpg",
   },
   "NteSqF9g5cOa6": [
     {
@@ -220,7 +220,7 @@ exports[`should convert value to json 1`] = `
   },
   "qCpteNRi2SiO": {
     "filename": "avatar.jpg",
-    "url": "https://heyformhq.com/qCpteNRi2SiO_avatar.jpg",
+    "url": "https://kyndform.com/qCpteNRi2SiO_avatar.jpg",
   },
   "qFN5cteg6SOa": 5,
   "u1NyLxkSvkN7": "Choice 2, Other answer",
@@ -249,10 +249,10 @@ No
 Choice 3
 
 🈴️ Upload you avatar 
-avatar.jpg (https://heyformhq.com/qCpteNRi2SiO_avatar.jpg)
+avatar.jpg (https://kyndform.com/qCpteNRi2SiO_avatar.jpg)
 
 You sig here
- (https://heyform.net/sig.jpg)
+ (https://kyndform.com/sig.jpg)
 
 🪐 Rate here 
 5

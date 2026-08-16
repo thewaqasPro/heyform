@@ -7,15 +7,15 @@ import {
   Logic,
   NavigateAction,
   Variable
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 
 import {
   htmlUtils,
   parsePlainAnswer,
   validateCondition,
   validateRequiredField
-} from '@heyform-inc/answer-utils'
-import { helper, type } from '@heyform-inc/utils'
+} from '@kyndform/answer-utils'
+import { helper, type } from '@kyndform/utils'
 
 import { CHAR_A_KEY_CODE } from '../consts'
 import type { AnyMap, IFormField, IPartialFormField } from '../typings'
@@ -284,7 +284,7 @@ export function getNavigateFieldId(
   // Check variables
   for (const variable of variables) {
     if (helper.isValidArray(variable.logics)) {
-      for (const { condition, action } of variable.logics) {
+      for (const { condition, action } of variable.logics || []) {
         const _field: any = {
           id: variable.id,
           kind: variable.kind === 'number' ? FieldKindEnum.NUMBER : FieldKindEnum.SHORT_TEXT

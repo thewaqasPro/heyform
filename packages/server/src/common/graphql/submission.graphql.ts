@@ -3,7 +3,7 @@ import {
   Property,
   SubmissionCategoryEnum,
   Variable
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { IsEnum, IsNumber, IsOptional, Max, Min } from 'class-validator'
 
 import { FormDetailInput, HiddenFieldType, PropertyInput, PropertyType } from './form.graphql'

@@ -2,7 +2,7 @@ import { BadRequestException } from '@nestjs/common'
 
 import { Auth, FormGuard, Team } from '@decorator'
 import { ConnectStripeInput, ConnectStripeType } from '@graphql'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { TeamModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { FormService, PaymentService, RedisService } from '@service'

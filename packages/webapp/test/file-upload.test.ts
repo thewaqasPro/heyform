@@ -55,11 +55,11 @@ function testSupportsSelfHostedUrlsAndRejectsUnsafeProtocols() {
   assert.deepStrictEqual(
     getFileUploadValue({
       filename: 'local.txt',
-      url: 'http://heyform_backend:9157/static/upload/id'
+      url: 'http://kyndform_backend:9157/static/upload/id'
     }),
     {
       filename: 'local.txt',
-      url: 'http://heyform_backend:9157/static/upload/id?attname=local.txt'
+      url: 'http://kyndform_backend:9157/static/upload/id?attname=local.txt'
     }
   )
   assert.deepStrictEqual(getFileUploadValue('/static/upload/id'), {

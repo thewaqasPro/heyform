@@ -1,11 +1,11 @@
-import { FormStatusEnum } from '@heyform-inc/shared-types-enums'
+import { FormStatusEnum } from '@kyndform/shared-types-enums'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
 import { FormService } from '@/services'
 import { useParam } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Async, EmptyState, Repeat } from '@/components'
 import { FormType } from '@/types'
@@ -39,7 +39,7 @@ export default function ProjectTrash() {
             a: (
               <a
                 className="hover:text-primary underline underline-offset-4"
-                href="https://docs.heyform.net/quickstart/how-to-retrieve-forms-from-trash"
+                href="https://docs.kyndform.com/quickstart/how-to-retrieve-forms-from-trash"
                 target="_blank"
                 rel="noopener noreferrer"
               />

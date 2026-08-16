@@ -16,10 +16,10 @@ export const Branding: FC = () => {
   return null
 
   return (
-    <a className="heyform-branding" href="https://heyform.net/?ref=badge" target="_blank">
+    <a className="kyndform-branding" href="https://kyndform.com/?ref=badge" target="_blank">
       <Trans
         t={t as any}
-        i18nKey="Made with HeyForm"
+        i18nKey="Made with KyndForm"
         components={{
           icon: <LogoIcon className="inline h-4 w-4" />,
           span: <span className="font-medium" />
@@ -31,10 +31,10 @@ export const Branding: FC = () => {
 
 export const WelcomeBranding: FC = () => {
   return (
-    <div className="heyform-footer heyform-welcome-footer">
-      <div className="heyform-footer-wrapper">
-        <div className="heyform-footer-left" />
-        <div className="heyform-footer-right">{/* <Branding /> */}</div>
+    <div className="kyndform-footer kyndform-welcome-footer">
+      <div className="kyndform-footer-wrapper">
+        <div className="kyndform-footer-left" />
+        <div className="kyndform-footer-right">{/* <Branding /> */}</div>
       </div>
     </div>
   )

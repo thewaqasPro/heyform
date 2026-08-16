@@ -1,11 +1,11 @@
-import { Logic } from '@heyform-inc/shared-types-enums'
+import { Logic } from '@kyndform/shared-types-enums'
 import { IconArrowUpRight, IconChevronRight, IconDots } from '@tabler/icons-react'
 import type { FC } from 'react'
 import { useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Dropdown } from '@/components'
 import { useAppStore } from '@/store'
@@ -135,7 +135,7 @@ export const Rules: FC = () => {
                 <a
                   key="a"
                   className="hover:text-primary underline underline-offset-4"
-                  href="https://docs.heyform.net/features/conditional-logic"
+                  href="https://docs.kyndform.com/features/conditional-logic"
                   target="_blank"
                   rel="noopener noreferrer"
                 />

@@ -12,7 +12,7 @@ import {
   useParam,
   useRouter
 } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Async, Avatar, Button, Loader } from '@/components'
 import { REDIRECT_COOKIE_NAME } from '@/consts'

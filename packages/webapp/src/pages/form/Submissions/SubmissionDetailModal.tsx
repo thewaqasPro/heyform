@@ -1,4 +1,4 @@
-import { FieldKindEnum, FormField } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, FormField } from '@kyndform/shared-types-enums'
 import { IconCalendar, IconPrinter } from '@tabler/icons-react'
 import { FC, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'

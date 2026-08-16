@@ -1,6 +1,6 @@
 import { Auth, FormGuard } from '@decorator'
 import { FormAnalyticInput, FormAnalyticResult, FormAnalyticType } from '@graphql'
-import { date, helper, parseJson } from '@heyform-inc/utils'
+import { date, helper, parseJson } from '@kyndform/utils'
 import { FormAnalyticRangeEnum } from '@model'
 import { Args, Query, Resolver } from '@nestjs/graphql'
 import { FormAnalyticService, RedisService } from '@service'

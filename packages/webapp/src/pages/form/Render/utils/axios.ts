@@ -2,9 +2,9 @@ import axiosStatic, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import cookies from 'js-cookie'
 import store2 from 'store2'
 
-import { helper, nanoid } from '@heyform-inc/utils'
+import { helper, nanoid } from '@kyndform/utils'
 
-import { HEYFORM_ID_KEY } from '../consts'
+import { KYNDFORM_ID_KEY } from '../consts'
 
 let instance: AxiosInstance
 
@@ -30,14 +30,14 @@ function getInstance() {
 }
 
 function getAnonymousId(): string {
-  let id = cookies.get(HEYFORM_ID_KEY) || store2.get(HEYFORM_ID_KEY)
+  let id = cookies.get(KYNDFORM_ID_KEY) || store2.get(KYNDFORM_ID_KEY)
 
   if (helper.isEmpty(id)) {
     id = nanoid(8)
 
     // save to cookie and localStorage
-    cookies.set(HEYFORM_ID_KEY, id)
-    store2.set(HEYFORM_ID_KEY, id)
+    cookies.set(KYNDFORM_ID_KEY, id)
+    store2.set(KYNDFORM_ID_KEY, id)
   }
 
   return id!

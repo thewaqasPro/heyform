@@ -1,4 +1,4 @@
-import { preventDefault } from '@heyform-inc/form-renderer'
+import { preventDefault } from '@kyndform/form-renderer'
 import { IconCopy, IconDots, IconTag, IconTrash } from '@tabler/icons-react'
 import { useRequest } from 'ahooks'
 import { FC, useEffect, useMemo } from 'react'
@@ -219,7 +219,7 @@ export const FormShell: FC<ComponentProps> = ({ children }) => {
           label: t('form.suspend.contactUs')
         },
         onConfirm() {
-          window.location.href = 'https://heyform.net/f/E4MKK2hx'
+          window.location.href = 'https://kyndform.com/f/E4MKK2hx'
         }
       })
     }

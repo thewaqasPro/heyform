@@ -1,10 +1,10 @@
-import { stopEvent } from '@heyform-inc/form-renderer'
-import { FieldKindEnum, HiddenField, Variable } from '@heyform-inc/shared-types-enums'
+import { stopEvent } from '@kyndform/form-renderer'
+import { FieldKindEnum, HiddenField, Variable } from '@kyndform/shared-types-enums'
 import { CSSProperties, FC, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Portal } from '@/components'
 import { CUSTOM_FIELDS_CONFIGS, VARIABLE_KIND_CONFIGS } from '@/consts'

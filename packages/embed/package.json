@@ -1,8 +1,8 @@
 {
-  "name": "@heyform-inc/embed",
+  "name": "@kyndform/embed",
   "version": "0.0.8",
-  "homepage": "https://heyform.net",
-  "author": "Heyooo, Inc.",
+  "homepage": "https://kyndform.com",
+  "author": "KyndForm, Inc.",
   "license": "AGPL-3.0",
   "files": [
     "./dist",

@@ -1,4 +1,4 @@
-import { preventDefault } from '@heyform-inc/form-renderer'
+import { preventDefault } from '@kyndform/form-renderer'
 import {
   Close,
   Content,
@@ -17,7 +17,7 @@ import { FC, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cn, useFormState } from '@/utils'
-import { deepEqual, excludeObject, helper, pickObject } from '@heyform-inc/utils'
+import { deepEqual, excludeObject, helper, pickObject } from '@kyndform/utils'
 
 import { Button, ButtonProps } from './Button'
 import { Form } from './Form'

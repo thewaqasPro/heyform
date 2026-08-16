@@ -10,7 +10,7 @@ interface GitHubRelease {
   published_at: string
 }
 
-const GITHUB_API_URL = 'https://api.github.com/repos/heyform/heyform/releases'
+const GITHUB_API_URL = 'https://api.github.com/repos/kyndform/kyndform/releases'
 
 @Injectable()
 export class ChangelogService {
@@ -19,7 +19,7 @@ export class ChangelogService {
       .get(`${GITHUB_API_URL}/latest`, {
         headers: {
           Accept: 'application/vnd.github.v3+json',
-          'User-Agent': 'Heyform-Changelog'
+          'User-Agent': 'Kyndform-Changelog'
         }
       })
       .json<GitHubRelease>()
@@ -35,7 +35,7 @@ export class ChangelogService {
       .get(GITHUB_API_URL, {
         headers: {
           Accept: 'application/vnd.github.v3+json',
-          'User-Agent': 'Heyform-Changelog'
+          'User-Agent': 'Kyndform-Changelog'
         }
       })
       .json<GitHubRelease[]>()

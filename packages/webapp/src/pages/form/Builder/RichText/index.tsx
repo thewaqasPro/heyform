@@ -1,4 +1,4 @@
-import { HiddenField, Variable } from '@heyform-inc/shared-types-enums'
+import { HiddenField, Variable } from '@kyndform/shared-types-enums'
 import debounce from 'lodash/debounce'
 import type { CSSProperties, ClipboardEvent, FC, KeyboardEvent, RefObject } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -12,8 +12,8 @@ import {
   replaceTriggerText
 } from './utils'
 import { cn } from '@/utils'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import { FormFieldType } from '@/types'
 

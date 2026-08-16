@@ -11,17 +11,17 @@ export const Address: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-address" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-address" field={field} locale={locale} {...restProps}>
       <div className="space-y-4">
         <input
           type="text"
-          className="heyform-input"
+          className="kyndform-input"
           placeholder={t('Address Line 1', { lng: locale })}
           disabled={true}
         />
         <input
           type="text"
-          className="heyform-input"
+          className="kyndform-input"
           placeholder={t('Address Line 2 (optional)', { lng: locale })}
           disabled={true}
         />
@@ -29,13 +29,13 @@ export const Address: FC<BlockProps> = ({ field, locale, ...restProps }) => {
         <div className="flex items-center space-x-4">
           <input
             type="text"
-            className="heyform-input"
+            className="kyndform-input"
             placeholder={t('City', { lng: locale })}
             disabled={true}
           />
           <input
             type="text"
-            className="heyform-input"
+            className="kyndform-input"
             placeholder={t('State/Province', { lng: locale })}
             disabled={true}
           />
@@ -44,7 +44,7 @@ export const Address: FC<BlockProps> = ({ field, locale, ...restProps }) => {
         <div className="flex items-center space-x-4">
           <input
             type="text"
-            className="heyform-input"
+            className="kyndform-input"
             placeholder={t('Zip/Postal Code', { lng: locale })}
             disabled={true}
           />

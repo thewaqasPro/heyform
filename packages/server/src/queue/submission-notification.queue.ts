@@ -2,8 +2,8 @@ import { Process, Processor } from '@nestjs/bull'
 import { Job } from 'bull'
 
 import { APP_HOMEPAGE_URL } from '@environments'
-import { answersToHtml } from '@heyform-inc/answer-utils'
-import { date } from '@heyform-inc/utils'
+import { answersToHtml } from '@kyndform/answer-utils'
+import { date } from '@kyndform/utils'
 import { FormService, MailService, SubmissionService, TeamService, UserService } from '@service'
 
 import { BaseQueue, IntegrationQueueJob } from './base.queue'
@@ -41,7 +41,7 @@ export class SubmissionNotificationQueue extends BaseQueue {
     }
 
     const logo = form.themeSettings?.logo || team?.avatar || ''
-    const workspaceName = team?.name || form.name || 'HeyForm'
+    const workspaceName = team?.name || form.name || 'KyndForm'
     const submissionDate = date(submission.startAt ? submission.startAt * 1000 : Date.now()).format(
       'MMMM D, YYYY · h:mm A'
     )

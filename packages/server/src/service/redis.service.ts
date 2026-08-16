@@ -3,7 +3,7 @@ import { InjectRedis } from '@svtslv/nestjs-ioredis'
 import { randomUUID } from 'crypto'
 import { Redis } from 'ioredis'
 
-import { hs } from '@heyform-inc/utils'
+import { hs } from '@kyndform/utils'
 
 interface BaseOptions {
   key: string

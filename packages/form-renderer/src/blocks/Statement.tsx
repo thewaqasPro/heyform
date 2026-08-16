@@ -6,7 +6,7 @@ import { Form } from './Form'
 
 export const Statement: FC<BlockProps> = ({ field, ...restProps }) => {
   return (
-    <Block className="heyform-statement heyform-empty-state" field={field} {...restProps}>
+    <Block className="kyndform-statement kyndform-empty-state" field={field} {...restProps}>
       <Form field={field} />
     </Block>
   )

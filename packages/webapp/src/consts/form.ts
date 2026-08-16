@@ -1,4 +1,4 @@
-import { FieldKindEnum, FieldLayoutAlignEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, FieldLayoutAlignEnum } from '@kyndform/shared-types-enums'
 import { IconCalendar, IconEyeOff, IconVariable } from '@tabler/icons-react'
 
 import IconAddress from '@/assets/address.svg?react'

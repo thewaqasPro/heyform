@@ -8,7 +8,7 @@ import {
 
 import { COOKIE_DEVICE_ID_NAME } from '@config'
 import { SESSION_MAX_AGE } from '@environments'
-import { helper, hs, timestamp } from '@heyform-inc/utils'
+import { helper, hs, timestamp } from '@kyndform/utils'
 import { GqlExecutionContext } from '@nestjs/graphql'
 import { AuthService, UserService } from '@service'
 

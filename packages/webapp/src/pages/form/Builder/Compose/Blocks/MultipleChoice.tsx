@@ -4,8 +4,8 @@ import {
   InputRef,
   getChoiceKeyName,
   preventDefault
-} from '@heyform-inc/form-renderer'
-import { Choice, ChoiceBadgeEnum } from '@heyform-inc/shared-types-enums'
+} from '@kyndform/form-renderer'
+import { Choice, ChoiceBadgeEnum } from '@kyndform/shared-types-enums'
 import { IconX } from '@tabler/icons-react'
 import { clsx } from 'clsx'
 import { FC, KeyboardEvent, Ref, useCallback, useMemo, useRef, useState } from 'react'
@@ -13,7 +13,7 @@ import { useTranslation } from 'react-i18next'
 import { ReactSortable } from 'react-sortablejs'
 
 import { cn, nextTick } from '@/utils'
-import { clone, excludeObject, helper, nanoid } from '@heyform-inc/utils'
+import { clone, excludeObject, helper, nanoid } from '@kyndform/utils'
 
 import { useStoreContext } from '../../store'
 import type { BlockProps } from './Block'
@@ -89,20 +89,20 @@ const MultipleChoiceItem: FC<MultipleChoiceItemProps> = ({
   }
 
   return (
-    <div className="heyform-radio">
-      <div className="heyform-radio-container">
-        <div className="heyform-radio-content">
+    <div className="kyndform-radio">
+      <div className="kyndform-radio-container">
+        <div className="kyndform-radio-content">
           <div
             className={cn(
-              'heyform-radio-hotkey',
-              isOther ? null : 'heyform-multiple-choice-handle cursor-move'
+              'kyndform-radio-hotkey',
+              isOther ? null : 'kyndform-multiple-choice-handle cursor-move'
             )}
           >
             {getChoiceKeyName(badge, index)}
           </div>
-          <div className="heyform-radio-label">
+          <div className="kyndform-radio-label">
             {isOther ? (
-              <div className="heyform-radio-label-other cursor-default">{choice.label}</div>
+              <div className="kyndform-radio-label-other cursor-default">{choice.label}</div>
             ) : (
               <AutoResizeTextarea
                 ref={ref}
@@ -116,7 +116,7 @@ const MultipleChoiceItem: FC<MultipleChoiceItemProps> = ({
             )}
           </div>
           {enableRemove && (
-            <div className="heyform-radio-remove" onClick={handleRemove}>
+            <div className="kyndform-radio-remove" onClick={handleRemove}>
               <IconX />
             </div>
           )}
@@ -284,19 +284,19 @@ export const MultipleChoice: FC<BlockProps> = ({ field, locale, ...restProps }) 
   )
 
   return (
-    <Block className="heyform-multiple-choice" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-multiple-choice" field={field} locale={locale} {...restProps}>
       {field.properties && (
         <ReactSortable
-          className={clsx('heyform-multiple-choice-list', {
-            'heyform-multiple-choice-horizontal': helper.isFalse(
+          className={clsx('kyndform-multiple-choice-list', {
+            'kyndform-multiple-choice-horizontal': helper.isFalse(
               field.properties!.verticalAlignment
             )
           })}
-          ghostClass="heyform-multiple-choice-ghost"
-          chosenClass="heyform-multiple-choice-chosen"
-          dragClass="heyform-multiple-choice-dragging"
-          fallbackClass="heyform-multiple-choice-cloned"
-          handle=".heyform-multiple-choice-handle"
+          ghostClass="kyndform-multiple-choice-ghost"
+          chosenClass="kyndform-multiple-choice-chosen"
+          dragClass="kyndform-multiple-choice-dragging"
+          fallbackClass="kyndform-multiple-choice-cloned"
+          handle=".kyndform-multiple-choice-handle"
           list={choices}
           setList={handleSetList}
           delay={10}
@@ -355,8 +355,8 @@ export const MultipleChoice: FC<BlockProps> = ({ field, locale, ...restProps }) 
         </ReactSortable>
       )}
 
-      <div className="heyform-add-choice">
-        <Button.Link className="heyform-add-column" onClick={() => handleAddChoiceCallback()}>
+      <div className="kyndform-add-choice">
+        <Button.Link className="kyndform-add-column" onClick={() => handleAddChoiceCallback()}>
           {t('form.builder.compose.addChoice')}
         </Button.Link>
       </div>

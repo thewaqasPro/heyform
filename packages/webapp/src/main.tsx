@@ -70,8 +70,8 @@ async function loadRuntimeConfig() {
     if (response.ok) {
       const config = await response.json()
 
-      window.heyform = {
-        ...(window.heyform || {}),
+      window.kyndform = {
+        ...(window.kyndform || {}),
         ...config
       }
     }

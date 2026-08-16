@@ -1,11 +1,11 @@
-import { Column, FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { Column, FieldKindEnum } from '@kyndform/shared-types-enums'
 import { useBoolean } from 'ahooks'
 import { FC, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { SubmissionService } from '@/services'
 import { getFileUploadValue, timeFromNow, useParam } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Pagination, useToast } from '@/components'
 
@@ -39,24 +39,24 @@ const InputTableItem: FC<InputTableItemProps> = ({ columns, answers: rawAnswers 
           {columns.map(c => (
             <th
               key={c.id}
-              className="heyform-report-border text-secondary border-b py-2 text-sm/6 font-medium"
+              className="kyndform-report-border text-secondary border-b py-2 text-sm/6 font-medium"
             >
               {c.label}
             </th>
           ))}
-          <th className="heyform-report-border border-b"></th>
+          <th className="kyndform-report-border border-b"></th>
         </tr>
       </thead>
 
-      <tbody className="heyform-report-divide divide-y">
+      <tbody className="kyndform-report-divide divide-y">
         {answers.map((row: any, index: number) => (
           <tr key={index}>
             {columns.map(c => (
-              <td key={c.id} className="heyform-report-input-value">
+              <td key={c.id} className="kyndform-report-input-value">
                 {row.value[c.id]}
               </td>
             ))}
-            <td className="heyform-report-input-datetime">
+            <td className="kyndform-report-input-datetime">
               {timeFromNow(row.endAt, i18n.language)}
             </td>
           </tr>
@@ -104,13 +104,13 @@ const SubmissionItem: FC<SubmissionItemProps> = ({ answers = [] }) => {
   const { i18n } = useTranslation()
 
   return (
-    <div className="heyform-report-divide divide-y">
+    <div className="kyndform-report-divide divide-y">
       {answers.map(row => (
-        <div className="heyform-report-answer" key={row.submissionId}>
-          <div className="heyform-report-value">
+        <div className="kyndform-report-answer" key={row.submissionId}>
+          <div className="kyndform-report-value">
             <AnswerValue answer={row} />
           </div>
-          <div className="heyform-report-datetime">{timeFromNow(row.endAt, i18n.language)}</div>
+          <div className="kyndform-report-datetime">{timeFromNow(row.endAt, i18n.language)}</div>
         </div>
       ))}
     </div>
@@ -169,7 +169,7 @@ export default function FormReportSubmissions({ response }: any) {
 
       {total > 10 && (
         <Pagination
-          className="heyform-report-pagination"
+          className="kyndform-report-pagination"
           total={total}
           page={page}
           pageSize={10}

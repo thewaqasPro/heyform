@@ -4,7 +4,7 @@ import type { FC } from 'react'
 import { useState } from 'react'
 
 import { useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { FormField, PhoneNumberInput } from '../components'
 import { useStore } from '../store'
@@ -23,8 +23,8 @@ export const PhoneNumber: FC<BlockProps> = ({ field, ...restProps }) => {
 
   return (
     <Block
-      className={clsx('heyform-phone-number', {
-        'heyform-dropdown-visible': isDropdownShown
+      className={clsx('kyndform-phone-number', {
+        'kyndform-dropdown-visible': isDropdownShown
       })}
       field={field}
       isScrollable={!isDropdownShown}

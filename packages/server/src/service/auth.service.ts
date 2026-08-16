@@ -18,15 +18,7 @@ import {
   VERIFY_EMAIL_RESEND_COOLDOWN,
   VERIFY_EMAIL_RESEND_DAILY_LIMIT
 } from '@environments'
-import {
-  helper,
-  hs,
-  isDateExpired,
-  nanoid,
-  parseNumber,
-  random,
-  timestamp
-} from '@heyform-inc/utils'
+import { helper, hs, isDateExpired, nanoid, parseNumber, random, timestamp } from '@kyndform/utils'
 import { UserActivityKindEnum, UserActivityModel } from '@model'
 import { aesDecryptObject, aesEncryptObject } from '@utils'
 import { UserAgent } from '@utils'
@@ -55,7 +47,7 @@ const DEFAULT_ATTEMPTS_OPTIONS = {
   expire: '15m'
 }
 const NUMERIC_ALPHABET = '0123456789'
-const OAUTH_STATE_COOKIE_NAME = 'HEYFORM_OAUTH_STATE'
+const OAUTH_STATE_COOKIE_NAME = 'KYNDFORM_OAUTH_STATE'
 const OAUTH_STATE_MAX_AGE = hs('10m')
 
 @Injectable()
@@ -84,7 +76,12 @@ export class AuthService {
   }
 
   getDeviceId(req: any): string {
-    return req.cookies?.[COOKIE_DEVICE_ID_NAME] || req.headers?.['x-device-id'] || nanoid()
+    return (
+      req.cookies?.[COOKIE_DEVICE_ID_NAME] ||
+      req.cookies?.['KYNDFORM_DEVICE_ID'] ||
+      req.headers?.['x-device-id'] ||
+      nanoid()
+    )
   }
 
   async createOAuthState(req: any, res: any, deviceId: string): Promise<string> {
@@ -189,7 +186,7 @@ export class AuthService {
   }
 
   getSession(req: any): any {
-    const cookie = req.cookies[COOKIE_SESSION_NAME]
+    const cookie = req.cookies[COOKIE_SESSION_NAME] || req.cookies['KYNDFORM_SESSION']
 
     try {
       return aesDecryptObject(cookie, SESSION_KEY)

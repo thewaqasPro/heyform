@@ -1,6 +1,6 @@
-import { Answer, CHOICES_FIELD_KINDS, FormField } from '@heyform-inc/shared-types-enums'
+import { Answer, CHOICES_FIELD_KINDS, FormField } from '@kyndform/shared-types-enums'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { fieldsToValidateRules } from './fields-to-validate-rules'
 import { validate } from './validate'

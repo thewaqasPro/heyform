@@ -17,7 +17,7 @@ RUN pnpm build:webapp
 RUN mkdir -p $APP_PATH/packages/server/static
 RUN cp -R $APP_PATH/packages/webapp/dist/static/. $APP_PATH/packages/server/static/
 RUN cp $APP_PATH/packages/webapp/dist/index.html $APP_PATH/packages/server/view/index.html
-RUN pnpm --filter=server --prod deploy /app/prod-server
+RUN pnpm --filter=./packages/server --prod deploy /app/prod-server
 
 FROM node:20-alpine3.19 AS runner
 

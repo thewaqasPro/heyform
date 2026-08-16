@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, ForbiddenException, Injectable } from '@nestjs/common'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { GqlExecutionContext } from '@nestjs/graphql'
 
 @Injectable()

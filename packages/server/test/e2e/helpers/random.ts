@@ -9,7 +9,7 @@ export function randomString(length = 10, alphabet = ALPHABET): string {
 }
 
 export function uniqueEmail(prefix = 'e2e'): string {
-  return `${prefix}.${Date.now().toString(36)}.${randomString(6)}@heyform.com`
+  return `${prefix}.${Date.now().toString(36)}.${randomString(6)}@kyndform.com`
 }
 
 export function uniqueName(prefix = 'E2E'): string {

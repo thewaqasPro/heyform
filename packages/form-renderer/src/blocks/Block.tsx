@@ -1,10 +1,10 @@
-import { FieldLayoutAlignEnum } from '@heyform-inc/shared-types-enums'
+import { FieldLayoutAlignEnum } from '@kyndform/shared-types-enums'
 import clsx from 'clsx'
 import { FC, WheelEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 import { removeHeading, replaceHTML } from '../utils'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import { Layout } from '../components'
 import { useStore } from '../store'
@@ -284,7 +284,7 @@ export const Block: FC<BlockProps> = ({
 
         const interactiveElement = container.querySelector<HTMLElement>(
           [
-            '[data-heyform-focus-target]:not([disabled])',
+            '[data-kyndform-focus-target]:not([disabled])',
             'input:not([type="hidden"]):not([disabled])',
             'textarea:not([disabled])',
             'select:not([disabled])',
@@ -320,28 +320,28 @@ export const Block: FC<BlockProps> = ({
   return (
     <div
       ref={bodyRef}
-      id={`heyform-${state.instanceId}-${field.id}`}
-      className={clsx('heyform-body', {
-        'heyform-body-split-layout': isSplitLayout,
-        'heyform-body-active': isActiveBlock,
-        'heyform-body-leaving': isLeaving
+      id={`kyndform-${state.instanceId}-${field.id}`}
+      className={clsx('kyndform-body', {
+        'kyndform-body-split-layout': isSplitLayout,
+        'kyndform-body-active': isActiveBlock,
+        'kyndform-body-leaving': isLeaving
       })}
       tabIndex={isActiveBlock ? -1 : undefined}
       aria-hidden={!isActiveBlock}
     >
       {/* Theme background */}
-      <div className="heyform-theme-background" />
+      <div className="kyndform-theme-background" />
 
       {/* Block container */}
       <div
-        className={clsx('heyform-block-container', className)}
+        className={clsx('kyndform-block-container', className)}
         onWheel={handleWheelScroll}
         {...restProps}
       >
         {field.parent && (
-          <div className="heyform-block-group">
-            <div className="heyform-block-group-container">
-              <h2 className="heyform-block-title">
+          <div className="kyndform-block-group">
+            <div className="kyndform-block-group-container">
+              <h2 className="kyndform-block-title">
                 {htmlUtils.plain(field.parent.title as string)}
               </h2>
             </div>
@@ -349,38 +349,38 @@ export const Block: FC<BlockProps> = ({
         )}
 
         <div
-          className={clsx('heyform-block', {
-            [`heyform-block-direction-${transitionDirection}`]: transitionDirection,
-            'heyform-block-entered': isTransitionReady && !isLeaving,
-            'heyform-block-entering': !isTransitionReady && !isLeaving,
-            'heyform-block-leaving': isLeaving,
-            'heyform-block-leaving-active': isTransitionReady && isLeaving,
-            'heyform-block-inactive':
+          className={clsx('kyndform-block', {
+            [`kyndform-block-direction-${transitionDirection}`]: transitionDirection,
+            'kyndform-block-entered': isTransitionReady && !isLeaving,
+            'kyndform-block-entering': !isTransitionReady && !isLeaving,
+            'kyndform-block-leaving': isLeaving,
+            'kyndform-block-leaving-active': isTransitionReady && isLeaving,
+            'kyndform-block-inactive':
               !isLeaving &&
               !isActiveBlock &&
               !isStandaloneActive &&
               !(helper.isValid(paymentBlockIndex) && paymentBlockIndex === state.scrollIndex),
-            [`heyform-block-${field.layout?.align}`]: field.layout?.align
+            [`kyndform-block-${field.layout?.align}`]: field.layout?.align
           })}
         >
-          <div className="heyform-block-scroll">
+          <div className="kyndform-block-scroll">
             {/* Field layout */}
             {!isInlineLayout && <Layout {...field.layout} />}
 
-            <div className="heyform-scroll-wrapper" onScroll={handleScroll}>
-              <div className="heyform-scroll-container">
-                <div className="heyform-block-main">
-                  <div className="heyform-block-wrapper">
-                    <div className="heyform-block-header">
+            <div className="kyndform-scroll-wrapper" onScroll={handleScroll}>
+              <div className="kyndform-scroll-container">
+                <div className="kyndform-block-main">
+                  <div className="kyndform-block-wrapper">
+                    <div className="kyndform-block-header">
                       {field.title && (
                         <h1
-                          className="heyform-block-title"
+                          className="kyndform-block-title"
                           dangerouslySetInnerHTML={{ __html: removeHeading(field.title as string) }}
                         />
                       )}
                       {field.description && (
                         <div
-                          className="heyform-block-description"
+                          className="kyndform-block-description"
                           dangerouslySetInnerHTML={{ __html: field.description as string }}
                         />
                       )}

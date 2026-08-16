@@ -22,7 +22,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: heyform/community-edition
+          images: kyndform/community-edition
           tags: |
             type=raw,value=latest
             type=ref,event=tag
@@ -54,4 +54,4 @@ jobs:
           url: ${{ secrets.BUILD_NOTIFICATION_URL }}
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"msg_type": "text","content": {"text": "HeyForm docker image build failed"}}'
+          data: '{"msg_type": "text","content": {"text": "KyndForm docker image build failed"}}'

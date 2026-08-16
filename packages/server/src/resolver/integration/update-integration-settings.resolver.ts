@@ -2,7 +2,7 @@ import { BadRequestException } from '@nestjs/common'
 
 import { Auth, FormGuard } from '@decorator'
 import { UpdateIntegrationInput } from '@graphql'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { IntegrationStatusEnum } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { AppService, IntegrationService } from '@service'

@@ -6,12 +6,12 @@ import { Standard } from './standard'
 import { ModalSettings } from './type'
 
 const MODAL_TEMPLATE = `
-  <div id="{containerId}" class="heyform__modal heyform__modal-{size}">
-    <div class="heyform__iframe-container">
+  <div id="{containerId}" class="kyndform__modal kyndform__modal-{size}">
+    <div class="kyndform__iframe-container">
       <iframe src="{src}" allow="microphone; camera"></iframe>
-      <div class="heyform__loading-container">${IconLoading}</div>
+      <div class="kyndform__loading-container">${IconLoading}</div>
     </div>
-    <button type="button" class="heyform__close-button" onclick="HeyForm.closeModal('{formId}')">
+    <button type="button" class="kyndform__close-button" onclick="KyndForm.closeModal('{formId}')">
       ${IconClose}
     </button>
   </div>
@@ -21,14 +21,14 @@ export class Modal<T extends ModalSettings> extends Standard<T> {
   protected isOpen = false
 
   override render() {
-    const $button = this.$container.find('.heyform__trigger-button')
+    const $button = this.$container.find('.kyndform__trigger-button')
 
     if ($button.exists()) {
       if (this.settings.triggerBackground) {
         $button.style('background', this.settings.triggerBackground)
 
         if (colorIsDark(this.settings.triggerBackground)) {
-          $button.addClass('heyform__trigger-button-dark')
+          $button.addClass('kyndform__trigger-button-dark')
         }
       }
 
@@ -61,7 +61,7 @@ export class Modal<T extends ModalSettings> extends Standard<T> {
       const $el = $(`#${this.containerId}`)
 
       $el.find('iframe').get(0).onload = () => {
-        $el.find('.heyform__loading-container').remove()
+        $el.find('.kyndform__loading-container').remove()
       }
     }, 0)
   }
@@ -98,7 +98,7 @@ export class Modal<T extends ModalSettings> extends Standard<T> {
 
     if (this.settings.hideAfterSubmit) {
       window.onmessage = ({ data }: MessageEvent) => {
-        if (!isPlainObject(data) || data.source !== 'HEYFORM') {
+        if (!isPlainObject(data) || data.source !== 'KYNDFORM') {
           return
         }
 

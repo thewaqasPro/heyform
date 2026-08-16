@@ -3,8 +3,8 @@ import { Response } from 'express'
 
 import { Auth, FormGuard } from '@decorator'
 import { ExportSubmissionsDto } from '@dto'
-import { flattenFields } from '@heyform-inc/answer-utils'
-import { date } from '@heyform-inc/utils'
+import { flattenFields } from '@kyndform/answer-utils'
+import { date } from '@kyndform/utils'
 import { ExportFileService, FormService, SubmissionService } from '@service'
 
 @Controller()

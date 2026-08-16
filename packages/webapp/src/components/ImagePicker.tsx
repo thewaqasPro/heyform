@@ -1,4 +1,4 @@
-import { preventDefault } from '@heyform-inc/form-renderer'
+import { preventDefault } from '@kyndform/form-renderer'
 import {
   Close,
   Content,

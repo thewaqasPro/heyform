@@ -47,32 +47,32 @@ export const Radio: FC<RadioProps> = ({
   return (
     <div
       className={clsx(
-        'heyform-radio',
+        'kyndform-radio',
         {
-          'heyform-radio-selected': isChecked
+          'kyndform-radio-selected': isChecked
         },
         className
       )}
       onClick={handleClick}
       {...restProps}
     >
-      <div className="heyform-radio-container">
+      <div className="kyndform-radio-container">
         {enableImage && (
-          <div className="heyform-radio-image">
+          <div className="kyndform-radio-image">
             {isURL(image) ? (
               <img src={image} alt={label} />
             ) : icon ? (
               icon
             ) : (
-              <IconPhoto className="heyform-radio-placeholder" />
+              <IconPhoto className="kyndform-radio-placeholder" />
             )}
           </div>
         )}
-        <div className="heyform-radio-content">
-          {keyName && isHotkeyShow && <div className="heyform-radio-hotkey">{keyName}</div>}
-          <div className="heyform-radio-label">{label}</div>
+        <div className="kyndform-radio-content">
+          {keyName && isHotkeyShow && <div className="kyndform-radio-hotkey">{keyName}</div>}
+          <div className="kyndform-radio-label">{label}</div>
         </div>
-        <div className="heyform-radio-icon">
+        <div className="kyndform-radio-icon">
           <IconCheck />
         </div>
       </div>

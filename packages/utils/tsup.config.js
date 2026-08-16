@@ -7,6 +7,5 @@ module.exports = {
   format: ['cjs', 'esm'],
   splitting: false,
   treeshake: true,
-  clean: true,
-  noExternal: ['nanoid', 'uuid']
+  clean: true
 }

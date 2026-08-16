@@ -1,4 +1,4 @@
-import { FormSettings } from '@heyform-inc/shared-types-enums'
+import { FormSettings } from '@kyndform/shared-types-enums'
 import { BadRequestException } from '@nestjs/common'
 
 export const OPEN_FORM_TOKEN_MAX_AGE_SECONDS = 24 * 60 * 60

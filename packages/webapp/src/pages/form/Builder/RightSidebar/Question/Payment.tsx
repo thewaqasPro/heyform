@@ -1,4 +1,4 @@
-import { NumberPrice } from '@heyform-inc/shared-types-enums'
+import { NumberPrice } from '@kyndform/shared-types-enums'
 import { IconArrowUpRight } from '@tabler/icons-react'
 import { useBoolean, useRequest } from 'ahooks'
 import { startTransition, useCallback, useMemo, useState } from 'react'
@@ -6,7 +6,7 @@ import { Trans, useTranslation } from 'react-i18next'
 
 import { PaymentService } from '@/services'
 import { useParam, useWindow } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Input, Select, useAlert } from '@/components'
 import { useFormStore } from '@/store'
@@ -29,7 +29,7 @@ const CURRENCY_OPTIONS = [
   { value: 'BRL', label: 'form.builder.settings.payment.brl' }
 ]
 
-const POPUP_WINDOW_SOURCE = 'heyform-connect-stripe'
+const POPUP_WINDOW_SOURCE = 'kyndform-connect-stripe'
 
 export default function PaymentSettings({ field }: RequiredSettingsProps) {
   const { t } = useTranslation()

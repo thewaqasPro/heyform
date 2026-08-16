@@ -1,8 +1,8 @@
-import { ChoiceBadgeEnum, Validation } from '@heyform-inc/shared-types-enums'
+import { ChoiceBadgeEnum, Validation } from '@kyndform/shared-types-enums'
 import { FC, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Input, Select, Switch } from '@/components'
 

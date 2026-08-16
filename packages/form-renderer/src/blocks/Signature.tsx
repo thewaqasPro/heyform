@@ -17,7 +17,7 @@ export const Signature: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-signature" field={field} {...restProps}>
+    <Block className="kyndform-signature" field={field} {...restProps}>
       <Form
         initialValues={{
           input: state.values[field.id]

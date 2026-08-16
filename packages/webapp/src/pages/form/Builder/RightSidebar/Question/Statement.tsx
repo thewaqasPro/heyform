@@ -1,4 +1,4 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import { startTransition, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -22,7 +22,7 @@ export default function StatementSettings({ field }: RequiredSettingsProps) {
         return t('Next', { lng: state.locale })
 
       case FieldKindEnum.THANK_YOU:
-        return t('Create a heyform', { lng: state.locale })
+        return t('Create a kyndform', { lng: state.locale })
     }
   }, [field.kind, field.properties?.buttonText, state.locale, t])
 

@@ -10,10 +10,10 @@ export const Email: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-email" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-email" field={field} locale={locale} {...restProps}>
       <input
         type="email"
-        className="heyform-input"
+        className="kyndform-input"
         placeholder="email@example.com"
         disabled={true}
       />

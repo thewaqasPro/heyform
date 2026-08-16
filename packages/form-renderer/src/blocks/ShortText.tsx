@@ -17,7 +17,7 @@ export const ShortText: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-short-text" field={field} {...restProps}>
+    <Block className="kyndform-short-text" field={field} {...restProps}>
       <Form
         initialValues={{
           input: state.values[field.id]

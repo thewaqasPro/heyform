@@ -1,8 +1,8 @@
-import { FormModel } from '@heyform-inc/shared-types-enums'
+import { FormModel } from '@kyndform/shared-types-enums'
 import { FC } from 'react'
 
 import { useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { ThankYou } from './ThankYou'
 
@@ -18,7 +18,7 @@ export const ClosedMessage: FC<ClosedMessageProps> = ({ form }) => {
     title: t('Form unavailable'),
     description: t("The form can't receive new submissions now."),
     properties: {
-      buttonText: t('Create a heyform')
+      buttonText: t('Create a kyndform')
     }
   }
 

@@ -7,7 +7,7 @@ import {
   HiddenFieldAnswer,
   SubmissionCategoryEnum,
   SubmissionStatusEnum
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import {
   BadRequestException,
   Controller,
@@ -31,8 +31,8 @@ import {
   uploadFileFilter
 } from '@config'
 import { APP_HOMEPAGE_URL, UPLOAD_FILE_SIZE } from '@environments'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper, nanoid, timestamp } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper, nanoid, timestamp } from '@kyndform/utils'
 import { FormModel } from '@model'
 import {
   EndpointService,

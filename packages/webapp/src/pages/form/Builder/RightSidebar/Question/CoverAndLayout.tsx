@@ -1,9 +1,9 @@
-import { FieldLayoutAlignEnum } from '@heyform-inc/shared-types-enums'
+import { FieldLayoutAlignEnum } from '@kyndform/shared-types-enums'
 import { startTransition, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, ImagePicker } from '@/components'
 import { LAYOUT_OPTIONS } from '@/consts'

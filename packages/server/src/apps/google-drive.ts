@@ -1,9 +1,9 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import { google } from 'googleapis'
 import got from 'got'
 import { Readable } from 'stream'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { FormModel, SubmissionModel } from '@model'
 
 export interface GoogleDriveConfig {

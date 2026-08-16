@@ -1,12 +1,12 @@
 version: '3.9'
 
 networks:
-  heyform-mongo:
-  heyform-keydb:
+  kyndform-mongo:
+  kyndform-keydb:
 
 services:
-  heyform:
-    image: heyform-local:test
+  kyndform:
+    image: kyndform-local:test
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,8 +16,9 @@ services:
       - keydb
     ports:
       - '9157:9157'
+      - '8000:8000'
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:9157/health/ready >/dev/null || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:8000/health/ready >/dev/null || exit 1"]
       interval: 15s
       timeout: 3s
       retries: 5
@@ -25,10 +26,10 @@ services:
     env_file:
       - .env
     environment:
-      APP_HOMEPAGE_URL: ${APP_HOMEPAGE_URL:-http://localhost:9157}
+      APP_HOMEPAGE_URL: ${APP_HOMEPAGE_URL:-http://localhost:8000}
       SESSION_KEY: ${SESSION_KEY:?SESSION_KEY is required}
       FORM_ENCRYPTION_KEY: ${FORM_ENCRYPTION_KEY:?FORM_ENCRYPTION_KEY is required}
-      MONGO_URI: mongodb://mongo:27017/heyform
+      MONGO_URI: mongodb://mongo:27017/kyndform
       REDIS_HOST: keydb
       REDIS_PORT: 6379
       SMTP_FROM: ${SMTP_FROM}
@@ -44,8 +45,8 @@ services:
       - ./assets:/app/packages/server/static/upload
       - ./assets:/app/packages/server/uploads
     networks:
-      - heyform-mongo
-      - heyform-keydb
+      - kyndform-mongo
+      - kyndform-keydb
 
   mongo:
     image: percona/percona-server-mongodb:4.4
@@ -55,7 +56,7 @@ services:
     volumes:
       - mongodb_data:/data/db
     networks:
-      - heyform-mongo
+      - kyndform-mongo
 
   keydb:
     image: eqalpha/keydb:latest
@@ -66,7 +67,7 @@ services:
     volumes:
       - keydb_data:/data
     networks:
-      - heyform-keydb
+      - kyndform-keydb
 
 volumes:
   mongodb_data:

@@ -1,6 +1,6 @@
 declare global {
   interface Window {
-    heyform: {
+    kyndform: {
       device: {
         ios: boolean
         android: boolean

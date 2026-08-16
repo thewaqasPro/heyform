@@ -1,7 +1,7 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import got from 'got'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { FormModel, SubmissionModel } from '@model'
 
 export interface HubspotConfig {

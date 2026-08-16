@@ -12,7 +12,7 @@ import {
   VERIFY_EMAIL_RESEND_COOLDOWN,
   VERIFY_USER_EMAIL
 } from '@environments'
-import { hs } from '@heyform-inc/utils'
+import { hs } from '@kyndform/utils'
 import { TRUSTED_UPLOAD_ORIGINS } from '@utils'
 
 @Controller()
@@ -66,10 +66,10 @@ export class DashboardController {
   @Header('X-Frame-Options', 'SAMEORIGIN')
   index(@Res() res: Response) {
     return res.render('index', {
-      title: 'HeyForm Dashboard - Create and Manage Custom Forms Effortlessly',
+      title: 'KyndForm Dashboard - Create and Manage Custom Forms Effortlessly',
       description:
-        "Simplify your form creation process with HeyForm's intuitive dashboard. Design, customize, and manage forms all in one place, with no coding required.",
-      heyform: this.runtimeConfig()
+        "Simplify your form creation process with KyndForm's intuitive dashboard. Design, customize, and manage forms all in one place, with no coding required.",
+      kyndform: this.runtimeConfig()
     })
   }
 }

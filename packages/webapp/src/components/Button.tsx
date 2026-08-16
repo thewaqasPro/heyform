@@ -1,4 +1,4 @@
-import { preventDefault } from '@heyform-inc/form-renderer'
+import { preventDefault } from '@kyndform/form-renderer'
 import { IconCheck, IconCopy } from '@tabler/icons-react'
 import { ButtonHTMLAttributes, FC, ReactNode, useState } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'

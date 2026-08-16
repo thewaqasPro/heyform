@@ -4,7 +4,7 @@ import type { FC } from 'react'
 import { useState } from 'react'
 
 import { isFile, stopPropagation, useTranslation } from '../utils'
-import { formatBytes, parseBytes } from '@heyform-inc/utils'
+import { formatBytes, parseBytes } from '@kyndform/utils'
 
 import { ACCEPTED_FILE_MIMES, MAX_FILE_SIZE } from '../consts'
 import { IComponentProps } from '../typings'
@@ -84,8 +84,8 @@ export const FileUploader: FC<FileUploaderProps> = ({ value, onChange }) => {
 
   return (
     <div
-      className={clsx('heyform-file-uploader', {
-        'heyform-file-uploader-dragging': dragging
+      className={clsx('kyndform-file-uploader', {
+        'kyndform-file-uploader-dragging': dragging
       })}
       ref={setDragZoneRef}
       onDrop={handleDrop}
@@ -94,25 +94,25 @@ export const FileUploader: FC<FileUploaderProps> = ({ value, onChange }) => {
       onDragLeave={handleDrop}
       onClick={handleClick}
     >
-      <div className="heyform-upload-wrapper">
+      <div className="kyndform-upload-wrapper">
         {isFile(value) ? (
           <>
-            <IconFile className="heyform-upload-icon" />
-            <div className="heyform-upload-file mt-8">
+            <IconFile className="kyndform-upload-icon" />
+            <div className="kyndform-upload-file mt-8">
               {value!.name} ({formatBytes(value!.size)})
             </div>
-            <div className="heyform-upload-reselect">
+            <div className="kyndform-upload-reselect">
               <span>{t('Re-select file')}</span>
             </div>
           </>
         ) : (
           <>
-            <IconUpload className="heyform-upload-icon" />
+            <IconUpload className="kyndform-upload-icon" />
             <div className="mt-8">{t('Upload a file or drag and drop')}</div>
             {error ? (
-              <div className="heyform-validation-error mt-1">{error}</div>
+              <div className="kyndform-validation-error mt-1">{error}</div>
             ) : (
-              <div className="heyform-upload-size-limit">
+              <div className="kyndform-upload-size-limit">
                 {t('Size limit')}: {MAX_FILE_SIZE}
               </div>
             )}

@@ -2,7 +2,7 @@ import { BadRequestException } from '@nestjs/common'
 
 import { Auth, FormGuard, Team, User } from '@decorator'
 import { FormDetailInput } from '@graphql'
-import { nanoid } from '@heyform-inc/utils'
+import { nanoid } from '@kyndform/utils'
 import { TeamModel, UserModel } from '@model'
 import { Args, Query, Resolver } from '@nestjs/graphql'
 import { PaymentService, RedisService } from '@service'

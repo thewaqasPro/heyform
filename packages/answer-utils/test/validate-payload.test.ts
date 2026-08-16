@@ -3,7 +3,7 @@ import {
   CalculateEnum,
   ComparisonEnum,
   type LogicPayload
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { expect, test } from 'vitest'
 
 import { validatePayload } from '../src/validate-payload'

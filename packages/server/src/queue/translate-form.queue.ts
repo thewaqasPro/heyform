@@ -1,11 +1,11 @@
-import { CHOICES_FIELD_KINDS } from '@heyform-inc/shared-types-enums'
+import { CHOICES_FIELD_KINDS } from '@kyndform/shared-types-enums'
 import { Process, Processor } from '@nestjs/bull'
 import { Job } from 'bull'
 import { OpenAI } from 'openai'
 
 import { OPENAI_API_KEY, OPENAI_BASE_URL, OPENAI_GPT_MODEL } from '@environments'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 import { FormService } from '@service'
 import { TRANSLATION_LANGUAGE_NAMES, parseAIJson } from '@utils'
 

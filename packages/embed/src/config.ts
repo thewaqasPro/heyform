@@ -2,13 +2,10 @@ import { $ } from './utils'
 
 import { AnyMap, EmbedConfig } from './type'
 
-const ATTR_PREFIX = 'data-heyform-'
-const HIDDEN_FIELD_PREFIX = `${ATTR_PREFIX}hiddenfield-`
-const ID_ATTR_NAME = `${ATTR_PREFIX}id`
-const TYPE_ATTR_NAME = `${ATTR_PREFIX}type`
+const ATTR_PREFIXES = ['data-kyndform-', 'data-kyndform-']
 
 export function getConfigs() {
-  const $form = $(`[${ID_ATTR_NAME}]`)
+  const $form = $('[data-kyndform-id], [data-kyndform-id]')
 
   return $form.map(el => {
     const settings: AnyMap = {}
@@ -19,19 +16,24 @@ export function getConfigs() {
     names.forEach(name => {
       let key = name.toLowerCase()
 
-      if (key.startsWith(HIDDEN_FIELD_PREFIX)) {
-        key = key.replace(HIDDEN_FIELD_PREFIX, '')
-
-        hiddenFields[key] = el.getAttribute(name)
-      } else if (key.startsWith(ATTR_PREFIX)) {
-        key = key.replace(ATTR_PREFIX, '').replace(/(-)+([a-z])/gi, (_, __, s) => s.toUpperCase())
-
-        settings[key] = el.getAttribute(name)
+      for (const prefix of ATTR_PREFIXES) {
+        const hiddenPrefix = `${prefix}hiddenfield-`
+        if (key.startsWith(hiddenPrefix)) {
+          key = key.replace(hiddenPrefix, '')
+          hiddenFields[key] = el.getAttribute(name)
+          return
+        } else if (key.startsWith(prefix)) {
+          key = key.replace(prefix, '').replace(/(-)+([a-z])/gi, (_, __, s) => s.toUpperCase())
+          settings[key] = el.getAttribute(name)
+          return
+        }
       }
     })
 
-    const formId = el.getAttribute(ID_ATTR_NAME) as string
-    const type = el.getAttribute(TYPE_ATTR_NAME) as string
+    const formId = (el.getAttribute('data-kyndform-id') ||
+      el.getAttribute('data-kyndform-id')) as string
+    const type = (el.getAttribute('data-kyndform-type') ||
+      el.getAttribute('data-kyndform-type')) as string
 
     return {
       formId,

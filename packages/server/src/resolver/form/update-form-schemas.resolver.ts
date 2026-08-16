@@ -2,7 +2,7 @@ import { BadRequestException, HttpStatus } from '@nestjs/common'
 
 import { Auth, FormGuard } from '@decorator'
 import { FormSchemasType, UpdateFormSchemasInput } from '@graphql'
-import { timestamp } from '@heyform-inc/utils'
+import { timestamp } from '@kyndform/utils'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { FormService } from '@service'
 import { sanitizeFormDrafts } from '@utils'

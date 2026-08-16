@@ -27,7 +27,7 @@ async function withOutboundEnvironment<T>(
   fn: () => Promise<T>
 ): Promise<T> {
   const previousNodeEnv = process.env.NODE_ENV
-  const previousAllowPrivateOutbound = process.env.HEYFORM_ALLOW_PRIVATE_OUTBOUND
+  const previousAllowPrivateOutbound = process.env.KYNDFORM_ALLOW_PRIVATE_OUTBOUND
 
   if (nodeEnv === undefined) {
     delete process.env.NODE_ENV
@@ -36,9 +36,9 @@ async function withOutboundEnvironment<T>(
   }
 
   if (allowPrivateOutbound === undefined) {
-    delete process.env.HEYFORM_ALLOW_PRIVATE_OUTBOUND
+    delete process.env.KYNDFORM_ALLOW_PRIVATE_OUTBOUND
   } else {
-    process.env.HEYFORM_ALLOW_PRIVATE_OUTBOUND = allowPrivateOutbound
+    process.env.KYNDFORM_ALLOW_PRIVATE_OUTBOUND = allowPrivateOutbound
   }
 
   try {
@@ -51,9 +51,9 @@ async function withOutboundEnvironment<T>(
     }
 
     if (previousAllowPrivateOutbound === undefined) {
-      delete process.env.HEYFORM_ALLOW_PRIVATE_OUTBOUND
+      delete process.env.KYNDFORM_ALLOW_PRIVATE_OUTBOUND
     } else {
-      process.env.HEYFORM_ALLOW_PRIVATE_OUTBOUND = previousAllowPrivateOutbound
+      process.env.KYNDFORM_ALLOW_PRIVATE_OUTBOUND = previousAllowPrivateOutbound
     }
   }
 }

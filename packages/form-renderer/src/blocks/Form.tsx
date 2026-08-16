@@ -1,5 +1,5 @@
-import type { FormField } from '@heyform-inc/shared-types-enums'
-import { FieldKindEnum, NumberPrice } from '@heyform-inc/shared-types-enums'
+import type { FormField } from '@kyndform/shared-types-enums'
+import { FieldKindEnum, NumberPrice } from '@kyndform/shared-types-enums'
 import { IconChevronRight } from '@tabler/icons-react'
 import Big from 'big.js'
 import clsx from 'clsx'
@@ -15,8 +15,8 @@ import {
   useTranslation,
   validateLogicField
 } from '../utils'
-import { applyLogicToFields, validateFields } from '@heyform-inc/answer-utils'
-import { clone, helper } from '@heyform-inc/utils'
+import { applyLogicToFields, validateFields } from '@kyndform/answer-utils'
+import { clone, helper } from '@kyndform/utils'
 
 import { Submit } from '../components'
 import { removeStorage, useStore } from '../store'
@@ -264,8 +264,8 @@ export const Form: FC<FormProps> = ({
     dispatch({ type: 'scrollNext' })
   }
 
-  useEnterKey(`heyform-${state.instanceId}-${field.id}`, (event: KeyboardEvent) => {
-    if (window.heyform.device.mobile) {
+  useEnterKey(`kyndform-${state.instanceId}-${field.id}`, (event: KeyboardEvent) => {
+    if (window.kyndform.device.mobile) {
       return event.preventDefault()
     }
 
@@ -280,8 +280,8 @@ export const Form: FC<FormProps> = ({
 
   return (
     <RCForm
-      className={clsx('heyform-form', {
-        'heyform-form-last': isLastBlock
+      className={clsx('kyndform-form', {
+        'kyndform-form-last': isLastBlock
       })}
       autoComplete="off"
       form={form}
@@ -296,8 +296,8 @@ export const Form: FC<FormProps> = ({
       {isLastBlock || state.isScrollNextDisabled ? (
         <>
           {submitError && (
-            <div className="heyform-validation-wrapper">
-              <div className="heyform-validation-error">{submitError}</div>
+            <div className="kyndform-validation-wrapper">
+              <div className="kyndform-validation-error">{submitError}</div>
             </div>
           )}
           <Field shouldUpdate={true}>
@@ -330,7 +330,7 @@ export const Form: FC<FormProps> = ({
             </Field>
           )}
           {isSkippable && (
-            <button className="heyform-skip-button" onClick={handleSkip}>
+            <button className="kyndform-skip-button" onClick={handleSkip}>
               {t('Skip')}
             </button>
           )}

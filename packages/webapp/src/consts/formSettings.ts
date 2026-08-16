@@ -1,4 +1,4 @@
-import { CaptchaKindEnum } from '@heyform-inc/shared-types-enums'
+import { CaptchaKindEnum } from '@kyndform/shared-types-enums'
 
 export const CAPTCHA_KIND_OPTIONS = [
   {

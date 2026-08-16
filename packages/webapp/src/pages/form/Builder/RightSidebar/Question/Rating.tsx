@@ -1,4 +1,4 @@
-import { RATING_SHAPE_ICONS } from '@heyform-inc/form-renderer'
+import { RATING_SHAPE_ICONS } from '@kyndform/form-renderer'
 import { startTransition, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -67,10 +67,10 @@ export default function Rating({ field }: RequiredSettingsProps) {
         </label>
 
         <Select
-          className="heyform-rating-shape"
+          className="kyndform-rating-shape"
           options={shapeItems}
           contentProps={{
-            className: 'heyform-rating-shape'
+            className: 'kyndform-rating-shape'
           }}
           value={field.properties?.shape}
           onChange={value => handleChange('shape', value)}

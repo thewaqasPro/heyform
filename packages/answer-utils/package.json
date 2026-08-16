@@ -1,9 +1,9 @@
 {
-  "name": "@heyform-inc/answer-utils",
-  "description": "HeyForm Answer Utils",
+  "name": "@kyndform/answer-utils",
+  "description": "KyndForm Answer Utils",
   "version": "1.2.0",
-  "homepage": "https://heyform.net",
-  "author": "Heyooo, Inc.",
+  "homepage": "https://kyndform.com",
+  "author": "KyndForm, Inc.",
   "license": "AGPL-3.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -20,8 +20,8 @@
     "prebuild": "npm run clean"
   },
   "peerDependencies": {
-    "@heyform-inc/shared-types-enums": "^1.1.8",
-    "@heyform-inc/utils": "^1.2.0",
+    "@kyndform/shared-types-enums": "workspace:*",
+    "@kyndform/utils": "workspace:*",
     "big.js": "^6.2.1",
     "dayjs": "^1.11.3",
     "html5parser": "^2.0.2",
@@ -29,8 +29,8 @@
     "validator": "^13.7.0"
   },
   "dependencies": {
-    "@heyform-inc/shared-types-enums": "^1.1.8",
-    "@heyform-inc/utils": "^1.2.0",
+    "@kyndform/shared-types-enums": "workspace:*",
+    "@kyndform/utils": "workspace:*",
     "big.js": "^6.2.1",
     "dayjs": "^1.11.3",
     "html5parser": "^2.0.2",

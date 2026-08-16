@@ -7,13 +7,13 @@ import {
   LogicCondition,
   LogicPayload,
   Variable
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { IconPlus, IconTrash } from '@tabler/icons-react'
 import { type FC, type ReactNode, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { validatePayload } from '@heyform-inc/answer-utils'
-import { nanoid } from '@heyform-inc/utils'
+import { validatePayload } from '@kyndform/answer-utils'
+import { nanoid } from '@kyndform/utils'
 
 import { Button, Form, Tooltip } from '@/components'
 import { FormFieldType } from '@/types'

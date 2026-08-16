@@ -1,6 +1,6 @@
-import { FieldKindEnum, FormField } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, FormField } from '@kyndform/shared-types-enums'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 export function flattenFields(fields?: FormField[], withGroup = false): FormField[] {
   if (helper.isEmpty(fields)) {

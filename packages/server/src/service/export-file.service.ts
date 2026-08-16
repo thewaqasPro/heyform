@@ -4,12 +4,12 @@ import {
   FormField,
   HiddenField,
   STATEMENT_FIELD_KINDS
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import { Injectable } from '@nestjs/common'
 import { FieldInfo, parseAsync } from 'json2csv'
 
-import { htmlUtils, parsePlainAnswer } from '@heyform-inc/answer-utils'
-import { helper, unixDate } from '@heyform-inc/utils'
+import { htmlUtils, parsePlainAnswer } from '@kyndform/answer-utils'
+import { helper, unixDate } from '@kyndform/utils'
 import { SubmissionModel } from '@model'
 
 const FIELD_ID_KEY = '#'

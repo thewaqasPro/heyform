@@ -1,7 +1,7 @@
 import cookies from 'js-cookie'
 import store from 'store2'
 
-import { helper, nanoid } from '@heyform-inc/utils'
+import { helper, nanoid } from '@kyndform/utils'
 
 import {
   COOKIE_OPTIONS,

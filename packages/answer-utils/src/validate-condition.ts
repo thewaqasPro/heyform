@@ -7,9 +7,9 @@ import {
   LogicCondition,
   STATEMENT_FIELD_KINDS,
   TextCondition
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import {
   isAfterDate,

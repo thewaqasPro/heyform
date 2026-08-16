@@ -1,4 +1,4 @@
-import { CaptchaKindEnum } from '@heyform-inc/shared-types-enums'
+import { CaptchaKindEnum } from '@kyndform/shared-types-enums'
 import { useTranslation } from 'react-i18next'
 
 import { Form, Input, Switch } from '@/components'

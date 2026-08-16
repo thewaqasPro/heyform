@@ -4,12 +4,12 @@ import {
   type Logic,
   QUESTION_FIELD_KINDS,
   type Variable
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 
 import { getValidLogics, serializeFields } from '../utils'
 import { FormService } from '@/services'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { clone, helper, nanoid } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { clone, helper, nanoid } from '@kyndform/utils'
 
 import { FormFieldType } from '@/types'
 

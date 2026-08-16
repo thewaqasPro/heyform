@@ -42,8 +42,8 @@ export function build(baseUrl: string) {
       input: { name, email, password }
     })
     assert.strictEqual(ok, true, 'signUp should return true')
-    assert.ok(client.jar.get('HEYFORM_SESSION'), 'session cookie should be set')
-    assert.ok(client.jar.get('HEYFORM_LOGGED_IN'), 'logged-in flag cookie should be set')
+    assert.ok(client.jar.get('KYNDFORM_SESSION'), 'session cookie should be set')
+    assert.ok(client.jar.get('KYNDFORM_LOGGED_IN'), 'logged-in flag cookie should be set')
 
     const detail = await client.gqlOk<any>('userDetail', USER_DETAIL_GQL)
     assert.strictEqual(detail.email, email.toLowerCase())

@@ -16,7 +16,7 @@ function resolveUri(opts: ConnectOpts): string {
     opts.mongoUri ??
     process.env.E2E_MONGO_URI ??
     process.env.MONGO_URI ??
-    'mongodb://127.0.0.1:27017/heyform'
+    'mongodb://127.0.0.1:27017/kyndform'
   )
 }
 

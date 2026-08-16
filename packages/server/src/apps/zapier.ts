@@ -1,6 +1,7 @@
 import got from 'got'
 
 import { FormModel, SubmissionModel } from '@model'
+import { assertSafeOutboundRequest } from '@utils'
 
 export interface ZapierConfig {
   webhookUrl: string
@@ -15,7 +16,7 @@ interface RunArgs {
 export default {
   id: 'zapier',
   name: 'Zapier',
-  description: 'Connect HeyForm to 5,000+ apps on Zapier using a Zapier Catch Hook.',
+  description: 'Connect KyndForm to 5,000+ apps on Zapier using a Zapier Catch Hook.',
   icon: '/static/zapier.svg',
   settings: [
     {
@@ -29,6 +30,8 @@ export default {
   ],
   run: async ({ config, submission, form }: RunArgs) => {
     if (!config?.webhookUrl) return
+
+    const { lookup, url } = await assertSafeOutboundRequest(config.webhookUrl)
 
     const answersMap: Record<string, unknown> = {}
     if (Array.isArray(submission.answers)) {
@@ -49,7 +52,8 @@ export default {
       variables: submission.variables
     }
 
-    await got.post(config.webhookUrl, {
+    await got.post(url.toString(), {
+      lookup,
       json: payload,
       timeout: 15000,
       retry: 1

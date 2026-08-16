@@ -1,4 +1,4 @@
-import { TIME_FORMAT } from '@heyform-inc/form-renderer'
+import { TIME_FORMAT } from '@kyndform/form-renderer'
 import { IconChevronRight } from '@tabler/icons-react'
 import type { FC } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -19,41 +19,41 @@ export const DateRange: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const [h, m, timeDivider] = DATE_FORMAT_MAPS[TIME_FORMAT]
 
   return (
-    <Block className="heyform-date" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-date" field={field} locale={locale} {...restProps}>
       <div
-        className={cn('heyform-date-range flex items-center', {
-          'heyform-date-range-with-time': field.properties?.allowTime
+        className={cn('kyndform-date-range flex items-center', {
+          'kyndform-date-range-with-time': field.properties?.allowTime
         })}
       >
-        <div className="heyform-date-root heyform-start-date">
+        <div className="kyndform-date-root kyndform-start-date">
           <DateItem locale={locale} format={x} />
-          <div className="heyform-date-divider">{dateDivider}</div>
+          <div className="kyndform-date-divider">{dateDivider}</div>
           <DateItem locale={locale} format={y} />
-          <div className="heyform-date-divider">{dateDivider}</div>
+          <div className="kyndform-date-divider">{dateDivider}</div>
           <DateItem locale={locale} format={z} />
 
           {field.properties?.allowTime && (
             <>
               <DateItem locale={locale} format={h} />
-              <div className="heyform-date-divider">{timeDivider}</div>
+              <div className="kyndform-date-divider">{timeDivider}</div>
               <DateItem locale={locale} format={m} />
             </>
           )}
         </div>
 
-        <div className="heyform-date-range-divider">{t('form.builder.compose.dateRangeTo')}</div>
+        <div className="kyndform-date-range-divider">{t('form.builder.compose.dateRangeTo')}</div>
 
-        <div className="heyform-date-root heyform-end-date">
+        <div className="kyndform-date-root kyndform-end-date">
           <DateItem locale={locale} format={x} />
-          <div className="heyform-date-divider">{dateDivider}</div>
+          <div className="kyndform-date-divider">{dateDivider}</div>
           <DateItem locale={locale} format={y} />
-          <div className="heyform-date-divider">{dateDivider}</div>
+          <div className="kyndform-date-divider">{dateDivider}</div>
           <DateItem locale={locale} format={z} />
 
           {field.properties?.allowTime && (
             <>
               <DateItem locale={locale} format={h} />
-              <div className="heyform-date-divider">{timeDivider}</div>
+              <div className="kyndform-date-divider">{timeDivider}</div>
               <DateItem locale={locale} format={m} />
             </>
           )}

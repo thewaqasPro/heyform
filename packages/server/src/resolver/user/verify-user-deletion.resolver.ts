@@ -1,7 +1,7 @@
 import { Auth, User } from '@decorator'
 import { ACCOUNT_DELETION_SCHEDULE_INTERVAL } from '@environments'
 import { VerifyUserDeletionInput } from '@graphql'
-import { hs, timestamp } from '@heyform-inc/utils'
+import { hs, timestamp } from '@kyndform/utils'
 import { UserModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { AuthService, MailService, UserService } from '@service'

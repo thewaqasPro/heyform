@@ -1,4 +1,4 @@
-import { htmlUtils } from '@heyform-inc/answer-utils'
+import { htmlUtils } from '@kyndform/answer-utils'
 
 const ALLOWED_BLOCK_TAGS = ['div', 'h1', 'h2', 'h3', 'p', 'br']
 const ALLOWED_TAGS = [

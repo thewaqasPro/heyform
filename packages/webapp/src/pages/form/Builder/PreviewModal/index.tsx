@@ -1,4 +1,4 @@
-import { FormRenderer } from '@heyform-inc/form-renderer'
+import { FormRenderer } from '@kyndform/form-renderer'
 import { FC, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 

@@ -8,7 +8,7 @@ import {
 import { BCRYPT_SALT, FORM_ENCRYPTION_KEY } from '@environments'
 import { VerifyPasswordInput } from '@graphql'
 import { EndpointAnonymousIdGuard } from '@guard'
-import { timestamp } from '@heyform-inc/utils'
+import { timestamp } from '@kyndform/utils'
 import { Args, Query, Resolver } from '@nestjs/graphql'
 import { FormService } from '@service'
 import { aesEncryptObject, comparePassword, isPasswordHash, passwordHash } from '@utils'

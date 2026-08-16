@@ -61,7 +61,7 @@ const FormItemLink: FC<FormItemLinkProps> = ({
         label: t('form.suspend.contactUs')
       },
       onConfirm() {
-        window.location.href = 'https://heyform.net/f/E4MKK2hx'
+        window.location.href = 'https://kyndform.com/f/E4MKK2hx'
       }
     })
   }

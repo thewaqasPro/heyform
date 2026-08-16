@@ -27,7 +27,7 @@ export const OpinionScale: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-opinion-scale" field={field} {...restProps}>
+    <Block className="kyndform-opinion-scale" field={field} {...restProps}>
       <Form
         initialValues={{
           input: [state.values[field.id]].filter(isNotNil)
@@ -49,7 +49,7 @@ export const OpinionScale: FC<BlockProps> = ({ field, ...restProps }) => {
           <RadioGroup options={options} isHotkeyShow={false} />
         </FormField>
 
-        <div className="heyform-opinion-scale-labels">
+        <div className="kyndform-opinion-scale-labels">
           <div className="flex-1 text-left">{field.properties?.leftLabel}</div>
           <div className="flex-1 text-center">{field.properties?.centerLabel}</div>
           <div className="flex-1 text-right">{field.properties?.rightLabel}</div>

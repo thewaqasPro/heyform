@@ -1,4 +1,4 @@
-import { FileUploadValue } from '@heyform-inc/shared-types-enums'
+import { FileUploadValue } from '@kyndform/shared-types-enums'
 import axios from 'axios'
 
 import { getDeviceId } from '@/utils'
@@ -26,9 +26,9 @@ export class UploadService {
         ...(deviceId ? { 'x-device-id': deviceId } : {}),
         ...(context
           ? {
-              'x-heyform-field-id': context.fieldId,
-              'x-heyform-form-id': context.formId,
-              'x-heyform-open-token': context.openToken
+              'x-kyndform-field-id': context.fieldId,
+              'x-kyndform-form-id': context.formId,
+              'x-kyndform-open-token': context.openToken
             }
           : {})
       }

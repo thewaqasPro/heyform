@@ -10,17 +10,17 @@ export const FullName: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-full-name" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-full-name" field={field} locale={locale} {...restProps}>
       <div className="flex items-center space-x-4">
         <input
           type="text"
-          className="heyform-input"
+          className="kyndform-input"
           placeholder={t('First Name', { lng: locale })}
           disabled={true}
         />
         <input
           type="text"
-          className="heyform-input"
+          className="kyndform-input"
           placeholder={t('Last Name', { lng: locale })}
           disabled={true}
         />

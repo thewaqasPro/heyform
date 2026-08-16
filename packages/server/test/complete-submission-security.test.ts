@@ -1,4 +1,4 @@
-import { CaptchaKindEnum, FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { CaptchaKindEnum, FieldKindEnum } from '@kyndform/shared-types-enums'
 import * as assert from 'assert'
 
 import { PaymentIntentWebhookController } from '../src/controller/payment-intent-webhook.controller'

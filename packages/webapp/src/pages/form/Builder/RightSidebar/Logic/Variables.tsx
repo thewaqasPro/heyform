@@ -1,9 +1,9 @@
-import { FieldKindEnum, Variable } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, Variable } from '@kyndform/shared-types-enums'
 import { IconArrowUpRight, IconDots, IconPlus } from '@tabler/icons-react'
 import { FC, startTransition } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Dropdown, Tooltip } from '@/components'
 import { VARIABLE_KIND_CONFIGS } from '@/consts'
@@ -140,7 +140,7 @@ export const Variables: FC = () => {
                 <a
                   key="a"
                   className="hover:text-primary underline underline-offset-4"
-                  href="https://docs.heyform.net/features/variable"
+                  href="https://docs.kyndform.com/features/variable"
                   target="_blank"
                   rel="noopener noreferrer"
                 />

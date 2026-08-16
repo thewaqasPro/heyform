@@ -13,37 +13,40 @@ declare global {
 
   type Timeout = ReturnType<typeof setTimeout>
 
+  interface GlobalFormEnv {
+    form?: any
+    query?: any
+    locale?: any
+    device: {
+      ios: boolean
+      android: boolean
+      mobile: boolean
+      windowHeight: number
+      screenHeight: number
+    }
+    homepageURL?: string
+    websiteURL?: string
+    cookieDomain?: string
+    stripePublishableKey?: string
+    googleRecaptchaKey?: string
+    uploadOrigins?: string[]
+    verifyEmailResendCooldownSeconds?: number | string
+    appDisableRegistration?: boolean | string
+    enableGoogleFonts?: boolean | string
+    disableLoginWithApple?: boolean | string
+    disableLoginWithGoogle?: boolean | string
+    verifyUserEmail?: boolean | string
+    templatesURL?: string
+    helpCenterURL?: string
+  }
+
   interface Window {
     grecaptcha: any
     plausible: any
     DEVICE_INFO: any
     TrackdeskObject: any
-    heyform: {
-      form: any
-      query: any
-      locale: any
-      device: {
-        ios: boolean
-        android: boolean
-        mobile: boolean
-        windowHeight: number
-        screenHeight: number
-      }
-      homepageURL?: string
-      websiteURL?: string
-      cookieDomain?: string
-      stripePublishableKey?: string
-      googleRecaptchaKey?: string
-      uploadOrigins?: string[]
-      verifyEmailResendCooldownSeconds?: number | string
-      appDisableRegistration?: boolean | string
-      enableGoogleFonts?: boolean | string
-      disableLoginWithApple?: boolean | string
-      disableLoginWithGoogle?: boolean | string
-      verifyUserEmail?: boolean | string
-      templatesURL?: string
-      helpCenterURL?: string
-    }
+    kyndform: GlobalFormEnv
+    kyndform: GlobalFormEnv
     __APOLLO_DEVTOOLS_GLOBAL_HOOK__: boolean
   }
 }

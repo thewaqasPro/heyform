@@ -1,6 +1,6 @@
 import { Auth, Team, TeamGuard, User } from '@decorator'
 import { CreateProjectInput } from '@graphql'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { TeamModel, UserModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { ProjectService } from '@service'

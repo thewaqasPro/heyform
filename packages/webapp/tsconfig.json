@@ -10,9 +10,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@heyform-inc/form-renderer": ["../form-renderer/src/index.ts"],
-      "@heyform-inc/form-renderer/src": ["../form-renderer/src/index.ts"],
-      "@heyform-inc/form-renderer/style.css": ["../form-renderer/src/style.scss"]
+      "@kyndform/form-renderer": ["../form-renderer/src/index.ts"],
+      "@kyndform/form-renderer/src": ["../form-renderer/src/index.ts"],
+      "@kyndform/form-renderer/style.css": ["../form-renderer/src/style.scss"]
     },
 
     /* Bundler mode */

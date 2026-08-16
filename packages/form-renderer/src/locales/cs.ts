@@ -1,5 +1,5 @@
 export default {
-  'Made with HeyForm': 'Vytvořeno pomocí <icon></icon> <span>HeyForm</span>',
+  'Made with KyndForm': 'Vytvořeno pomocí <icon></icon> <span>KyndForm</span>',
   'This field is required': 'Nutné vyplnit',
   'File type is not supported': 'Typ souboru není podporován',
   "File size can't exceed {{size}}": 'Velikost souboru nesmí přesáhnout {{size}}',
@@ -50,7 +50,7 @@ export default {
   'Thanks for completing this form. Now create your own form.':
     'Děkujeme za vyplnění formuláře. Nyní můžete vyplnit vlastní.',
   'Form unavailable': 'Formulář nedostupný',
-  'Create a heyform': 'Vytvořit formulář',
+  'Create a kyndform': 'Vytvořit formulář',
   "The form can't receive new submissions now.": 'Formulář nyní nenemůže přijímat nové odpovědi',
   "This page doesn't exist": 'Stránka neexistuje',
   'If you have any questions, please contact us.':

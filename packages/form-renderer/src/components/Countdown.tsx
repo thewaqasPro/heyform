@@ -1,4 +1,4 @@
-import type { FormSettings } from '@heyform-inc/shared-types-enums'
+import type { FormSettings } from '@kyndform/shared-types-enums'
 import type { FC } from 'react'
 import { useEffect, useRef, useState } from 'react'
 
@@ -43,5 +43,5 @@ export const Countdown: FC<CountdownProps> = ({ settings, onEnd }) => {
     return stopTimer
   }, [])
 
-  return <div className="heyform-countdown">{parseTime(timeLimit)}</div>
+  return <div className="kyndform-countdown">{parseTime(timeLimit)}</div>
 }

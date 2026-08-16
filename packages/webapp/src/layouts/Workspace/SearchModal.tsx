@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next'
 
 import { WorkspaceService } from '@/services'
 import { cn, useParam, useRouter } from '@/utils'
-import { helper, toJSON } from '@heyform-inc/utils'
+import { helper, toJSON } from '@kyndform/utils'
 
 import { Button, Loader, Modal } from '@/components'
 import { HELP_CENTER_URL } from '@/consts'

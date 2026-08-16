@@ -6,11 +6,11 @@ export const FakeSelect: FC<ComponentProps & { placeholder?: string }> = ({
   ...restProps
 }) => {
   return (
-    <div className="heyform-select" {...restProps}>
-      <div className="heyform-select-container">
+    <div className="kyndform-select" {...restProps}>
+      <div className="kyndform-select-container">
         {/* @ts-ignore */}
-        <span className="heyform-select-value" placeholder={placeholder} />
-        <span className="heyform-select-arrow-icon">
+        <span className="kyndform-select-value" placeholder={placeholder} />
+        <span className="kyndform-select-arrow-icon">
           <IconChevronDown />
         </span>
       </div>

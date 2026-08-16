@@ -48,11 +48,11 @@ export function useEnterKey(id: string, callback: (event: KeyboardEvent) => void
     (event: KeyboardEvent) => {
       const elem = document.getElementById(id)
 
-      if (elem?.classList.contains('heyform-body-active') && event.key === 'Enter') {
+      if (elem?.classList.contains('kyndform-body-active') && event.key === 'Enter') {
         const isIgnoredElement = (event.target as any)?.matches(
           'input, [contenteditable="true"], [contenteditable="true"] *'
         )
-        const isDropdownOpen = document.body.classList.contains('heyform-dropdown-open')
+        const isDropdownOpen = document.body.classList.contains('kyndform-dropdown-open')
 
         if (!isIgnoredElement && !isDropdownOpen) {
           callback(event)

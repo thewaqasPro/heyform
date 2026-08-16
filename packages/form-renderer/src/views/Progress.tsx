@@ -49,9 +49,9 @@ const CircularProgressbar: FC<CircularProgressbarProps> = ({
   strokeWidth = 3
 }) => {
   return (
-    <svg className="heyform-circular-progressbar" viewBox={`0 0 ${radius * 2} ${radius * 2}`}>
+    <svg className="kyndform-circular-progressbar" viewBox={`0 0 ${radius * 2} ${radius * 2}`}>
       <circle
-        className="heyform-circular-circle"
+        className="kyndform-circular-circle"
         fill="none"
         cx={radius}
         cy={radius}
@@ -61,7 +61,7 @@ const CircularProgressbar: FC<CircularProgressbarProps> = ({
         }}
       />
       <path
-        className="heyform-circular-path"
+        className="kyndform-circular-path"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -79,7 +79,7 @@ export const Progress: FC = () => {
   const { state } = useStore()
 
   return (
-    <div className="heyform-progress">
+    <div className="kyndform-progress">
       <CircularProgressbar current={state.percentage} />
       <span>{t('{{number}}% answered', { number: state.percentage })}</span>
     </div>

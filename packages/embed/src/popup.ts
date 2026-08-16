@@ -7,17 +7,17 @@ import { Modal } from './modal'
 import { AnyMap, PopupSettings } from './type'
 
 const POPUP_TEMPLATE = `
-  <div id="{containerId}" class="heyform__popup heyform__popup-{position}">
-    <button class="heyform__popup-button {buttonClass}" style="{buttonStyle}" onclick="HeyForm.togglePopup('{formId}')">
+  <div id="{containerId}" class="kyndform__popup kyndform__popup-{position}">
+    <button class="kyndform__popup-button {buttonClass}" style="{buttonStyle}" onclick="KyndForm.togglePopup('{formId}')">
       {icon}
     </button>
   </div>
 `
 
 const IFRAME_TEMPLATE = `
-  <div class="heyform__iframe-container" style="{style}">
+  <div class="kyndform__iframe-container" style="{style}">
     <iframe src="{src}" allow="microphone; camera"></iframe>
-    <div class="heyform__loading-container">${IconLoading}</div>
+    <div class="kyndform__loading-container">${IconLoading}</div>
   </div>
 `
 
@@ -40,7 +40,7 @@ export class Popup<T extends PopupSettings> extends Modal<T> {
       data.buttonStyle = `background: ${this.settings.triggerBackground}`
 
       if (colorIsDark(this.settings.triggerBackground)) {
-        data.buttonClass = 'heyform__popup-button-dark'
+        data.buttonClass = 'kyndform__popup-button-dark'
       }
     }
 
@@ -55,7 +55,7 @@ export class Popup<T extends PopupSettings> extends Modal<T> {
       return
     }
 
-    const $frame = $el.find('.heyform__iframe-container')
+    const $frame = $el.find('.kyndform__iframe-container')
 
     if ($frame.exists()) {
       return
@@ -77,7 +77,7 @@ export class Popup<T extends PopupSettings> extends Modal<T> {
 
     setTimeout(() => {
       $el.find('iframe').get(0).onload = () => {
-        $el.find('.heyform__loading-container').remove()
+        $el.find('.kyndform__loading-container').remove()
       }
     }, 0)
 
@@ -85,7 +85,7 @@ export class Popup<T extends PopupSettings> extends Modal<T> {
   }
 
   public close() {
-    $(`#${this.containerId} .heyform__iframe-container`).remove()
+    $(`#${this.containerId} .kyndform__iframe-container`).remove()
 
     this.isOpen = false
     this.updateButtonIcon()
@@ -94,7 +94,7 @@ export class Popup<T extends PopupSettings> extends Modal<T> {
   }
 
   private updateButtonIcon() {
-    const button = $(`#${this.containerId} .heyform__popup-button`)
+    const button = $(`#${this.containerId} .kyndform__popup-button`)
 
     if (button) {
       button.html(this.getIcon())

@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Document } from 'mongoose'
 
-import { nanoid } from '@heyform-inc/utils'
+import { nanoid } from '@kyndform/utils'
 
 @Schema({
   timestamps: true

@@ -3,7 +3,7 @@ import { Throttle } from '@nestjs/throttler'
 
 import { SendResetPasswordEmailInput } from '@graphql'
 import { DeviceIdGuard, GqlThrottlerGuard } from '@guard'
-import { helper, hs } from '@heyform-inc/utils'
+import { helper, hs } from '@kyndform/utils'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { AuthService, MailService, UserService } from '@service'
 

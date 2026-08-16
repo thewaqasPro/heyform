@@ -24,15 +24,15 @@ export default ({ mode }: ConfigEnv) => {
     resolve: {
       alias: [
         {
-          find: /^@heyform-inc\/form-renderer\/style\.css$/,
+          find: /^@kyndform\/form-renderer\/style\.css$/,
           replacement: resolve(__dirname, '../form-renderer/src/style.scss')
         },
         {
-          find: /^@heyform-inc\/form-renderer\/src$/,
+          find: /^@kyndform\/form-renderer\/src$/,
           replacement: resolve(__dirname, '../form-renderer/src/index.ts')
         },
         {
-          find: /^@heyform-inc\/form-renderer$/,
+          find: /^@kyndform\/form-renderer$/,
           replacement: resolve(__dirname, '../form-renderer/src/index.ts')
         },
         {
@@ -57,7 +57,6 @@ export default ({ mode }: ConfigEnv) => {
             ],
             ui: [
               '@radix-ui/react-dialog',
-              '@radix-ui/react-dialog',
               '@radix-ui/react-dropdown-menu',
               '@radix-ui/react-popover',
               '@radix-ui/react-select',
@@ -70,11 +69,11 @@ export default ({ mode }: ConfigEnv) => {
               'react-sortablejs',
               'qrcode.react'
             ],
-            heyform: [
+            kyndform: [
               '@heyooo-inc/react-router',
-              '@heyform-inc/answer-utils',
-              '@heyform-inc/shared-types-enums',
-              '@heyform-inc/utils'
+              '@kyndform/answer-utils',
+              '@kyndform/shared-types-enums',
+              '@kyndform/utils'
             ]
           }
         }

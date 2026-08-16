@@ -1,4 +1,4 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import { InjectQueue } from '@nestjs/bull'
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
@@ -9,8 +9,8 @@ import { FormService } from './form.service'
 import { RedisService } from './redis.service'
 import { SubmissionService } from './submission.service'
 import { FORM_REPORT_RATE } from '@environments'
-import { flattenFields } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { flattenFields } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 import { FormReportModel, FormReportResponse } from '@model'
 
 @Injectable()

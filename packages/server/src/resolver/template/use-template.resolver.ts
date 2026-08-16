@@ -1,9 +1,9 @@
-import { CaptchaKindEnum, FormStatusEnum } from '@heyform-inc/shared-types-enums'
+import { CaptchaKindEnum, FormStatusEnum } from '@kyndform/shared-types-enums'
 import { BadRequestException } from '@nestjs/common'
 
 import { Auth, ProjectGuard, Team, User } from '@decorator'
 import { UseTemplateInput } from '@graphql'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { TeamModel, UserModel } from '@model'
 import { Args, Mutation, Resolver } from '@nestjs/graphql'
 import { FormService, TemplateService } from '@service'

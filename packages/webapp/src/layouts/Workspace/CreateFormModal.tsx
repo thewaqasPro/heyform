@@ -1,4 +1,4 @@
-import { FormKindEnum, InteractiveModeEnum } from '@heyform-inc/shared-types-enums'
+import { FormKindEnum, InteractiveModeEnum } from '@kyndform/shared-types-enums'
 import { IconPlus, IconStack2 } from '@tabler/icons-react'
 import { useRequest } from 'ahooks'
 import { useState } from 'react'

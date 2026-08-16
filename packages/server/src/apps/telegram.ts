@@ -1,6 +1,6 @@
 import got from 'got'
 
-import { answersToHtml } from '@heyform-inc/answer-utils'
+import { answersToHtml } from '@kyndform/answer-utils'
 import { FormModel, SubmissionModel } from '@model'
 
 export interface TelegramConfig {

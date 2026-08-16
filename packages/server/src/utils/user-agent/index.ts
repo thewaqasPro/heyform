@@ -1,6 +1,6 @@
 import * as WhichBrowser from 'which-browser'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 export enum PlatformType {
   DESKTOP = 'desktop',

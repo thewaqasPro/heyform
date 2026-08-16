@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>HeyForm</title>
+  <title>KyndForm</title>
   <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch" />
   <link href="https://js.stripe.com" rel="dns-prefetch" />
-  {{#if heyform.enableGoogleFonts}}
+  {{#if kyndform.enableGoogleFonts}}
   <link href="https://fonts.gstatic.com" rel="dns-prefetch" />
   {{/if}}
   <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <meta content="HeyForm" name="application-name" />
+  <meta content="KyndForm" name="application-name" />
   <meta content="yes" name="mobile-web-app-capable" />
   <meta content="yes" name="apple-mobile-web-app-capable" />
   <meta content="white" name="apple-mobile-web-app-status-bar-style" />
   <meta content="#fff" name="theme-color" />
-  <meta content="HeyForm" name="apple-mobile-web-app-title" />
+  <meta content="KyndForm" name="apple-mobile-web-app-title" />
   <meta content="telephone=no,email=no" name="format-detection" />
   <meta content="on" http-equiv="x-dns-prefetch-control" />
   <link href="/static/favicon.ico" rel="shortcut icon" />
@@ -27,9 +27,9 @@
   <script>
 		;(function () {
 			const userAgent = window.navigator.userAgent;
-			const heyform = {{{json heyform}}};
+			const kyndform = {{{json kyndform}}};
 
-			heyform.device = {
+			kyndform.device = {
 				ios: /iPad|iPhone|iPod/i.test(userAgent),
 				android: /Android/i.test(userAgent),
 				mobile: /Android|iPad|iPhone|iPod/i.test(userAgent),
@@ -38,7 +38,7 @@
         locale: '{{locale}}'
 			};
 
-			window.heyform = heyform;
+			window.kyndform = kyndform;
 		})();
 	</script>
 </head>

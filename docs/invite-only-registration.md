@@ -4,7 +4,7 @@ When `APP_DISABLE_REGISTRATION=true`, public account creation remains disabled, 
 
 ## Flow
 
-1. Opening a valid `/workspace/:workspaceId/invitation/:code` page stores the workspace ID and invite code in the `HEYFORM_INVITATION` browser-session cookie.
+1. Opening a valid `/workspace/:workspaceId/invitation/:code` page stores the workspace ID and invite code in the `KYNDFORM_INVITATION` browser-session cookie.
 2. The invitation cookie makes the sign-up route and link available. It has no `Expires` or `Max-Age` attribute, so it expires with the browser session.
 3. Sign-up sends the workspace ID and invite code through the existing optional `SignUpInput` fields.
 4. The server allows the registration bypass only when MongoDB contains a workspace with the exact current code, `allowJoinByInviteLink=true`, and an unexpired `inviteCodeExpireAt`.

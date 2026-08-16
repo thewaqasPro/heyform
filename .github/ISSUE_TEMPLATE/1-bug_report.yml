@@ -53,10 +53,10 @@ body:
   - type: dropdown
     id: install_type
     attributes:
-      label: HeyForm Installation
-      description: Select the type of HeyForm installation.
+      label: KyndForm Installation
+      description: Select the type of KyndForm installation.
       options:
-        - heyform.net
+        - kyndform.com
         - self hosted
     validations:
       required: true

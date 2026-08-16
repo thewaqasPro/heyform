@@ -73,6 +73,20 @@ export const openPopup = (formId: string) => open(formId, 'popup')
 export const closePopup = (formId: string) => close(formId, 'popup')
 export const togglePopup = (formId: string) => toggle(formId, 'popup')
 
+const api = {
+  openModal,
+  closeModal,
+  toggleModal,
+  openPopup,
+  closePopup,
+  togglePopup
+}
+
+if (typeof window !== 'undefined') {
+  ;(window as any).KyndForm = api
+  ;(window as any).KyndForm = api
+}
+
 // Import the library after the element
 main()
 

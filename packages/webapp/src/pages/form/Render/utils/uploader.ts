@@ -1,13 +1,13 @@
-import { FieldKindEnum, FileUploadValue, FormModel } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, FileUploadValue, FormModel } from '@kyndform/shared-types-enums'
 
 import { UploadService } from '@/services'
-import { flattenFields } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { flattenFields } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 interface UploaderField {
   id: string
   kind: FieldKindEnum
-  value?: File | string
+  value?: File | Blob | string
 }
 
 const UPLOAD_FIELD_KINDS = [FieldKindEnum.SIGNATURE, FieldKindEnum.FILE_UPLOAD]

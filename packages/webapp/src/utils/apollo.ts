@@ -14,7 +14,7 @@ import { getMainDefinition } from '@apollo/client/utilities'
 import { RetryLink } from 'apollo-link-retry'
 import ApolloLinkTimeout from 'apollo-link-timeout'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { GRAPHQL_API_URL, IS_PROD, LOCALE_COOKIE_NAME } from '@/consts'
 

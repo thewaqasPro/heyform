@@ -1,7 +1,7 @@
-import { SocialLoginTypeEnum } from '@heyform-inc/shared-types-enums'
+import { SocialLoginTypeEnum } from '@kyndform/shared-types-enums'
 import { Controller, Get, Param, Post, Query, Req, Res } from '@nestjs/common'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { AuthService, RedisService, SocialLoginService } from '@service'
 import { Logger } from '@utils'
 
@@ -27,7 +27,7 @@ export class SocialLoginController {
    * and front end need to attach the browserId to the authorized url.
    *
    * Example:
-   * http://my.heyformhq.com/connect/google?state=DMbcJqLJ
+   * http://my.kyndform.com/connect/google?state=DMbcJqLJ
    */
   @Get('/connect/:kind')
   async authUrl(

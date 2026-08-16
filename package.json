@@ -1,7 +1,7 @@
 {
-  "name": "heyform",
-  "homepage": "https://heyform.net",
-  "author": "EarlyBird, Inc.",
+  "name": "kyndform",
+  "homepage": "https://kyndform.com",
+  "author": "KyndForm, Inc.",
   "license": "AGPL-3.0",
   "private": true,
   "engines": {

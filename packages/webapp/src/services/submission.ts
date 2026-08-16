@@ -1,4 +1,4 @@
-import { Answer, SubmissionCategoryEnum } from '@heyform-inc/shared-types-enums'
+import { Answer, SubmissionCategoryEnum } from '@kyndform/shared-types-enums'
 
 import { apollo } from '@/utils'
 

@@ -11,7 +11,7 @@ import {
   REDIS_PORT,
   REDIS_USERNAME
 } from '@environments'
-import { ms } from '@heyform-inc/utils'
+import { ms } from '@kyndform/utils'
 
 export const BullOptionsFactory = (): BullModuleOptions | Promise<BullModuleOptions> => ({
   redis: {

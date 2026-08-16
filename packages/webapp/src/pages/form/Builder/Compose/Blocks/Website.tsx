@@ -10,10 +10,10 @@ export const Website: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-website" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-website" field={field} locale={locale} {...restProps}>
       <input
         type="url"
-        className="heyform-input"
+        className="kyndform-input"
         placeholder="https://example.com"
         disabled={true}
       />

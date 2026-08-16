@@ -4,9 +4,9 @@ import IconLoading from './assets/icon-loading.svg'
 import { EmbedConfig, StandardSettings } from './type'
 
 const STANDARD_TEMPLATE = `
-<div class="heyform__iframe-container">
+<div class="kyndform__iframe-container">
   <iframe src="{src}" allow="microphone; camera"></iframe>
-  <div class="heyform__loading-container">${IconLoading}</div>
+  <div class="kyndform__loading-container">${IconLoading}</div>
 </div>
 `
 
@@ -25,11 +25,11 @@ export class Standard<T extends StandardSettings> {
       ...hiddenFields
     })
 
-    container.addClass('heyform__embed')
-    container.addClass(`heyform__embed-${type}`)
+    container.addClass('kyndform__embed')
+    container.addClass(`kyndform__embed-${type}`)
 
     this.formId = formId
-    this.containerId = `heyform__${type}-${formId}`
+    this.containerId = `kyndform__${type}-${formId}`
     this.$container = container
     this.settings = settings
 
@@ -59,7 +59,7 @@ export class Standard<T extends StandardSettings> {
     )
 
     this.$container.find('iframe').get(0).onload = () => {
-      this.$container.find('.heyform__loading-container').remove()
+      this.$container.find('.kyndform__loading-container').remove()
     }
   }
 }

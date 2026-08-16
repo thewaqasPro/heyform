@@ -1,8 +1,8 @@
-import { CHOICE_FIELD_KINDS, RATING_FIELD_KINDS } from '@heyform-inc/shared-types-enums'
+import { CHOICE_FIELD_KINDS, RATING_FIELD_KINDS } from '@kyndform/shared-types-enums'
 import { FC, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { helper, toFixed } from '@heyform-inc/utils'
+import { helper, toFixed } from '@kyndform/utils'
 
 import { useFormStore } from '@/store'
 
@@ -27,23 +27,23 @@ const Choices: FC<ChoicesProps> = ({ chooses }) => {
   const total = useMemo(() => chooses.reduce((prev, next) => prev + next.count, 0) || 1, [chooses])
 
   return (
-    <div className="heyform-report-chart">
+    <div className="kyndform-report-chart">
       {chooses.map((row, index) => {
         const percent = `${toFixed((row.count * 100) / total)}%`
 
         return (
-          <div key={index} className="heyform-report-chart-item">
+          <div key={index} className="kyndform-report-chart-item">
             <div
-              className="heyform-report-chart-background"
+              className="kyndform-report-chart-background"
               style={{
                 width: percent
               }}
             />
-            <div className="heyform-report-chart-content">
-              <span className="heyform-report-chart-percent">
+            <div className="kyndform-report-chart-content">
+              <span className="kyndform-report-chart-percent">
                 {row.label} · {percent}
               </span>
-              <span className="heyform-report-chart-count">
+              <span className="kyndform-report-chart-count">
                 {t('form.analytics.report.submission', { count: row.count })}
               </span>
             </div>
@@ -60,24 +60,24 @@ const Ratings: FC<RatingsProps> = ({ length, chooses }) => {
   const total = chooses.filter(c => helper.isNumeric(c)).reduce((prev, next) => prev + next, 0)
 
   return (
-    <div className="heyform-report-chart">
+    <div className="kyndform-report-chart">
       {arrays.map((row, index) => {
         const count = chooses[row] || 0
         const percent = `${toFixed((count * 100) / total)}%`
 
         return (
-          <div key={index} className="heyform-report-chart-item">
+          <div key={index} className="kyndform-report-chart-item">
             <div
-              className="heyform-report-chart-background"
+              className="kyndform-report-chart-background"
               style={{
                 width: percent
               }}
             />
-            <div className="heyform-report-chart-content">
-              <span className="heyform-report-chart-percent">
+            <div className="kyndform-report-chart-content">
+              <span className="kyndform-report-chart-percent">
                 {row} · {total > 0 ? Math.round((count * 100) / total) : 0}%
               </span>
-              <span className="heyform-report-chart-count">
+              <span className="kyndform-report-chart-count">
                 {t('form.analytics.report.submission', { count })}
               </span>
             </div>
@@ -112,13 +112,13 @@ const FormReportItem: FC<FormReportItemProps> = ({ index, response, isHideFieldE
   }, [isChoices, isRating, response])
 
   return (
-    <li className="heyform-report-item">
+    <li className="kyndform-report-item">
       <div className="flex gap-4">
-        <div className="heyform-report-question flex-1">
+        <div className="kyndform-report-question flex-1">
           {index}. {response.title}
         </div>
       </div>
-      <div className="heyform-report-meta">
+      <div className="kyndform-report-meta">
         {isRating
           ? t('form.analytics.report.submission2', {
               count: response.count,
@@ -127,7 +127,7 @@ const FormReportItem: FC<FormReportItemProps> = ({ index, response, isHideFieldE
           : t('form.analytics.report.submission', { count: response.count })}
       </div>
 
-      {!isHided && <div className="heyform-report-content">{children}</div>}
+      {!isHided && <div className="kyndform-report-content">{children}</div>}
     </li>
   )
 }

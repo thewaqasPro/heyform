@@ -17,7 +17,7 @@ import {
   UPLOAD_DIR,
   VIEW_DIR
 } from '@environments'
-import { helper, ms } from '@heyform-inc/utils'
+import { helper, ms } from '@kyndform/utils'
 import { Logger, hbs } from '@utils'
 
 import { AppModule } from './app.module'

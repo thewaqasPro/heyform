@@ -53,7 +53,7 @@ jobs:
       # Test-only secrets — never use these outside CI.
       SESSION_KEY: ci-session-key-32-chars-aaaaaaaa
       FORM_ENCRYPTION_KEY: ci-form-encryption-key-32-chars-aa
-      MONGO_URI: mongodb://127.0.0.1:27017/heyform_e2e
+      MONGO_URI: mongodb://127.0.0.1:27017/kyndform_e2e
       REDIS_HOST: 127.0.0.1
       REDIS_PORT: '6379'
       E2E_BASE_URL: http://127.0.0.1:9157

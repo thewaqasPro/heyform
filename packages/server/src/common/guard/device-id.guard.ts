@@ -1,7 +1,7 @@
 import { CanActivate, ExecutionContext, ForbiddenException, Injectable } from '@nestjs/common'
 
 import { COOKIE_DEVICE_ID_NAME } from '@config'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { GqlExecutionContext } from '@nestjs/graphql'
 
 @Injectable()

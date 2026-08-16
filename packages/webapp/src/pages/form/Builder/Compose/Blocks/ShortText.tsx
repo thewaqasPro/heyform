@@ -10,10 +10,10 @@ export const ShortText: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   const { t } = useTranslation()
 
   return (
-    <Block className="heyform-short-text" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-short-text" field={field} locale={locale} {...restProps}>
       <input
         type="text"
-        className="heyform-input"
+        className="kyndform-input"
         placeholder={t('Your answer goes here', { lng: locale })}
         disabled={true}
       />

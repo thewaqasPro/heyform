@@ -29,7 +29,7 @@ async function testEscapesTemplateReplacementsAndPreservesSafeSubmissionHtml() {
       <img src=x onerror=alert(1)>
       <script>alert(1)</script>
     `,
-    link: 'https://heyform.example/forms/a?x=1&y="bad"'
+    link: 'https://kyndform.example/forms/a?x=1&y="bad"'
   })
 
   assert.ok(queued)
@@ -41,13 +41,13 @@ async function testEscapesTemplateReplacementsAndPreservesSafeSubmissionHtml() {
   assert.ok(!queued!.data.data.html.includes('<img'))
   assert.ok(!queued!.data.data.html.includes('<script'))
   assert.ok(
-    queued!.data.data.html.includes('href="https://heyform.example/forms/a?x=1&amp;y=%22bad%22"')
+    queued!.data.data.html.includes('href="https://kyndform.example/forms/a?x=1&amp;y=%22bad%22"')
   )
 
   await service.teamInvitation('member@example.test', {
     userName: '<img src=x onerror=alert(1)>',
     teamName: '<style>body{display:none}</style>',
-    link: 'https://heyform.example/invite?x=1&y="bad"'
+    link: 'https://kyndform.example/invite?x=1&y="bad"'
   })
 
   assert.ok(queued!.data.data.html.includes('&lt;img src=x onerror=alert(1)&gt;'))

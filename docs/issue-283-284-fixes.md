@@ -4,7 +4,7 @@
 
 This change fixes two self-hosted deployment regressions:
 
-- Issue #283: `/api/image` can now fetch images from the configured HeyForm
+- Issue #283: `/api/image` can now fetch images from the configured KyndForm
   origin when that origin is a private network address, while arbitrary private
   network targets remain blocked.
 - Issue #284: the production server HTML now includes favicon links, and

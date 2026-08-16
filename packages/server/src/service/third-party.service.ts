@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
-import { hs, timestamp } from '@heyform-inc/utils'
+import { hs, timestamp } from '@kyndform/utils'
 import { ThirdPartyOauthModel } from '@model'
 
 @Injectable()

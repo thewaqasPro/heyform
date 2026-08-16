@@ -1,8 +1,8 @@
-import { FormStatusEnum } from '@heyform-inc/shared-types-enums'
+import { FormStatusEnum } from '@kyndform/shared-types-enums'
 
 import { Auth, TeamGuard, User } from '@decorator'
 import { SearchFormInput, SearchFormType } from '@graphql'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { UserModel } from '@model'
 import { Args, Query, Resolver } from '@nestjs/graphql'
 import { FormService, TeamService, TemplateService } from '@service'

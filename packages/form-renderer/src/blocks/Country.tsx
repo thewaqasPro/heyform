@@ -19,7 +19,12 @@ export const Country: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-country" field={field} isScrollable={!isDropdownShown} {...restProps}>
+    <Block
+      className="kyndform-country"
+      field={field}
+      isScrollable={!isDropdownShown}
+      {...restProps}
+    >
       <Form
         initialValues={{
           input: state.values[field.id]

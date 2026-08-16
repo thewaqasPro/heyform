@@ -1,6 +1,6 @@
 import { ExecutionContext, createParamDecorator } from '@nestjs/common'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { UserModel } from '@model'
 import { GqlExecutionContext } from '@nestjs/graphql'
 

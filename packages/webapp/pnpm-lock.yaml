@@ -18,16 +18,16 @@ importers:
       '@fortaine/fetch-event-source':
         specifier: ^3.0.6
         version: 3.0.6
-      '@heyform-inc/answer-utils':
+      '@kyndform-inc/answer-utils':
         specifier: ^1.2.0
-        version: 1.2.0(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0)
-      '@heyform-inc/form-renderer':
+        version: 1.2.0(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0)
+      '@kyndform-inc/form-renderer':
         specifier: ^0.3.8
-        version: 0.3.8(@heyform-inc/answer-utils@1.2.0(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0))(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(@popperjs/core@2.11.8)(@radix-ui/react-tooltip@1.1.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@tabler/icons-react@3.20.0(react@19.0.0))(big.js@6.2.2)(clsx@2.1.1)(flag-icons@7.2.3)(i18next@24.0.5(typescript@5.7.2))(libphonenumber-js@1.11.16)(rc-field-form@2.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react-i18next@15.1.4(i18next@24.0.5(typescript@5.7.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-transition-state@2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(signature_pad@5.0.4)(store2@2.14.3)
-      '@heyform-inc/shared-types-enums':
+        version: 0.3.8(@kyndform-inc/answer-utils@1.2.0(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0))(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(@popperjs/core@2.11.8)(@radix-ui/react-tooltip@1.1.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@tabler/icons-react@3.20.0(react@19.0.0))(big.js@6.2.2)(clsx@2.1.1)(flag-icons@7.2.3)(i18next@24.0.5(typescript@5.7.2))(libphonenumber-js@1.11.16)(rc-field-form@2.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react-i18next@15.1.4(i18next@24.0.5(typescript@5.7.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-transition-state@2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(signature_pad@5.0.4)(store2@2.14.3)
+      '@kyndform-inc/shared-types-enums':
         specifier: ^1.3.0
         version: 1.3.0
-      '@heyform-inc/utils':
+      '@kyndform-inc/utils':
         specifier: ^1.2.2
         version: 1.2.2
       '@heyooo-inc/react-router':
@@ -585,23 +585,23 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@heyform-inc/answer-utils@1.2.0':
+  '@kyndform-inc/answer-utils@1.2.0':
     resolution: {integrity: sha512-9VyCgL4keK3PPsPqW88G8e5We6NZQbbIQ0OdYXjLzKkreina3HZkMRS0msH+Tvf6+Wp+7jFAdVG1XE00hQMYoQ==}
     peerDependencies:
-      '@heyform-inc/shared-types-enums': ^1.1.8
-      '@heyform-inc/utils': ^1.2.0
+      '@kyndform-inc/shared-types-enums': ^1.1.8
+      '@kyndform-inc/utils': ^1.2.0
       big.js: ^6.2.1
       dayjs: ^1.11.3
       html5parser: ^2.0.2
       libphonenumber-js: ^1.10.7
       validator: ^13.7.0
 
-  '@heyform-inc/form-renderer@0.3.8':
+  '@kyndform-inc/form-renderer@0.3.8':
     resolution: {integrity: sha512-sh4oTZqnk/+e120ZZiYD8PbfZvCTD9/2t+ScAKNhejDusVkXECn8roD31BX9HE/obrJUIvnVnwdVw9zY/+gDkg==}
     peerDependencies:
-      '@heyform-inc/answer-utils': ^1.2.0
-      '@heyform-inc/shared-types-enums': ^1.2.2
-      '@heyform-inc/utils': ^1.2.2
+      '@kyndform-inc/answer-utils': ^1.2.0
+      '@kyndform-inc/shared-types-enums': ^1.2.2
+      '@kyndform-inc/utils': ^1.2.2
       '@popperjs/core': ^2.11.8
       '@radix-ui/react-tooltip': ^1.1.2
       '@tabler/icons-react': ^3.11.0
@@ -619,11 +619,11 @@ packages:
       signature_pad: ^5.0.1
       store2: ^2.13.2
 
-  '@heyform-inc/shared-types-enums@1.3.0':
+  '@kyndform-inc/shared-types-enums@1.3.0':
     resolution: {integrity: sha512-wctVOttEEDPLV+++RzPJxBI0Ea4es0rGs/klYanQoK73QKJ2BXw6p8IrwTKnnYtiysFS8eC6JB4aaoA6UJQjkw==}
     engines: {node: '>=12.0.0'}
 
-  '@heyform-inc/utils@1.2.2':
+  '@kyndform-inc/utils@1.2.2':
     resolution: {integrity: sha512-UO4uDs8lT6AYCwQaBImzuS/Z/kmeW/ys0lLNNFH8NWvBfB+DJRx5ttO2qyXV6KfAcFh7Ezad7w1a+HmUVLUDbQ==}
 
   '@heyooo-inc/react-router@0.0.5':
@@ -4448,21 +4448,21 @@ snapshots:
     dependencies:
       graphql: 16.9.0
 
-  '@heyform-inc/answer-utils@1.2.0(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0)':
+  '@kyndform-inc/answer-utils@1.2.0(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0)':
     dependencies:
-      '@heyform-inc/shared-types-enums': 1.3.0
-      '@heyform-inc/utils': 1.2.2
+      '@kyndform-inc/shared-types-enums': 1.3.0
+      '@kyndform-inc/utils': 1.2.2
       big.js: 6.2.2
       dayjs: 1.11.13
       html5parser: 2.0.2
       libphonenumber-js: 1.11.16
       validator: 13.12.0
 
-  '@heyform-inc/form-renderer@0.3.8(@heyform-inc/answer-utils@1.2.0(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0))(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(@popperjs/core@2.11.8)(@radix-ui/react-tooltip@1.1.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@tabler/icons-react@3.20.0(react@19.0.0))(big.js@6.2.2)(clsx@2.1.1)(flag-icons@7.2.3)(i18next@24.0.5(typescript@5.7.2))(libphonenumber-js@1.11.16)(rc-field-form@2.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react-i18next@15.1.4(i18next@24.0.5(typescript@5.7.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-transition-state@2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(signature_pad@5.0.4)(store2@2.14.3)':
+  '@kyndform-inc/form-renderer@0.3.8(@kyndform-inc/answer-utils@1.2.0(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0))(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(@popperjs/core@2.11.8)(@radix-ui/react-tooltip@1.1.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@tabler/icons-react@3.20.0(react@19.0.0))(big.js@6.2.2)(clsx@2.1.1)(flag-icons@7.2.3)(i18next@24.0.5(typescript@5.7.2))(libphonenumber-js@1.11.16)(rc-field-form@2.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react-i18next@15.1.4(i18next@24.0.5(typescript@5.7.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-popper@2.3.0(@popperjs/core@2.11.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-transition-state@2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(signature_pad@5.0.4)(store2@2.14.3)':
     dependencies:
-      '@heyform-inc/answer-utils': 1.2.0(@heyform-inc/shared-types-enums@1.3.0)(@heyform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0)
-      '@heyform-inc/shared-types-enums': 1.3.0
-      '@heyform-inc/utils': 1.2.2
+      '@kyndform-inc/answer-utils': 1.2.0(@kyndform-inc/shared-types-enums@1.3.0)(@kyndform-inc/utils@1.2.2)(big.js@6.2.2)(dayjs@1.11.13)(html5parser@2.0.2)(libphonenumber-js@1.11.16)(validator@13.12.0)
+      '@kyndform-inc/shared-types-enums': 1.3.0
+      '@kyndform-inc/utils': 1.2.2
       '@popperjs/core': 2.11.8
       '@radix-ui/react-tooltip': 1.1.4(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@tabler/icons-react': 3.20.0(react@19.0.0)
@@ -4480,9 +4480,9 @@ snapshots:
       signature_pad: 5.0.4
       store2: 2.14.3
 
-  '@heyform-inc/shared-types-enums@1.3.0': {}
+  '@kyndform-inc/shared-types-enums@1.3.0': {}
 
-  '@heyform-inc/utils@1.2.2':
+  '@kyndform-inc/utils@1.2.2':
     dependencies:
       '@types/clone': 2.1.4
       '@types/mime-types': 2.1.4

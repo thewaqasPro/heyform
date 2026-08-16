@@ -1,9 +1,9 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import { FC, useState } from 'react'
 
 import { useTranslation } from '../../utils'
-import { ValidateError, validateFields } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { ValidateError, validateFields } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import { ThankYou } from '../../blocks/ThankYou'
 import { useStore } from '../../store'
@@ -111,27 +111,27 @@ export const ClassicForm: FC = () => {
       title: t('Thank you!'),
       description: t('Thanks for completing this form. Now create your own form.'),
       properties: {
-        buttonText: t('Create a heyform')
+        buttonText: t('Create a kyndform')
       }
     }
     return <ThankYou field={field} />
   }
 
   return (
-    <div className="heyform-classic-root">
-      <div className="heyform-classic-card">
+    <div className="kyndform-classic-root">
+      <div className="kyndform-classic-card">
         {(state.logo || formTitle || formDescription) && (
-          <div className="heyform-classic-header">
-            {state.logo && <img src={state.logo} alt="Logo" className="heyform-classic-logo" />}
+          <div className="kyndform-classic-header">
+            {state.logo && <img src={state.logo} alt="Logo" className="kyndform-classic-logo" />}
             {formTitle && (
               <h1
-                className="heyform-classic-title"
+                className="kyndform-classic-title"
                 dangerouslySetInnerHTML={{ __html: formTitle }}
               />
             )}
             {formDescription && (
               <div
-                className="heyform-classic-description"
+                className="kyndform-classic-description"
                 dangerouslySetInnerHTML={{ __html: formDescription }}
               />
             )}
@@ -139,7 +139,7 @@ export const ClassicForm: FC = () => {
         )}
 
         <form onSubmit={handleSubmit} noValidate>
-          <div className="heyform-classic-fields">
+          <div className="kyndform-classic-fields">
             {visibleFields.map((field, idx) => (
               <ClassicField
                 key={field.id}
@@ -151,12 +151,12 @@ export const ClassicForm: FC = () => {
             ))}
           </div>
 
-          <div className="heyform-classic-footer">
-            <button type="submit" className="heyform-classic-submit-btn" disabled={loading}>
+          <div className="kyndform-classic-footer">
+            <button type="submit" className="kyndform-classic-submit-btn" disabled={loading}>
               {loading ? t('Submitting...') : t('Submit')}
             </button>
 
-            {submitError && <div className="heyform-classic-submit-error">{submitError}</div>}
+            {submitError && <div className="kyndform-classic-submit-error">{submitError}</div>}
           </div>
         </form>
       </div>

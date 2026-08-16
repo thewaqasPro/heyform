@@ -1,4 +1,4 @@
-import { SocialLoginTypeEnum } from '@heyform-inc/shared-types-enums'
+import { SocialLoginTypeEnum } from '@kyndform/shared-types-enums'
 import { BadRequestException, Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
@@ -14,7 +14,7 @@ import {
   GOOGLE_LOGIN_CLIENT_ID,
   GOOGLE_LOGIN_CLIENT_SECRET
 } from '@environments'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { UserSocialAccountModel } from '@model'
 import { UserInfo, appleLoginUrl, appleUserInfo, googleLoginUrl, googleUserInfo } from '@utils'
 

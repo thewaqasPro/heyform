@@ -158,7 +158,7 @@ export interface Property {
   // Score
   score?: number
 
-  // HeyForm Form Builder v2.0
+  // KyndForm Form Builder v2.0
   // Embed & Image
   sourceUrl?: string
 
@@ -193,7 +193,7 @@ export interface FormField {
 
   layout?: Layout
 
-  // HeyForm question number
+  // KyndForm question number
   number?: number
 
   index?: number

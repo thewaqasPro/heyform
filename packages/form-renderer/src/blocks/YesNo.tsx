@@ -30,7 +30,7 @@ export const YesNo: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-yes-no" field={field} {...restProps}>
+    <Block className="kyndform-yes-no" field={field} {...restProps}>
       <Form
         initialValues={{
           input: [state.values[field.id]].filter(isNotNil)

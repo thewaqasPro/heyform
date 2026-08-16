@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
-import { timestamp } from '@heyform-inc/utils'
+import { timestamp } from '@kyndform/utils'
 import { UserModel } from '@model'
 
 @Injectable()

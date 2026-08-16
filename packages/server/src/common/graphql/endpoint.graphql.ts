@@ -1,4 +1,4 @@
-import { HiddenFieldAnswer } from '@heyform-inc/shared-types-enums'
+import { HiddenFieldAnswer } from '@kyndform/shared-types-enums'
 import { IsOptional, IsString, Length } from 'class-validator'
 
 import { CdnTokenInput } from './user.graphql'

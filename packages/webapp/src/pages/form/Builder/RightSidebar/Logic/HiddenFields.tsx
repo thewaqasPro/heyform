@@ -1,9 +1,9 @@
-import { FieldKindEnum, HiddenField } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum, HiddenField } from '@kyndform/shared-types-enums'
 import { IconArrowUpRight, IconDots, IconPlus } from '@tabler/icons-react'
 import { FC, startTransition } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Dropdown, Tooltip } from '@/components'
 import { CUSTOM_FIELDS_CONFIGS } from '@/consts'
@@ -137,7 +137,7 @@ export const HiddenFields: FC = () => {
                 <a
                   key="a"
                   className="hover:text-primary underline underline-offset-4"
-                  href="https://docs.heyform.net/features/hidden-fields"
+                  href="https://docs.kyndform.com/features/hidden-fields"
                   target="_blank"
                   rel="noopener noreferrer"
                 />

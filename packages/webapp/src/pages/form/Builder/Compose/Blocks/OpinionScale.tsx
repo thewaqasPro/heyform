@@ -11,13 +11,13 @@ export const OpinionScale: FC<BlockProps> = ({ field, locale, ...restProps }) =>
   }, [field.properties?.total])
 
   return (
-    <Block className="heyform-opinion-scale" field={field} locale={locale} {...restProps}>
+    <Block className="kyndform-opinion-scale" field={field} locale={locale} {...restProps}>
       <div className="flex items-center space-x-2">
         {indexes.map(index => (
           <FakeRadio label={index} key={index} />
         ))}
       </div>
-      <div className="heyform-opinion-scale-labels">
+      <div className="kyndform-opinion-scale-labels">
         <div className="flex-1 text-left">{field.properties?.leftLabel}</div>
         <div className="flex-1 text-center">{field.properties?.centerLabel}</div>
         <div className="flex-1 text-right">{field.properties?.rightLabel}</div>

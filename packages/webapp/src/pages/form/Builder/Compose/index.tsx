@@ -1,5 +1,5 @@
-import { insertWebFont } from '@heyform-inc/form-renderer'
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { insertWebFont } from '@kyndform/form-renderer'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import { FC, useCallback, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -250,19 +250,19 @@ export default function BuilderCompose() {
   return (
     <div
       className={cn('compose', {
-        'compose-mobile': window.heyform.device.mobile
+        'compose-mobile': window.kyndform.device.mobile
       })}
     >
-      <div className="heyform-root">
-        <div className="heyform-wrapper">
-          <div className="heyform-header">
-            <div className="heyform-header-wrapper">
-              <div className="heyform-header-left"></div>
-              <div className="heyform-header-right"></div>
+      <div className="kyndform-root">
+        <div className="kyndform-wrapper">
+          <div className="kyndform-header">
+            <div className="kyndform-header-wrapper">
+              <div className="kyndform-header-left"></div>
+              <div className="kyndform-header-right"></div>
             </div>
           </div>
 
-          <div className="compose-container heyform-body">
+          <div className="compose-container kyndform-body">
             <Fields />
           </div>
         </div>

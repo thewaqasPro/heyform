@@ -1,12 +1,12 @@
-import { flattenFieldsWithGroups } from '@heyform-inc/form-renderer'
-import { ActionEnum, LogicAction, Variable } from '@heyform-inc/shared-types-enums'
+import { flattenFieldsWithGroups } from '@kyndform/form-renderer'
+import { ActionEnum, LogicAction, Variable } from '@kyndform/shared-types-enums'
 import { IconPlus } from '@tabler/icons-react'
 import { type FC, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { cn } from '@/utils'
-import { htmlUtils } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { htmlUtils } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import { Button, Input, Select } from '@/components'
 import { ACTIONS, OPERATORS } from '@/consts'

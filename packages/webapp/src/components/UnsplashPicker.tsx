@@ -1,4 +1,4 @@
-import { UnsplashImage } from '@heyform-inc/shared-types-enums'
+import { UnsplashImage } from '@kyndform/shared-types-enums'
 import { IconSearch } from '@tabler/icons-react'
 import { FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'

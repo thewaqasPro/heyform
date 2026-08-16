@@ -6,7 +6,7 @@ import { Block } from './Block'
 export const ThankYou: FC<BlockProps> = ({ field, locale, ...restProps }) => {
   return (
     <Block
-      className="heyform-thank-you heyform-empty-state"
+      className="kyndform-thank-you kyndform-empty-state"
       field={field}
       locale={locale}
       {...restProps}

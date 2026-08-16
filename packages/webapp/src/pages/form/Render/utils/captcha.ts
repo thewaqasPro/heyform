@@ -2,7 +2,7 @@ const recaptchaClientIds: Record<'standard' | 'enterprise', number | null> = {
   standard: null,
   enterprise: null
 }
-const RECAPTCHA_CONTAINER_ID = 'heyform-recaptcha-container'
+const RECAPTCHA_CONTAINER_ID = 'kyndform-recaptcha-container'
 
 function hasNoClientsError(err: unknown): boolean {
   const message = err instanceof Error ? err.message : String(err || '')
@@ -48,7 +48,7 @@ function resetWidgetClient(kind: 'standard' | 'enterprise') {
 export function recaptchaToken(instance: Any): Promise<string> {
   return new Promise((resolve, reject) => {
     instance.ready(() => {
-      const key = window.heyform.googleRecaptchaKey
+      const key = window.kyndform.googleRecaptchaKey
 
       if (!key) {
         reject(new Error('Google reCAPTCHA key is not configured'))

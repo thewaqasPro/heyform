@@ -5,9 +5,9 @@ import { Standard } from './standard'
 import { FullPageSettings } from './type'
 
 const FULLPAGE_TEMPLATE = `
-<div class="heyform__iframe-container">
+<div class="kyndform__iframe-container">
   <iframe src="{src}" allow="microphone; camera"></iframe>
-  <div class="heyform__loading-container">${IconLoading}</div>
+  <div class="kyndform__loading-container">${IconLoading}</div>
 </div>
 `
 

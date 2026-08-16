@@ -31,7 +31,7 @@ export const ThankYou: FC<BlockProps> = ({ field, className, children, ...restPr
   return (
     <>
       <Block
-        className={clsx('heyform-empty-state heyform-thank-you', className)}
+        className={clsx('kyndform-empty-state kyndform-thank-you', className)}
         field={field}
         isScrollable={false}
         {...restProps}

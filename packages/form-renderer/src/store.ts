@@ -6,8 +6,8 @@ import type {
   HiddenField,
   Logic,
   Variable
-} from '@heyform-inc/shared-types-enums'
-import { QUESTION_FIELD_KINDS } from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
+import { QUESTION_FIELD_KINDS } from '@kyndform/shared-types-enums'
 import { useContext } from 'react'
 
 import {
@@ -20,8 +20,8 @@ import {
   replaceHTML,
   validateLogicField
 } from './utils'
-import { applyLogicToFields } from '@heyform-inc/answer-utils'
-import { helper } from '@heyform-inc/utils'
+import { applyLogicToFields } from '@kyndform/answer-utils'
+import { helper } from '@kyndform/utils'
 
 import type { AnyMap, IFormField } from './typings'
 
@@ -32,10 +32,10 @@ function removeLegacyLocalStorage(): void {
     return
   }
 
-  // Versions before this hardening pass stored answer data in localStorage for seven days.
-  // Purge that bucket whenever a renderer initializes, even though autosave now defaults off.
+  // Purge legacy storage buckets whenever a renderer initializes
   try {
-    window.localStorage.removeItem('HEYFORM_DATA')
+    window.localStorage.removeItem('KYNDFORM_DATA')
+    window.localStorage.removeItem('KYNDFORM_DATA')
   } catch {}
 }
 
@@ -69,7 +69,7 @@ function getSessionStore() {
 export function getLRU(): LRU {
   if (!LRU_CACHE) {
     LRU_CACHE = new LRU({
-      bucket: 'HEYFORM_SESSION_DATA',
+      bucket: 'KYNDFORM_SESSION_DATA',
       expires: 60 * 60,
       store: getSessionStore()
     })

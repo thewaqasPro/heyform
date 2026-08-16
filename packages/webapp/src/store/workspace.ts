@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import computed from 'zustand-computed'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 import { createJSONStorage, persist } from 'zustand/middleware'
 import { immer } from 'zustand/middleware/immer'
 
@@ -49,7 +49,11 @@ const computeState = (state: WorkspaceStoreType): ComputedStoreType => {
   let project: ProjectType | undefined
   let members: MemberType[] = []
   let forms: FormType[] = []
-  const websiteUrl = window.heyform?.websiteURL || WEBSITE_URL || ''
+  const websiteUrl =
+    (window as any).kyndform?.websiteURL ||
+    (window as any).kyndform?.websiteURL ||
+    WEBSITE_URL ||
+    ''
   let sharingURLPrefix = websiteUrl.replace(/\/+$/, '')
 
   const workspace = state.workspaces.find(w => w.id === state.currentWorkspaceId)

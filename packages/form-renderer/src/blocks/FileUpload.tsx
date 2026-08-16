@@ -17,7 +17,7 @@ export const FileUpload: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-file-upload" field={field} {...restProps}>
+    <Block className="kyndform-file-upload" field={field} {...restProps}>
       <Form
         initialValues={{
           input: state.values[field.id]

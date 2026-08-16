@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common'
 import { OpenAI } from 'openai'
 
 import { OPENAI_API_KEY, OPENAI_BASE_URL, OPENAI_GPT_MODEL } from '@environments'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 type ChatCompletionRequest = Omit<
   OpenAI.Chat.Completions.ChatCompletionCreateParamsNonStreaming,

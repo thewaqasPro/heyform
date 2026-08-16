@@ -5,7 +5,7 @@ import { Trans, useTranslation } from 'react-i18next'
 
 import { FormService } from '@/services'
 import { useParam } from '@/utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import OgIcon from '@/assets/og.svg?react'
 import { Button, Image, ImagePicker, ImagePickerRef, Input, Tooltip } from '@/components'

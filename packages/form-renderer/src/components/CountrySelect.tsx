@@ -5,7 +5,7 @@ import type { CSSProperties, FC, MouseEvent } from 'react'
 import { startTransition, useCallback, useEffect, useMemo, useState } from 'react'
 
 import { stopEvent, useKey, useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { COUNTRIES } from '../consts'
 import { AnyMap, IComponentProps } from '../typings'
@@ -80,25 +80,25 @@ const Item: FC<ItemProps> = ({
 
   return (
     <div
-      id={`heyform-country-${country.value}`}
-      className={clsx('heyform-radio', {
-        'heyform-radio-selected': isSelected,
-        'heyform-radio-highlighted': isHighlighted
+      id={`kyndform-country-${country.value}`}
+      className={clsx('kyndform-radio', {
+        'kyndform-radio-selected': isSelected,
+        'kyndform-radio-highlighted': isHighlighted
       })}
       onMouseEnter={handleHover}
       onClick={handleClick}
       {...restProps}
     >
-      <div className="heyform-radio-container">
-        <div className="heyform-radio-content">
+      <div className="kyndform-radio-container">
+        <div className="kyndform-radio-content">
           <FlagIcon className="mr-2" countryCode={country.value} />
           {enableCallingCode && (
-            <span className="heyform-radio-calling-code mr-2">+{country.callingCode}</span>
+            <span className="kyndform-radio-calling-code mr-2">+{country.callingCode}</span>
           )}
-          <span className="heyform-radio-label">{t(country.label)}</span>
+          <span className="kyndform-radio-label">{t(country.label)}</span>
         </div>
         {isSelected && (
-          <div className="heyform-radio-icon">
+          <div className="kyndform-radio-icon">
             <IconCheck />
           </div>
         )}
@@ -179,7 +179,7 @@ export const CountrySelect: FC<CountrySelectProps> = ({
   const memoOverlay = useMemo(() => {
     return (
       <div
-        className={clsx('heyform-select-popup', popupClassName)}
+        className={clsx('kyndform-select-popup', popupClassName)}
         style={{ width: triggerStyle?.width }}
         onMouseLeave={() => setHighlighted(undefined)}
       >
@@ -210,7 +210,7 @@ export const CountrySelect: FC<CountrySelectProps> = ({
 
   function scrollIntoView(value: string) {
     setTimeout(() => {
-      document.getElementById(`heyform-country-${value}`)?.scrollIntoView({ block: 'nearest' })
+      document.getElementById(`kyndform-country-${value}`)?.scrollIntoView({ block: 'nearest' })
     }, 0)
   }
 
@@ -271,10 +271,10 @@ export const CountrySelect: FC<CountrySelectProps> = ({
 
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add('heyform-dropdown-open')
+      document.body.classList.add('kyndform-dropdown-open')
       setTriggerStyle(ref?.getBoundingClientRect())
     } else {
-      document.body.classList.remove('heyform-dropdown-open')
+      document.body.classList.remove('kyndform-dropdown-open')
     }
 
     onDropdownVisibleChange?.(isOpen)
@@ -285,39 +285,39 @@ export const CountrySelect: FC<CountrySelectProps> = ({
       <div
         ref={setRef}
         className={clsx(
-          'heyform-select',
+          'kyndform-select',
           {
-            'heyform-select-open': isOpen,
+            'kyndform-select-open': isOpen,
             'select-error': isHasError
           },
           className
         )}
         onClick={handleClick}
       >
-        <div className="heyform-select-container">
-          <div className="heyform-select-value">
+        <div className="kyndform-select-container">
+          <div className="kyndform-select-value">
             {selected && <FlagIcon className="mr-2" countryCode={selected.value} />}
             {enableLabel && (
               // @ts-ignore
-              <span className="heyform-select-label" data-placeholder={placeholder}>
+              <span className="kyndform-select-label" data-placeholder={placeholder}>
                 {selected && t(selected.label)}
               </span>
             )}
           </div>
 
           {selected && allowClear && (
-            <Tooltip className="heyform-select-clear" ariaLabel={t('Clear')}>
+            <Tooltip className="kyndform-select-clear" ariaLabel={t('Clear')}>
               <button type="button" onClick={handleClear}>
                 <XIcon />
               </button>
             </Tooltip>
           )}
 
-          <div className="heyform-select-arrow-icon">
+          <div className="kyndform-select-arrow-icon">
             {isOpen ? <IconChevronUp /> : <IconChevronDown />}
           </div>
         </div>
-        <div className="heyform-group-highlight" />
+        <div className="kyndform-group-highlight" />
       </div>
 
       <Popup

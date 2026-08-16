@@ -50,7 +50,7 @@ export default {
       embeds: [
         {
           title: `📋 New Form Submission: ${form.name}`,
-          description: `A new response has been submitted on HeyForm.`,
+          description: `A new response has been submitted on KyndForm.`,
           color: 0x5865f2,
           fields,
           footer: {

@@ -1,4 +1,4 @@
-import { FieldKindEnum } from '@heyform-inc/shared-types-enums'
+import { FieldKindEnum } from '@kyndform/shared-types-enums'
 import { BadRequestException } from '@nestjs/common'
 import * as assert from 'assert'
 

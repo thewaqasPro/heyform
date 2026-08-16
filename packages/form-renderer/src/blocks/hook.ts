@@ -1,9 +1,9 @@
-import { type Choice, ChoiceBadgeEnum } from '@heyform-inc/shared-types-enums'
+import { type Choice, ChoiceBadgeEnum } from '@kyndform/shared-types-enums'
 import type { WheelEvent } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 
 import { GlobalTimeout, getChoiceKeyName } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 interface SelectionRange {
   allowMultiple: boolean

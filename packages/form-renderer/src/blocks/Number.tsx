@@ -17,7 +17,7 @@ export const Number: FC<BlockProps> = ({ field, ...restProps }) => {
   }
 
   return (
-    <Block className="heyform-number" field={field} {...restProps}>
+    <Block className="kyndform-number" field={field} {...restProps}>
       <Form
         initialValues={{
           input: state.values[field.id]

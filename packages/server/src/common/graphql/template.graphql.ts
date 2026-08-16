@@ -1,4 +1,4 @@
-import { FormField, FormKindEnum, InteractiveModeEnum } from '@heyform-inc/shared-types-enums'
+import { FormField, FormKindEnum, InteractiveModeEnum } from '@kyndform/shared-types-enums'
 import { IsOptional, IsString, Max, MaxLength } from 'class-validator'
 
 import { FormFieldType, ThemeSettingsType } from './form.graphql'

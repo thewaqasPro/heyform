@@ -1,7 +1,7 @@
 import type { ChangeEvent, CompositionEvent, FC, KeyboardEvent, Ref } from 'react'
 import { useEffect, useImperativeHandle, useRef, useState } from 'react'
 
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { IComponentProps } from '../typings'
 
@@ -112,7 +112,7 @@ export const Input: FC<InputProps> = ({
   return (
     <input
       ref={inputRef}
-      className="input heyform-input"
+      className="input kyndform-input"
       type={type}
       value={value as string}
       disabled={disabled}

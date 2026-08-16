@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 
 import { useTranslation } from '../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import { ChoiceRadioGroup, FormField, SelectHelper } from '../components'
 import { useStore } from '../store'
@@ -43,7 +43,7 @@ export const MultipleChoice: FC<BlockProps> = ({ field, ...restProps }) => {
   }, [field.id, state.values])
 
   return (
-    <Block className="heyform-multiple-choice" field={field} {...restProps}>
+    <Block className="kyndform-multiple-choice" field={field} {...restProps}>
       <SelectHelper min={min} max={max} />
 
       <Form

@@ -37,7 +37,7 @@ function compose(args) {
 async function main() {
   let code = 0
   try {
-    code = compose(['up', '-d', '--build', 'heyform'])
+    code = compose(['up', '-d', '--build', 'kyndform'])
     if (code !== 0) {
       console.error('Failed to bring up the docker stack')
       process.exit(code)
@@ -46,7 +46,7 @@ async function main() {
     const env = {
       ...process.env,
       E2E_BASE_URL: process.env.E2E_BASE_URL || 'http://localhost:9157',
-      E2E_MONGO_URI: process.env.E2E_MONGO_URI || 'mongodb://127.0.0.1:27017/heyform',
+      E2E_MONGO_URI: process.env.E2E_MONGO_URI || 'mongodb://127.0.0.1:27017/kyndform',
       E2E_REDIS_HOST: process.env.E2E_REDIS_HOST || '127.0.0.1',
       E2E_REDIS_PORT: process.env.E2E_REDIS_PORT || '9514',
       E2E_WAIT_MS: process.env.E2E_WAIT_MS || '120000'

@@ -1,4 +1,4 @@
-import { FormStatusEnum } from '@heyform-inc/shared-types-enums'
+import { FormStatusEnum } from '@kyndform/shared-types-enums'
 import { Process, Processor } from '@nestjs/bull'
 
 import {

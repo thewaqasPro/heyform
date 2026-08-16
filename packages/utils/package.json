@@ -1,9 +1,9 @@
 {
-  "name": "@heyform-inc/utils",
-  "description": "HeyForm utils",
+  "name": "@kyndform/utils",
+  "description": "KyndForm utils",
   "version": "1.3.1",
-  "homepage": "https://heyform.net",
-  "author": "Heyooo, Inc.",
+  "homepage": "https://kyndform.com",
+  "author": "KyndForm, Inc.",
   "license": "AGPL-3.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "test": "vitest",
+    "test": "vitest run",
     "cov": "vitest run --coverage",
     "clean": "rimraf dist",
     "prebuild": "npm run clean"
@@ -70,12 +70,12 @@
     "@types/html-to-text": "^9.0.4",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.0.10",
-    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/coverage-v8": "^1.6.0",
     "jsdom": "^27.4.0",
     "rimraf": "^6.1.2",
     "tslib": "^2.0.0",
     "tsup": "^8.0.2",
     "typescript": "5.9.3",
-    "vitest": "^4.0.18"
+    "vitest": "^1.6.0"
   }
 }

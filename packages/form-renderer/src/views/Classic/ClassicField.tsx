@@ -2,12 +2,12 @@ import {
   ChoiceBadgeEnum,
   FieldKindEnum,
   FormField as IFormField
-} from '@heyform-inc/shared-types-enums'
+} from '@kyndform/shared-types-enums'
 import clsx from 'clsx'
 import { FC, useMemo } from 'react'
 
 import { removeHeading, useTranslation } from '../../utils'
-import { helper } from '@heyform-inc/utils'
+import { helper } from '@kyndform/utils'
 
 import {
   ChoiceRadioGroup,
@@ -173,7 +173,7 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
             itemRender={(idx: number) => (
               <>
                 {icon}
-                <span className="heyform-rate-index">{idx}</span>
+                <span className="kyndform-rate-index">{idx}</span>
               </>
             )}
           />
@@ -185,12 +185,12 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
         const min = (field.properties as any)?.startAtOne ? 1 : 0
         const scaleValues = Array.from({ length: total }, (_, i) => min + i)
         return (
-          <div className="heyform-classic-opinion-scale">
+          <div className="kyndform-classic-opinion-scale">
             {scaleValues.map(num => (
               <button
                 key={num}
                 type="button"
-                className={clsx('heyform-opinion-btn', {
+                className={clsx('kyndform-opinion-btn', {
                   'is-selected': value === num
                 })}
                 onClick={() => onChange(num)}
@@ -215,7 +215,7 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
 
       case FieldKindEnum.FULL_NAME:
         return (
-          <div className="heyform-classic-grid-2">
+          <div className="kyndform-classic-grid-2">
             <Input
               value={value?.firstName}
               onChange={val => handleFullNameChange('firstName', val)}
@@ -242,7 +242,7 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
               onChange={val => handleAddressChange('address2', val)}
               placeholder={t('Address Line 2 (optional)')}
             />
-            <div className="heyform-classic-grid-2">
+            <div className="kyndform-classic-grid-2">
               <Input
                 value={value?.city}
                 onChange={val => handleAddressChange('city', val)}
@@ -254,7 +254,7 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
                 placeholder={t('State/Province')}
               />
             </div>
-            <div className="heyform-classic-grid-2">
+            <div className="kyndform-classic-grid-2">
               <Input
                 value={value?.zip}
                 onChange={val => handleAddressChange('zip', val)}
@@ -276,7 +276,7 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
 
       case FieldKindEnum.LEGAL_TERMS:
         return (
-          <label className="heyform-classic-legal">
+          <label className="kyndform-classic-legal">
             <input type="checkbox" checked={!!value} onChange={e => onChange(e.target.checked)} />
             <span>{field.properties?.buttonText || t('I agree to the terms and conditions')}</span>
           </label>
@@ -302,26 +302,26 @@ export const ClassicField: FC<ClassicFieldProps> = ({ field, index, error, onCha
   return (
     <div
       id={`field-${field.id}`}
-      className={clsx('heyform-classic-field', {
+      className={clsx('kyndform-classic-field', {
         'has-error': !!error
       })}
     >
-      <label className="heyform-classic-label">
-        <span className="heyform-classic-number">{index + 1}.</span>
+      <label className="kyndform-classic-label">
+        <span className="kyndform-classic-number">{index + 1}.</span>
         <span dangerouslySetInnerHTML={{ __html: titleHtml }} />
-        {isRequired && <span className="heyform-classic-required">*</span>}
+        {isRequired && <span className="kyndform-classic-required">*</span>}
       </label>
 
       {field.description && (
         <div
-          className="heyform-classic-field-description"
+          className="kyndform-classic-field-description"
           dangerouslySetInnerHTML={{ __html: field.description as string }}
         />
       )}
 
-      <div className="heyform-classic-field-control">{renderInput()}</div>
+      <div className="kyndform-classic-field-control">{renderInput()}</div>
 
-      {error && <div className="heyform-classic-error-message">⚠️ {error}</div>}
+      {error && <div className="kyndform-classic-error-message">⚠️ {error}</div>}
     </div>
   )
 }

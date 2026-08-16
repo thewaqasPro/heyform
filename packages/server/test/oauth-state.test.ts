@@ -6,9 +6,9 @@ const originalLoad = Module._load
 Module._load = function (request: string, parent: any, isMain: boolean) {
   if (request === '@config') {
     return {
-      COOKIE_DEVICE_ID_NAME: 'HEYFORM_DEVICE_ID',
-      COOKIE_LOGIN_IN_NAME: 'HEYFORM_LOGGED_IN',
-      COOKIE_SESSION_NAME: 'HEYFORM_SESSION',
+      COOKIE_DEVICE_ID_NAME: 'KYNDFORM_DEVICE_ID',
+      COOKIE_LOGIN_IN_NAME: 'KYNDFORM_LOGGED_IN',
+      COOKIE_SESSION_NAME: 'KYNDFORM_SESSION',
       CookieOptionsFactory: (options = {}) => options,
       SessionOptionsFactory: (options = {}) => options
     }
@@ -76,23 +76,23 @@ async function testVerifiesStoredOAuthState() {
 
   const state = await service.createOAuthState(req, res, 'device_1')
 
-  assert.strictEqual(cookies.HEYFORM_OAUTH_STATE, state)
+  assert.strictEqual(cookies.KYNDFORM_OAUTH_STATE, state)
   assert.strictEqual(values.get(`oauth_state:${state}`), 'device_1')
 
-  req.cookies.HEYFORM_OAUTH_STATE = state
+  req.cookies.KYNDFORM_OAUTH_STATE = state
   await service.verifyOAuthState(req, res, state)
 
   assert.strictEqual(values.has(`oauth_state:${state}`), false)
   assert.strictEqual(req.headers['x-device-id'], 'device_1')
-  assert.strictEqual(req.cookies.HEYFORM_DEVICE_ID, 'device_1')
-  assert.deepStrictEqual(cleared, ['HEYFORM_OAUTH_STATE'])
+  assert.strictEqual(req.cookies.KYNDFORM_DEVICE_ID, 'device_1')
+  assert.deepStrictEqual(cleared, ['KYNDFORM_OAUTH_STATE'])
 }
 
 async function testRejectsMismatchedOAuthState() {
   const { service, res } = createAuthService()
   const req: Record<string, any> = {
     cookies: {
-      HEYFORM_OAUTH_STATE: 'state_1'
+      KYNDFORM_OAUTH_STATE: 'state_1'
     },
     headers: {}
   }

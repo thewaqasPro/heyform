@@ -10,7 +10,7 @@ export const Input = ({ value, onChange }: InputProps) => {
 
   return (
     <input
-      className="heyform-input"
+      className="kyndform-input"
       value={value}
       placeholder="Enter form password here"
       onChange={handleChange}

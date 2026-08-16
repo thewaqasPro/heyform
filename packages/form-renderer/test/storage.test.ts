@@ -30,7 +30,7 @@ test('renderer initialization purges the legacy localStorage answer bucket', () 
 
   try {
     expect(getStorage('form_1', false)).toEqual({})
-    expect(removed).toEqual(['HEYFORM_DATA'])
+    expect(removed).toEqual(['KYNDFORM_DATA'])
   } finally {
     Reflect.deleteProperty(globalThis, 'window')
   }

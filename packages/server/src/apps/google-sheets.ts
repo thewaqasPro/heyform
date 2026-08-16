@@ -21,7 +21,7 @@ export default {
   description: 'Send form responses directly to a Google Sheets spreadsheet in real-time.',
   icon: '/static/google-sheets.png',
 
-  // Settings rendered in the HeyForm Integrations UI
+  // Settings rendered in the KyndForm Integrations UI
   settings: [
     {
       type: 'text',

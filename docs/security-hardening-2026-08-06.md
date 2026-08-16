@@ -1,7 +1,7 @@
 # Security hardening (2026-08-06)
 
 This document records the controls added after reviewing the repository security advisories with
-`gh api /repos/heyform/heyform/security-advisories`. It is intended as a deployment and regression
+`gh api /repos/kyndform/kyndform/security-advisories`. It is intended as a deployment and regression
 checklist; it does not replace the individual GitHub advisory descriptions.
 
 ## Advisories addressed by this hardening pass
@@ -80,7 +80,7 @@ The current branch already contains controls for the earlier published advisorie
 ## Deployment requirements
 
 1. Run production containers with `NODE_ENV=production`. The Docker runner now sets this value.
-2. Keep `HEYFORM_ALLOW_PRIVATE_OUTBOUND=false` (or unset) in production. Private/localhost
+2. Keep `KYNDFORM_ALLOW_PRIVATE_OUTBOUND=false` (or unset) in production. Private/localhost
    outbound access is permitted only when both `NODE_ENV=development` and this flag is exactly
    `true`.
 3. `TRUST_PROXY` defaults to `false`. If a known reverse proxy is the only network path to the
