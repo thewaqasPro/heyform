@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_link",
+      "label": "Link Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/link.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

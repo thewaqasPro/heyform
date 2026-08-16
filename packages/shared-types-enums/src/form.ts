@@ -58,6 +58,11 @@ export interface FormSettings {
   enableClosedMessage?: boolean
   closedFormTitle?: string
   closedFormDescription?: string
+
+  // Headless & Static Form Settings
+  allowedDomains?: string[]
+  defaultRedirectUrl?: string
+  autoCreateFields?: boolean
 }
 
 export interface Choice {

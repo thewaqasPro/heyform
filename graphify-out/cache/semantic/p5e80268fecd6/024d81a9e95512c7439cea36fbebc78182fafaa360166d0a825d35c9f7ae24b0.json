@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_yes_no",
+      "label": "Yes/No Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/yes-no.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

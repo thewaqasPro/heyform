@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_layout_float_left",
+      "label": "Layout Float Left Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/layout-float-left.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

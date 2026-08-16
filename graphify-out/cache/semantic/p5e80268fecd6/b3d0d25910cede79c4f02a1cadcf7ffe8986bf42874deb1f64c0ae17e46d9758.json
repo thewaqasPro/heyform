@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "vollkorn_ofl",
+      "label": "Vollkorn SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Vollkorn/OFL.txt",
+      "author": "The Vollkorn Project Authors"
+    }
+  ],
+  "edges": [
+    {
+      "source": "vollkorn_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Vollkorn/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

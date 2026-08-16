@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "montserrat_readme",
+      "label": "Montserrat Variable Font README",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Montserrat/README.txt",
+      "rationale": "Documentation for Montserrat font axis (wght) and file structure."
+    }
+  ],
+  "edges": [
+    {
+      "source": "montserrat_readme",
+      "target": "montserrat_ofl",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Montserrat/README.txt"
+    }
+  ],
+  "hyperedges": []
+}

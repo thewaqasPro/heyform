@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_josefin_sans_ofl",
+      "label": "Josefin Sans License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Josefin_Sans/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_karla_ofl",
+      "label": "Karla License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Karla/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

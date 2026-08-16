@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_picture_choice",
+      "label": "Picture Choice Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/picture-choice.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

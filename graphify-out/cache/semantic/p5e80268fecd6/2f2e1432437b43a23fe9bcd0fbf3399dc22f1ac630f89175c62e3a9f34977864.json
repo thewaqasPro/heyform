@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "nunito_ofl",
+      "label": "Nunito SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Nunito/OFL.txt",
+      "author": "The Nunito Project Authors"
+    }
+  ],
+  "edges": [
+    {
+      "source": "nunito_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Nunito/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

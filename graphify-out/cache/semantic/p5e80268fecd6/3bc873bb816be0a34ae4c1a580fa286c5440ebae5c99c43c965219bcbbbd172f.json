@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_legal_terms",
+      "label": "Legal Terms Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/legal-terms.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

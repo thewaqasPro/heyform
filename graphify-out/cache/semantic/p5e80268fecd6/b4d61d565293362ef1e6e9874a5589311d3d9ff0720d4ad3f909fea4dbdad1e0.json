@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_statement",
+      "label": "Statement Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/statement.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

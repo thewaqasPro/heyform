@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_rating",
+      "label": "Rating Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/rating.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

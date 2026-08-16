@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_layout_cover",
+      "label": "Layout Cover Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/layout-cover.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

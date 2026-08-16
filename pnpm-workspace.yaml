@@ -1,4 +1,13 @@
 packages:
-  - 'packages/server'
-  - 'packages/webapp'
-  - 'packages/form-renderer'
+  - 'packages/*'
+allowBuilds:
+  '@apollo/protobufjs': true
+  '@nestjs/core': true
+  '@parcel/watcher': true
+  '@swc/core': true
+  bcrypt: true
+  bufferutil: true
+  esbuild: true
+  sharp: true
+  simple-git-hooks: true
+  utf-8-validate: true

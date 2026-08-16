@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_courier_prime_ofl",
+      "label": "Courier Prime License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Courier_Prime/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

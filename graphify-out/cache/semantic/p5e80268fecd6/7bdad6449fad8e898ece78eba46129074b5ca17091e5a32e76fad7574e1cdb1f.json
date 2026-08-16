@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_crimson_text_ofl",
+      "label": "Crimson Text License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Crimson_Text/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

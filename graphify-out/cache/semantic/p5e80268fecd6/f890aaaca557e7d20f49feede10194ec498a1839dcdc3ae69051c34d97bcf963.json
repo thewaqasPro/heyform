@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_fira_sans_ofl",
+      "label": "Fira Sans License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Fira_Sans/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

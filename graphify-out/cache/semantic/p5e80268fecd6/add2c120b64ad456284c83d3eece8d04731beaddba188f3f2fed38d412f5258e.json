@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "source_sans_3_readme",
+      "label": "Source Sans 3 Variable Font README",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Source_Sans_3/README.txt",
+      "rationale": "Documentation for Source Sans 3 font axis (wght) and file structure."
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_sans_3_readme",
+      "target": "source_sans_3_ofl",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Source_Sans_3/README.txt"
+    }
+  ],
+  "hyperedges": []
+}

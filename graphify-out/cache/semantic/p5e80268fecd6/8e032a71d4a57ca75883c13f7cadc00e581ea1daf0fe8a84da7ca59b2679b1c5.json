@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_number",
+      "label": "Number Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/number.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

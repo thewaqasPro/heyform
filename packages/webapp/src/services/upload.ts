@@ -1,6 +1,8 @@
 import { FileUploadValue } from '@heyform-inc/shared-types-enums'
 import axios from 'axios'
 
+import { getDeviceId } from '@/utils'
+
 export interface UploadContext {
   fieldId: string
   formId: string
@@ -12,9 +14,13 @@ export class UploadService {
     const formData = new FormData()
     formData.append('file', file)
 
+    const deviceId = getDeviceId()
+
     const result = await axios.post('/api/upload', formData, {
+      withCredentials: true,
       headers: {
         'Content-Type': 'multipart/form-data',
+        ...(deviceId ? { 'x-device-id': deviceId } : {}),
         ...(context
           ? {
               'x-heyform-field-id': context.fieldId,

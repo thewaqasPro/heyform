@@ -1,0 +1,63 @@
+{
+  "nodes": [
+    {
+      "id": "docker_compose_test",
+      "label": "Docker Compose Test",
+      "file_type": "code",
+      "source_file": "docker-compose.test.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null
+    },
+    {
+      "id": "mongo",
+      "label": "MongoDB",
+      "file_type": "concept",
+      "source_file": "docker-compose.test.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null
+    },
+    {
+      "id": "keydb",
+      "label": "KeyDB",
+      "file_type": "concept",
+      "source_file": "docker-compose.test.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "docker_compose_test",
+      "target": "mongo",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docker-compose.test.yml",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "docker_compose_test",
+      "target": "keydb",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docker-compose.test.yml",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": []
+}

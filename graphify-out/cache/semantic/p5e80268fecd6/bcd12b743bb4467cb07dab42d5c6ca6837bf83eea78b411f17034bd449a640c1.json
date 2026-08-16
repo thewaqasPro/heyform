@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "oswald_readme",
+      "label": "Oswald Variable Font README",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Oswald/README.txt",
+      "rationale": "Documentation for Oswald font axis (wght) and file structure."
+    }
+  ],
+  "edges": [
+    {
+      "source": "oswald_readme",
+      "target": "oswald_ofl",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Oswald/README.txt"
+    }
+  ],
+  "hyperedges": []
+}

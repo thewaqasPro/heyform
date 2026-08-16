@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_payment",
+      "label": "Payment Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/payment.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

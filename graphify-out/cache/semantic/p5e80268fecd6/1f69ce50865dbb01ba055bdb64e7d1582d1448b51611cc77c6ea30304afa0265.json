@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "varela_ofl",
+      "label": "Varela SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Varela/OFL.txt",
+      "author": "Joe Prince, Admix Designs"
+    }
+  ],
+  "edges": [
+    {
+      "source": "varela_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Varela/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_ibm_plex_mono_ofl",
+      "label": "IBM Plex Mono License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/IBM_Plex_Mono/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

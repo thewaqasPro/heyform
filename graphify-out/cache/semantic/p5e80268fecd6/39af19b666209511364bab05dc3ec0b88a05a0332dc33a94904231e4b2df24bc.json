@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "pt_serif_ofl",
+      "label": "PT Serif SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/PT_Serif/OFL.txt",
+      "author": "ParaType Ltd."
+    }
+  ],
+  "edges": [
+    {
+      "source": "pt_serif_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/PT_Serif/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

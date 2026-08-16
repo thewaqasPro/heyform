@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "assets_images_screenshot",
+      "label": "HeyForm UI Screenshot",
+      "file_type": "image",
+      "source_file": "assets/images/screenshot.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

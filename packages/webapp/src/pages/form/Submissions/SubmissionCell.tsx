@@ -34,52 +34,47 @@ interface SubmissionCellProps extends SubmissionHeaderCellProps {
 const ICON_CONFIGS = [...ALL_FIELD_CONFIGS, ...CUSTOM_FIELDS_CONFIGS]
 
 const AddressItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {
-  const { t } = useTranslation()
+  if (answer.kind !== field.kind || answer.value === undefined || answer.value === null) {
+    return null
+  }
 
-  if (answer.kind !== field.kind || !helper.isObject(answer.value)) {
+  if (typeof answer.value === 'string') {
+    return (
+      <div className={cn(isTableCell ? 'truncate' : 'whitespace-pre-line')}>{answer.value}</div>
+    )
+  }
+
+  if (!helper.isObject(answer.value)) {
     return null
   }
 
   const value = [
-    answer.value.address1,
+    answer.value.address1 || answer.value.address || answer.value.street,
     answer.value.address2,
     answer.value.city,
-    answer.value.state,
-    answer.value.zip
-  ]
+    answer.value.state || answer.value.region,
+    answer.value.zip || answer.value.postalCode || answer.value.postal_code,
+    answer.value.country,
+    answer.value.latitude && answer.value.longitude
+      ? `(${answer.value.latitude}, ${answer.value.longitude})`
+      : answer.value.coordinates
+  ].filter(helper.isValid)
 
   if (isTableCell) {
-    return <span className="text-nowrap">{value.filter(helper.isValid).join(', ')}</span>
+    return <span className="text-nowrap">{value.join(', ')}</span>
   }
 
-  const labels = [
-    t('form.submissions.address.address1'),
-    t('form.submissions.address.address2'),
-    t('form.submissions.address.city'),
-    t('form.submissions.address.state'),
-    t('form.submissions.address.zip')
-  ]
-
-  const result = value
-    .map((row, index) => {
-      if (helper.isValid(row)) {
-        return {
-          value: row,
-          label: labels[index]
-        }
-      }
-    })
-    .filter(Boolean) as AnyMap[]
+  const entries = Object.entries(answer.value).filter(([_, v]) => helper.isValid(v))
 
   return (
     <dl className="grid grid-cols-1 text-base/6 sm:grid-cols-[min(50%,theme(spacing.80))_auto] sm:text-sm/6">
-      {result.map((row, index) => (
+      {entries.map(([k, v], index) => (
         <Fragment key={index}>
-          <dt className="border-accent-light text-secondary sm:border-accent-light col-start-1 border-t pt-3 first:border-none sm:border-t sm:py-3">
-            {row.label}
+          <dt className="border-accent-light text-secondary sm:border-accent-light col-start-1 border-t pt-3 capitalize first:border-none sm:border-t sm:py-3">
+            {k.replace(/[-_]+/g, ' ')}
           </dt>
-          <dd className="sm:[&amp;:nth-child(2)]:border-none text-primary sm:border-accent-light pb-3 pt-1 sm:border-t sm:py-3">
-            {row.value}
+          <dd className="text-primary sm:border-accent-light pb-3 pt-1 sm:border-t sm:py-3 sm:[&:nth-child(2)]:border-none">
+            {typeof v === 'object' ? JSON.stringify(v) : String(v)}
           </dd>
         </Fragment>
       ))}
@@ -215,18 +210,45 @@ const InputTableItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell })
 }
 
 const MultipleChoiceItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {
+  if (answer.kind !== field.kind || answer.value === undefined || answer.value === null) {
+    return null
+  }
+
+  // Handle direct string array values from headless submissions
+  if (Array.isArray(answer.value)) {
+    return (
+      <div className={cn('flex', isTableCell ? 'gap-x-2 overflow-hidden py-2' : 'flex-wrap gap-2')}>
+        {answer.value.map((item, index) => (
+          <Badge
+            key={index}
+            color="zinc"
+            className={cn('text-primary', {
+              'text-nowrap': isTableCell
+            })}
+          >
+            {String(item)}
+          </Badge>
+        ))}
+      </div>
+    )
+  }
+
   const choices = field.properties?.choices as Choice[]
 
   if (
-    answer.kind !== field.kind ||
-    !helper.isValidArray(choices) ||
     !helper.isObject(answer.value) ||
     (!helper.isValidArray(answer.value.value) && helper.isEmpty(answer.value.other))
   ) {
     return null
   }
 
-  const result = choices.filter(c => answer.value.value.includes(c.id))
+  const result: { id: string; label: string }[] = []
+
+  if (helper.isValidArray(choices) && helper.isValidArray(answer.value.value)) {
+    result.push(...choices.filter(c => answer.value.value.includes(c.id)))
+  } else if (helper.isValidArray(answer.value.value)) {
+    result.push(...answer.value.value.map((v: string) => ({ id: v, label: v })))
+  }
 
   if (answer.value.other) {
     result.push({
@@ -253,17 +275,34 @@ const MultipleChoiceItem: FC<SubmissionCellProps> = ({ answer, field, isTableCel
 }
 
 const YesNoItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {
-  const choices = field.properties?.choices as Choice[]
-
-  if (answer.kind !== field.kind || !helper.isValidArray(choices)) {
+  if (answer.kind !== field.kind || answer.value === undefined || answer.value === null) {
     return null
   }
 
-  const value = helper.isObject(answer.value) ? answer.value.value : answer.value
-  const selected = choices.find(c => c.id === value)
+  const choices = field.properties?.choices as Choice[]
+  const rawValue = helper.isObject(answer.value) ? answer.value.value : answer.value
 
-  if (!selected) {
-    return null
+  let label: string | undefined
+
+  if (helper.isValidArray(choices)) {
+    const selected = choices.find(c => c.id === rawValue)
+    label = selected?.label
+  }
+
+  if (!label) {
+    if (typeof rawValue === 'boolean') {
+      label = rawValue ? 'Yes' : 'No'
+    } else if (typeof rawValue === 'string') {
+      const lower = rawValue.toLowerCase()
+      label =
+        lower === 'true' || lower === 'yes' || lower === '1'
+          ? 'Yes'
+          : lower === 'false' || lower === 'no' || lower === '0'
+            ? 'No'
+            : rawValue
+    } else {
+      label = String(rawValue)
+    }
   }
 
   return (
@@ -274,7 +313,7 @@ const YesNoItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {
           'text-nowrap': isTableCell
         })}
       >
-        {selected.label}
+        {label}
       </Badge>
     </div>
   )
@@ -346,15 +385,39 @@ const SignatureItem: FC<SubmissionCellProps> = ({ answer, field }) => {
   return <Image src={answer.value} width={80} height={40} resize={{ width: 80, height: 40 }} />
 }
 
-const TextItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {
-  if (
-    answer.kind !== field.kind ||
-    !(helper.isString(answer.value) || helper.isNumber(answer.value))
-  ) {
+const TextItem: FC<SubmissionCellProps> = ({ answer, isTableCell }) => {
+  if (answer.value === undefined || answer.value === null) {
     return null
   }
 
-  return <div className={cn(isTableCell ? 'truncate' : 'whitespace-pre-line')}>{answer.value}</div>
+  if (Array.isArray(answer.value)) {
+    return (
+      <div className={cn(isTableCell ? 'truncate' : 'whitespace-pre-line')}>
+        {answer.value.join(', ')}
+      </div>
+    )
+  }
+
+  if (typeof answer.value === 'object') {
+    const formatted = Object.entries(answer.value)
+      .map(([k, v]) => `${k}: ${typeof v === 'object' ? JSON.stringify(v) : v}`)
+      .join(', ')
+    return <div className={cn(isTableCell ? 'truncate' : 'whitespace-pre-line')}>{formatted}</div>
+  }
+
+  if (typeof answer.value === 'boolean') {
+    return (
+      <div className={cn(isTableCell ? 'truncate' : 'whitespace-pre-line')}>
+        {answer.value ? 'Yes' : 'No'}
+      </div>
+    )
+  }
+
+  return (
+    <div className={cn(isTableCell ? 'truncate' : 'whitespace-pre-line')}>
+      {String(answer.value)}
+    </div>
+  )
 }
 
 const URLItem: FC<SubmissionCellProps> = ({ answer, field, isTableCell }) => {

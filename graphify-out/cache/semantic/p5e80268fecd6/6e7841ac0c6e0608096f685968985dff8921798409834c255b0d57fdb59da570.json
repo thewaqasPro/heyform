@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_cormorant_ofl",
+      "label": "Cormorant License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Cormorant/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

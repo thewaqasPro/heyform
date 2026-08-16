@@ -2,9 +2,11 @@ import {
   IconBrandFacebook,
   IconBrandLinkedin,
   IconBrandX,
+  IconCode,
   IconExclamationCircle,
   IconMail,
-  IconQrcode
+  IconQrcode,
+  IconTerminal2
 } from '@tabler/icons-react'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -16,6 +18,7 @@ import { FORM_EMBED_OPTIONS } from '@/consts'
 import { useAppStore, useFormStore, useWorkspaceStore } from '@/store'
 
 import EmbedModal from './EmbedModal'
+import HeadlessModal from './HeadlessModal'
 import LinkSettings from './LinkSettings'
 import QRCodeModal from './QRCodeModal'
 
@@ -138,6 +141,36 @@ export default function FormShare() {
 
         <LinkSettings />
 
+        <section id="headless">
+          <h2 className="hf-section-title">Headless & Static Form Endpoint</h2>
+          <p className="text-secondary text-sm/6">
+            Connect your Next.js, Astro.js, or static HTML form directly via a simple POST method
+            URL.
+          </p>
+
+          <div className="mt-4 flex flex-col gap-4 sm:flex-row">
+            <div className="hf-card border-input flex flex-1 items-center justify-between rounded-lg border p-4">
+              <div className="flex items-center gap-3">
+                <div className="bg-primary-light/30 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
+                  <IconTerminal2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-primary text-sm font-semibold">
+                    HTML Form Action & API POST
+                  </div>
+                  <div className="text-secondary font-mono text-xs">
+                    {sharingURLPrefix}/f/{formId}
+                  </div>
+                </div>
+              </div>
+              <Button size="sm" onClick={() => openModal('HeadlessModal')}>
+                <IconCode className="h-4 w-4" />
+                <span>Integration Snippets</span>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         <section id="embed">
           <h2 className="hf-section-title">{t('form.share.embed.headline')}</h2>
           <p className="text-secondary text-sm/6">{t('form.share.embed.subHeadline')}</p>
@@ -163,6 +196,7 @@ export default function FormShare() {
 
       <QRCodeModal />
       <EmbedModal />
+      <HeadlessModal />
     </>
   )
 }

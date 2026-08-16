@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_short_text",
+      "label": "Short Text Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/short-text.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

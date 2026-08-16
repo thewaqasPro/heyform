@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_logo",
+      "label": "HeyForm Logo",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/logo.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

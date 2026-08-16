@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_variable_string",
+      "label": "Variable String Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/variable-string.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

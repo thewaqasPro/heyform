@@ -160,6 +160,10 @@ export const S3_BUCKET = process.env.S3_BUCKET
 export const S3_ACCESS_KEY_ID = process.env.S3_ACCESS_KEY_ID
 export const S3_SECRET_ACCESS_KEY = process.env.S3_SECRET_ACCESS_KEY
 export const S3_PUBLIC_URL = process.env.S3_PUBLIC_URL
+export const S3_FORCE_PATH_STYLE: boolean =
+  process.env.S3_FORCE_PATH_STYLE !== undefined
+    ? helper.isTrue(process.env.S3_FORCE_PATH_STYLE)
+    : Boolean(S3_ENDPOINT)
 
 export function parseTrustProxy(value?: string): boolean | number | string {
   const normalized = value?.trim()

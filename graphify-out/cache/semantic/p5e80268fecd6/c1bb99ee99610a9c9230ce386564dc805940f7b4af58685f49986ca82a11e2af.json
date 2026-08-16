@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "work_sans_readme",
+      "label": "Work Sans Variable Font README",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Work_Sans/README.txt",
+      "rationale": "Documentation for Work Sans font axis (wght) and file structure."
+    }
+  ],
+  "edges": [
+    {
+      "source": "work_sans_readme",
+      "target": "work_sans_ofl",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Work_Sans/README.txt"
+    }
+  ],
+  "hyperedges": []
+}

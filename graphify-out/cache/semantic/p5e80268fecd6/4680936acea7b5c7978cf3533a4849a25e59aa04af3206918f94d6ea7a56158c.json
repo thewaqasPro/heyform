@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "old_standard_tt_ofl",
+      "label": "Old Standard TT SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Old_Standard_TT/OFL.txt",
+      "author": "The Old Standard Project Authors"
+    }
+  ],
+  "edges": [
+    {
+      "source": "old_standard_tt_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Old_Standard_TT/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

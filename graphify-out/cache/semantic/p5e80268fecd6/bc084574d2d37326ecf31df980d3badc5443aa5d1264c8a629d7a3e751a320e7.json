@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_alegreya_ofl",
+      "label": "Alegreya License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Alegreya/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

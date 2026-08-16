@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "mulish_readme",
+      "label": "Mulish Variable Font README",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Mulish/README.txt",
+      "rationale": "Documentation for Mulish font axis (wght) and file structure."
+    }
+  ],
+  "edges": [
+    {
+      "source": "mulish_readme",
+      "target": "mulish_ofl",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Mulish/README.txt"
+    }
+  ],
+  "hyperedges": []
+}

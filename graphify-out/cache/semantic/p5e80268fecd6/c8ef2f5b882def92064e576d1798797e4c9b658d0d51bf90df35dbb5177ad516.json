@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_concert_one_ofl",
+      "label": "Concert One License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Concert_One/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

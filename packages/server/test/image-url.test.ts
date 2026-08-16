@@ -13,10 +13,12 @@ async function withImageUrlEnvironment<T>(
   const previousNodeEnv = process.env.NODE_ENV
   const previousHomepageUrl = process.env.APP_HOMEPAGE_URL
   const previousS3PublicUrl = process.env.S3_PUBLIC_URL
+  const previousS3Endpoint = process.env.S3_ENDPOINT
 
   process.env.NODE_ENV = 'production'
   process.env.APP_HOMEPAGE_URL = 'http://192.168.112.4:9157'
   delete process.env.S3_PUBLIC_URL
+  delete process.env.S3_ENDPOINT
 
   delete require.cache[require.resolve('../src/environments')]
   delete require.cache[require.resolve('../src/common/dto')]
@@ -40,6 +42,12 @@ async function withImageUrlEnvironment<T>(
       delete process.env.S3_PUBLIC_URL
     } else {
       process.env.S3_PUBLIC_URL = previousS3PublicUrl
+    }
+
+    if (previousS3Endpoint === undefined) {
+      delete process.env.S3_ENDPOINT
+    } else {
+      process.env.S3_ENDPOINT = previousS3Endpoint
     }
 
     delete require.cache[require.resolve('../src/environments')]

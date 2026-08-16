@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "montserrat_ofl",
+      "label": "Montserrat SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Montserrat/OFL.txt",
+      "author": "The Montserrat.Git Project Authors"
+    }
+  ],
+  "edges": [
+    {
+      "source": "montserrat_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Montserrat/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

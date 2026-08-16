@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_lora_ofl",
+      "label": "Lora License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Lora/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

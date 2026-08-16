@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "mulish_ofl",
+      "label": "Mulish SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Mulish/OFL.txt",
+      "author": "The Mulish Project Authors"
+    }
+  ],
+  "edges": [
+    {
+      "source": "mulish_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Mulish/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

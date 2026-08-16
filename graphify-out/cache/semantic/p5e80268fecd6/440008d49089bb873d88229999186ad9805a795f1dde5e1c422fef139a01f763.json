@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_phone_number",
+      "label": "Phone Number Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/phone-number.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

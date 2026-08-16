@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "assets_website",
+      "label": "Website Icon",
+      "file_type": "code",
+      "source_file": "packages/webapp/src/assets/website.svg",
+      "verification": "unverified"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "id": "spectral_ofl",
+      "label": "Spectral SIL Open Font License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Spectral/OFL.txt",
+      "author": "The Spectral Project Authors"
+    }
+  ],
+  "edges": [
+    {
+      "source": "spectral_ofl",
+      "target": "sil_open_font_license_1_1",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "packages/webapp/src/assets/fonts/Spectral/OFL.txt"
+    }
+  ],
+  "hyperedges": []
+}

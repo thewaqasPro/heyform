@@ -21,56 +21,86 @@ export function answersToHtml(answers: Answer[]): string {
 }
 
 function parseHtmlAnswer(answer: Answer): string {
+  if (answer.value === undefined || answer.value === null) {
+    return ''
+  }
+
   let value = ''
 
   if (QUESTION_FIELD_KINDS.includes(answer.kind)) {
-    switch (answer.kind) {
-      case FieldKindEnum.FILE_UPLOAD:
-        const file = parser.fileUpload(answer)
-        value = `${file.filename} (${file.url})`
-        break
+    try {
+      switch (answer.kind) {
+        case FieldKindEnum.FILE_UPLOAD:
+          const file = parser.fileUpload(answer)
+          value = `${file.filename} (${file.url})`
+          break
 
-      case FieldKindEnum.RATING:
-      case FieldKindEnum.OPINION_SCALE:
-        value = parser.rating(answer)
-        break
+        case FieldKindEnum.RATING:
+        case FieldKindEnum.OPINION_SCALE:
+          value = parser.rating(answer)
+          break
 
-      case FieldKindEnum.YES_NO:
-        value = parser.singleChoice(answer)
-        break
+        case FieldKindEnum.YES_NO:
+          value = parser.singleChoice(answer)
+          break
 
-      case FieldKindEnum.MULTIPLE_CHOICE:
-      case FieldKindEnum.PICTURE_CHOICE:
-        value = parser.multipleChoice(answer)
-        break
+        case FieldKindEnum.MULTIPLE_CHOICE:
+        case FieldKindEnum.PICTURE_CHOICE:
+          value = parser.multipleChoice(answer)
+          break
 
-      case FieldKindEnum.FULL_NAME:
-        const name = parser.fullName(answer)
-        value = `${name.firstName} ${name.lastName}`
-        break
+        case FieldKindEnum.FULL_NAME:
+          const name = parser.fullName(answer)
+          value = `${name.firstName || ''} ${name.lastName || ''}`.trim()
+          break
 
-      case FieldKindEnum.ADDRESS:
-        value = parser.address(answer)
-        break
+        case FieldKindEnum.ADDRESS:
+          value = parser.address(answer)
+          break
 
-      case FieldKindEnum.LEGAL_TERMS:
-        value = parser.legalTerms(answer)
-        break
+        case FieldKindEnum.LEGAL_TERMS:
+          value = parser.legalTerms(answer)
+          break
 
-      case FieldKindEnum.DATE_RANGE:
-        value = parser.dateRange(answer)
-        break
+        case FieldKindEnum.DATE_RANGE:
+          value = parser.dateRange(answer)
+          break
 
-      case FieldKindEnum.INPUT_TABLE:
-        value = parser.inputTable(answer)
-        break
+        case FieldKindEnum.INPUT_TABLE:
+          value = parser.inputTable(answer)
+          break
 
-      case FieldKindEnum.PAYMENT:
-        value = parser.payment(answer)
-        break
+        case FieldKindEnum.PAYMENT:
+          value = parser.payment(answer)
+          break
 
-      default:
-        value = answer.value?.toString()
+        default:
+          if (Array.isArray(answer.value)) {
+            value = answer.value.join(', ')
+          } else if (typeof answer.value === 'object') {
+            value = Object.entries(answer.value)
+              .map(([k, v]) => `${k}: ${v}`)
+              .join(', ')
+          } else if (typeof answer.value === 'boolean') {
+            value = answer.value ? 'Yes' : 'No'
+          } else {
+            value = answer.value?.toString() || ''
+          }
+      }
+    } catch (_) {
+      value = typeof answer.value === 'object' ? JSON.stringify(answer.value) : String(answer.value)
+    }
+  } else {
+    if (Array.isArray(answer.value)) {
+      value = answer.value.join(', ')
+    } else if (typeof answer.value === 'object') {
+      value = Object.entries(answer.value)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join(', ')
+    } else if (typeof answer.value === 'boolean') {
+      value = answer.value ? 'Yes' : 'No'
+    } else {
+      value = answer.value?.toString() || ''
     }
   }
 

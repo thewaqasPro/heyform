@@ -57,6 +57,15 @@ export default function FormSettingsProtection() {
         >
           <Switch />
         </Form.Item>
+
+        <Form.Item
+          className="[&_[data-slot=content]]:pt-1.5"
+          name="defaultRedirectUrl"
+          label="Default Redirect URL"
+          description="Fallback URL where respondents are redirected after static form submission if _next is not specified."
+        >
+          <Input placeholder="https://example.com/thank-you" />
+        </Form.Item>
       </div>
     </section>
   )

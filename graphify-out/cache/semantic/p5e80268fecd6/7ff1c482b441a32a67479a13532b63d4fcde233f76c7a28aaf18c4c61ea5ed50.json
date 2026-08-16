@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_biorhyme_ofl",
+      "label": "BioRhyme License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/BioRhyme/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

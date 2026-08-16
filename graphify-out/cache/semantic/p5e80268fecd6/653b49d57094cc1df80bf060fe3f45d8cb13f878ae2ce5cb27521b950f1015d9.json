@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "docs_security_hardening_2026_08_06",
+      "label": "Security hardening (2026-08-06)",
+      "file_type": "document",
+      "source_file": "docs/security-hardening-2026-08-06.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": null
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

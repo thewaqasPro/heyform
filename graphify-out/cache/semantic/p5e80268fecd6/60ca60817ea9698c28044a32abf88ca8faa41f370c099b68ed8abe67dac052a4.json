@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "id": "fonts_archivo_ofl",
+      "label": "Archivo License",
+      "file_type": "document",
+      "source_file": "packages/webapp/src/assets/fonts/Archivo/OFL.txt"
+    }
+  ],
+  "edges": [],
+  "hyperedges": []
+}

@@ -112,6 +112,25 @@ const SubmissionDetail: FC<SubmissionDetailProps> = () => {
           {fields.map(field => (
             <SubmissionItem key={field.id} submission={payload?.submission} field={field} />
           ))}
+
+          {payload?.submission?.hiddenFields && payload.submission.hiddenFields.length > 0 && (
+            <div className="space-y-3 pt-6">
+              <h3 className="text-secondary text-xs font-semibold uppercase tracking-wider">
+                {t('form.submissions.hiddenFields', 'Hidden & Tracking Fields')}
+              </h3>
+              <div className="border-accent-light bg-accent-light/10 divide-accent-light/50 divide-y rounded-lg border p-4">
+                {payload.submission.hiddenFields.map((hf, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between py-2 text-sm first:pt-0 last:pb-0"
+                  >
+                    <span className="text-secondary font-medium">{hf.name || hf.id}</span>
+                    <span className="text-primary font-mono text-xs">{hf.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
