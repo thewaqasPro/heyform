@@ -18,7 +18,7 @@ if (fs.existsSync(SERVER_ROOT_PATH)) {
 }
 
 // App serve
-export const APP_LISTEN_PORT: number = +process.env.APP_LISTEN_PORT || 9157
+export const APP_LISTEN_PORT: number = +process.env.APP_LISTEN_PORT || 8000
 export const APP_LISTEN_HOSTNAME: string = process.env.APP_LISTEN_HOSTNAME || '0.0.0.0'
 export const APP_HOMEPAGE_URL: string =
   process.env.APP_HOMEPAGE_URL || `http://${APP_LISTEN_HOSTNAME}:${APP_LISTEN_PORT}`
