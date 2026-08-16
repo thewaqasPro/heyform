@@ -30,36 +30,64 @@ function rating(answer: Answer): string {
 }
 
 function singleChoice(answer: Answer): string {
-  const choice = answer.properties!.choices?.find(row => row.id === answer.value)
-  return choice ? choice.label : ''
+  if (helper.isString(answer.value)) {
+    const choice = answer.properties?.choices?.find(row => row.id === answer.value)
+    return choice ? choice.label : answer.value
+  }
+  return String(answer.value ?? '')
 }
 
 function multipleChoice(answer: Answer): string {
-  return (answer.properties?.choices?.filter(row => answer.value?.value.includes(row.id)) || [])
-    .map(row => row.label)
-    .concat([answer.value?.other])
-    .filter(row => helper.isValid(row))
-    .join(', ')
+  if (Array.isArray(answer.value)) {
+    return answer.value.join(', ')
+  }
+  if (helper.isObject(answer.value)) {
+    const list = (
+      answer.properties?.choices?.filter(
+        row => Array.isArray(answer.value?.value) && answer.value.value.includes(row.id)
+      ) || []
+    )
+      .map(row => row.label)
+      .concat([answer.value?.other])
+      .filter(row => helper.isValid(row))
+
+    if (list.length > 0) {
+      return list.join(', ')
+    }
+  }
+  return String(answer.value ?? '')
 }
 
 function fullName(answer: Answer): FullNameValue {
+  if (typeof answer.value === 'string') {
+    return { firstName: answer.value, lastName: '' }
+  }
   return answer.value
 }
 
 function address(answer: Answer): string {
-  return [
-    answer.value.address1,
-    ',',
-    answer.value.address2,
-    answer.value.city,
-    ',',
-    answer.value.state,
-    ',',
-    answer.value.country,
-    answer.value.zip
-  ]
-    .filter(Boolean)
-    .join(' ')
+  if (typeof answer.value === 'string') {
+    return answer.value
+  }
+  if (helper.isObject(answer.value)) {
+    const parts = [
+      answer.value.address1 || answer.value.address || answer.value.street,
+      answer.value.address2,
+      answer.value.city,
+      answer.value.state || answer.value.region,
+      answer.value.country,
+      answer.value.zip || answer.value.postalCode || answer.value.postal_code
+    ].filter(helper.isValid)
+
+    if (parts.length > 0) {
+      return parts.join(', ')
+    }
+
+    return Object.entries(answer.value)
+      .map(([k, v]) => `${k}: ${v}`)
+      .join(', ')
+  }
+  return String(answer.value ?? '')
 }
 
 function legalTerms(answer: Answer): string {
