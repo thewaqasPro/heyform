@@ -5,7 +5,6 @@ import { Dirent, readFileSync, readdirSync } from 'fs'
 import { basename, extname, join } from 'path'
 
 import { EMAIL_TEMPLATES_DIR, SMTP_FROM } from '@environments'
-import { htmlUtils } from '@heyform-inc/answer-utils'
 import { helper } from '@heyform-inc/utils'
 
 interface JoinWorkspaceAlertOptions {
@@ -29,6 +28,10 @@ interface SubmissionNotificationOptions {
   formName: string
   submission: string
   link: string
+  logo?: string
+  workspaceName?: string
+  submissionDate?: string
+  submissionId?: string
 }
 
 interface TeamDeletionAlertOptions {
@@ -56,7 +59,6 @@ interface UserSecurityAlertOptions {
 const HTML_EXT = '.html'
 const TEMPLATE_META_REGEX = /^---([\s\S]*?)---[\n\s\S]\n/
 const DEFAULT_LOCALE = 'en'
-const SUBMISSION_HTML_TAGS = ['ol', 'li', 'h3', 'p']
 
 interface TrustedHtml {
   html: string
@@ -182,18 +184,19 @@ export class MailService {
     options: SubmissionNotificationOptions,
     locale?: string
   ) {
-    const submission = htmlUtils.purge(options.submission, {
-      allowedAttributes: [],
-      allowedBlockTags: SUBMISSION_HTML_TAGS,
-      allowedTags: ['text']
-    })
+    const logoBlock = options.logo
+      ? `<div style="text-align: center; margin-bottom: 20px;"><img src="${escapeHtml(options.logo)}" alt="${escapeHtml(options.workspaceName || options.formName)}" style="max-height: 52px; max-width: 200px; object-fit: contain; display: inline-block;" /></div>`
+      : ''
 
     await this.addQueue(
       'submission_notification',
       to,
       {
         ...options,
-        submission: trustedHtml(submission)
+        submission: trustedHtml(options.submission),
+        logoBlock: trustedHtml(logoBlock),
+        workspaceName: options.workspaceName || 'HeyForm',
+        submissionDate: options.submissionDate || ''
       },
       undefined,
       locale

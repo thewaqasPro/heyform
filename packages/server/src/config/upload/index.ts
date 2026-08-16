@@ -179,25 +179,29 @@ export function sanitizeUploadFilename(filename: unknown): string {
 }
 
 export function getUploadType(filename: unknown, mimeType: unknown): UploadType | undefined {
-  let normalizedMimeType = normalizeMimeType(mimeType)
-  let uploadType = UPLOAD_TYPES[normalizedMimeType]
   const extension = extname(String(filename || '')).toLowerCase()
 
-  if (!uploadType) {
-    const entry = Object.entries(UPLOAD_TYPES).find(([_, type]) =>
+  // 1. Prioritize finding by file extension (handles mismatched or generic MIME types like text/plain for CSV)
+  if (extension) {
+    const entryByExt = Object.entries(UPLOAD_TYPES).find(([_, type]) =>
       type.extensions.includes(extension)
     )
-    if (entry) {
-      normalizedMimeType = entry[0]
-      uploadType = entry[1]
+    if (entryByExt) {
+      return entryByExt[1]
     }
   }
 
-  if (!uploadType || !uploadType.extensions.includes(extension)) {
-    return
+  // 2. Fallback to MIME type lookup (handles blobs or files without extensions)
+  const normalizedMimeType = normalizeMimeType(mimeType)
+  const uploadType = UPLOAD_TYPES[normalizedMimeType]
+
+  if (uploadType) {
+    if (!extension || uploadType.extensions.includes(extension)) {
+      return uploadType
+    }
   }
 
-  return uploadType
+  return undefined
 }
 
 export function isUploadFileContentValid(file: {
@@ -273,7 +277,13 @@ export async function saveUploadedFile(file: {
   size: number
 }): Promise<SavedUploadFile> {
   const mimeType = normalizeMimeType(file.mimetype)
-  const extension = extname(file.originalname).toLowerCase()
+  let extension = extname(file.originalname).toLowerCase()
+  if (!extension) {
+    const uploadType = getUploadType(file.originalname, file.mimetype)
+    if (uploadType && uploadType.extensions.length > 0) {
+      extension = uploadType.extensions[0]
+    }
+  }
   const filename = `${nanoid(24)}${extension}`
   const originalname = sanitizeUploadFilename(file.originalname)
 

@@ -28,15 +28,24 @@ export class Uploader {
         let value = values[row.id]
 
         if (helper.isValid(value)) {
-          if (row.kind === FieldKindEnum.SIGNATURE) {
+          if (
+            row.kind === FieldKindEnum.SIGNATURE &&
+            typeof value === 'string' &&
+            value.startsWith('data:')
+          ) {
             value = this.b64ImageURLToBlob(value as string) as File
           }
 
-          this.fields.push({
-            id: row.id,
-            kind: row.kind,
-            value
-          })
+          if (
+            (typeof File !== 'undefined' && value instanceof File) ||
+            (typeof Blob !== 'undefined' && value instanceof Blob)
+          ) {
+            this.fields.push({
+              id: row.id,
+              kind: row.kind,
+              value
+            })
+          }
         }
       }
     })
@@ -74,7 +83,7 @@ export class Uploader {
     }
   }
 
-  b64ImageURLToBlob(b64ImageURL: string): Blob {
+  b64ImageURLToBlob(b64ImageURL: string): File | Blob {
     const [prefix, data] = b64ImageURL.split(',')
     const type = prefix.split(':')[1].split(';')[0]
     const bytes = atob(data)
@@ -85,9 +94,12 @@ export class Uploader {
       intArray[i] = bytes.charCodeAt(i)
     }
 
-    const blob: Any = new Blob([intArray], { type })
-    blob.name = 'signature.png'
-
-    return blob
+    try {
+      return new File([intArray], 'signature.png', { type })
+    } catch (_) {
+      const blob: Any = new Blob([intArray], { type })
+      blob.name = 'signature.png'
+      return blob
+    }
   }
 }

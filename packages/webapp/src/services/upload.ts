@@ -10,9 +10,12 @@ export interface UploadContext {
 }
 
 export class UploadService {
-  static async upload(file: File, context?: UploadContext): Promise<FileUploadValue> {
+  static async upload(file: File | Blob, context?: UploadContext): Promise<FileUploadValue> {
     const formData = new FormData()
-    formData.append('file', file)
+    const filename =
+      (file as any).name ||
+      (typeof File !== 'undefined' && file instanceof File ? file.name : 'upload.png')
+    formData.append('file', file, filename)
 
     const deviceId = getDeviceId()
 

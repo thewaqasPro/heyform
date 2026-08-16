@@ -3,7 +3,8 @@ import { Job } from 'bull'
 
 import { APP_HOMEPAGE_URL } from '@environments'
 import { answersToHtml } from '@heyform-inc/answer-utils'
-import { FormService, MailService, SubmissionService, UserService } from '@service'
+import { date } from '@heyform-inc/utils'
+import { FormService, MailService, SubmissionService, TeamService, UserService } from '@service'
 
 import { BaseQueue, IntegrationQueueJob } from './base.queue'
 
@@ -13,7 +14,8 @@ export class SubmissionNotificationQueue extends BaseQueue {
     private readonly submissionService: SubmissionService,
     private readonly mailService: MailService,
     private readonly formService: FormService,
-    private readonly userService: UserService
+    private readonly userService: UserService,
+    private readonly teamService: TeamService
   ) {
     super()
   }
@@ -25,15 +27,36 @@ export class SubmissionNotificationQueue extends BaseQueue {
       this.formService.findById(job.data.formId)
     ])
 
-    const user = await this.userService.findById(form.memberId)
-    const html = answersToHtml(submission.answers)
+    if (!submission || !form) {
+      return
+    }
+
+    const [user, team] = await Promise.all([
+      this.userService.findById(form.memberId),
+      this.teamService.findById(form.teamId)
+    ])
+
+    if (!user) {
+      return
+    }
+
+    const logo = form.themeSettings?.logo || team?.avatar || ''
+    const workspaceName = team?.name || form.name || 'HeyForm'
+    const submissionDate = date(submission.startAt ? submission.startAt * 1000 : Date.now()).format(
+      'MMMM D, YYYY · h:mm A'
+    )
+    const html = answersToHtml(submission.answers || [])
 
     await this.mailService.submissionNotification(
       user.email,
       {
         formName: form.name,
         submission: html,
-        link: `${APP_HOMEPAGE_URL}/workspace/${form.teamId}/project/${form.projectId}/form/${form.id}/submissions`
+        link: `${APP_HOMEPAGE_URL}/workspace/${form.teamId}/project/${form.projectId}/form/${form.id}/submissions`,
+        logo,
+        workspaceName,
+        submissionDate,
+        submissionId: submission.id
       },
       user.lang
     )
