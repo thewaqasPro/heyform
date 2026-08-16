@@ -35,5 +35,5 @@ COPY --from=base $APP_PATH/packages/server/tsconfig.json $APP_PATH/packages/serv
 
 RUN test -f ./dist/main.js || test -f ./dist/src/main.js || test -f ./dist/packages/server/main.js
 
-EXPOSE 9157 8000
+EXPOSE 9157
 CMD ["sh", "-c", "if [ -f ./dist/main.js ]; then node --enable-source-maps ./dist/main.js; elif [ -f ./dist/src/main.js ]; then node --enable-source-maps ./dist/src/main.js; else node --enable-source-maps ./dist/packages/server/main.js; fi"]
