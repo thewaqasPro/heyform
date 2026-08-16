@@ -154,7 +154,7 @@ export class CompleteSubmissionResolver {
 
     // Notification and Webhook still need the submission data
     // even archive settings have been disabled
-    if (!form.settings?.allowArchive) {
+    if (form.settings?.allowArchive === false) {
       status = SubmissionStatusEnum.PRIVATE
     }
 

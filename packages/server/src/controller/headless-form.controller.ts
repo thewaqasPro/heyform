@@ -477,7 +477,7 @@ export class HeadlessFormController {
     }
 
     let status = SubmissionStatusEnum.PUBLIC
-    if (!form.settings?.allowArchive) {
+    if (form.settings?.allowArchive === false) {
       status = SubmissionStatusEnum.PRIVATE
     }
 
