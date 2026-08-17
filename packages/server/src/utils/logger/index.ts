@@ -1,27 +1,27 @@
 import { Logger as L } from '@nestjs/common'
 
 export class Logger extends L {
-  static info(message: any, context?: string): void {
-    L.log(message, context)
+  static info(message: any, ...optionalParams: any[]): void {
+    L.log(message, ...optionalParams)
   }
 
-  static trace(message: any, trace?: string, context?: string): void {
-    L.error(message, trace, context)
+  static trace(message: any, ...optionalParams: any[]): void {
+    L.error(message, ...optionalParams)
   }
 
-  static fatal(message: any, trace?: string, context?: string): void {
-    L.error(message, trace, context)
+  static fatal(message: any, ...optionalParams: any[]): void {
+    L.error(message, ...optionalParams)
   }
 
-  info(message: any, context?: string): void {
-    this.log(message, context)
+  info(message: any, ...optionalParams: any[]): void {
+    this.log(message, ...optionalParams)
   }
 
-  trace(message: any, trace?: string, context?: string): void {
-    this.error(message, trace, context)
+  trace(message: any, ...optionalParams: any[]): void {
+    this.error(message, ...optionalParams)
   }
 
-  fatal(message: any, trace?: string, context?: string): void {
-    this.error(message, trace, context)
+  fatal(message: any, ...optionalParams: any[]): void {
+    this.error(message, ...optionalParams)
   }
 }

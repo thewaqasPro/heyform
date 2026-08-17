@@ -1,5 +1,6 @@
-@import 'flag-icons/css/flag-icons.css';
-@import './views/Classic/classic.scss';
+@use 'flag-icons/css/flag-icons.css';
+@use './views/Classic/classic.scss';
+
 
 @mixin kyndform-scrollbar() {
   &::-webkit-scrollbar {

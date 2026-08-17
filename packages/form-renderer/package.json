@@ -23,7 +23,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsup && npm run style",
-    "style": "sass src/style.scss dist/style.css",
+    "style": "sass --load-path=node_modules src/style.scss dist/style.css",
     "type-check": "tsc --pretty --noEmit"
   },
   "peerDependencies": {

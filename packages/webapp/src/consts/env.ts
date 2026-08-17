@@ -41,11 +41,20 @@ export const ENABLE_GOOGLE_FONTS = helper.isTrue(
 )
 
 export function isRegistrationDisabled() {
-  return helper.isTrue(globalConfig?.appDisableRegistration)
+  const runtimeConfig = typeof window !== 'undefined' ? (window as any).kyndform : null
+  return helper.isTrue(
+    runtimeConfig?.appDisableRegistration ??
+      globalConfig?.appDisableRegistration ??
+      import.meta.env.VITE_APP_DISABLE_REGISTRATION
+  )
 }
 
 export function getVerifyEmailResendCooldownSeconds() {
-  const value = Number(globalConfig?.verifyEmailResendCooldownSeconds)
+  const runtimeConfig = typeof window !== 'undefined' ? (window as any).kyndform : null
+  const value = Number(
+    runtimeConfig?.verifyEmailResendCooldownSeconds ??
+      globalConfig?.verifyEmailResendCooldownSeconds
+  )
   return Number.isFinite(value) && value > 0 ? value : 60
 }
 

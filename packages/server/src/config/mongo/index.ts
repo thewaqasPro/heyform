@@ -36,14 +36,15 @@ export function redactMongoLogValue(value: unknown, seen = new WeakSet<object>()
 mongoose.set(
   'debug',
   NODE_ENV === 'development'
-    ? (collection: string, method: string, query: any, doc: any) => {
+    ? (collection: string, method: string, ...args: any[]) => {
         logger.info(
           [
             collection,
             method,
-            JSON.stringify(redactMongoLogValue(query)),
-            JSON.stringify(redactMongoLogValue(doc))
-          ].join(' ')
+            ...args.map(arg => (arg !== undefined ? JSON.stringify(redactMongoLogValue(arg)) : ''))
+          ]
+            .filter(Boolean)
+            .join(' ')
         )
       }
     : false
